@@ -9,6 +9,8 @@ import {
 } from 'react-native';
 import moment from 'moment'
 import {RkButton} from 'react-native-ui-kitten';
+import axios from 'axios'
+
 
 export default class HomeScreen extends React.Component {
 
@@ -20,9 +22,25 @@ export default class HomeScreen extends React.Component {
     date: 'vazio'
   }
 
+  getSchedule = async () => {
+    const date = new Date().toISOString() // Iso Date Format to pass to API
+
+    return axios.get(`https://api.winnipegtransit.com/v3/stops/40318/schedule.json?start=${date}&route=44&api-key=NyQGsU66kIXieXPwhzrD`)
+      .then(({ data }) => {
+        console.log('success',data['stop-schedule']['route-schedules'][0]['scheduled-stops']);
+      })
+      .catch((error) => {
+        // handle error
+        console.log('error get', error);
+      });
+  }
+
   generateDate = () => {
-    const date = moment().format()
+    const date = new Date().toISOString() // Iso Date Format to pass to API
+    console.log('date', date);
     // const date = new Date().toUTCString()
+    // start=2018-10-16T03:28:52.873Z
+    // start=2018-10-22T21:04:13
     this.setState({ date })
   };
 
@@ -32,7 +50,7 @@ export default class HomeScreen extends React.Component {
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
 
           <View style={styles.getStartedContainer}>
-            <RkButton onPress={this.generateDate}>Click me!</RkButton>
+            <RkButton onPress={this.getSchedule}>Click me!</RkButton>
             <Text style={styles.getStartedText}>
               {this.state.date}
             </Text>
