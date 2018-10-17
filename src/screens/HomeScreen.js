@@ -4,13 +4,12 @@ import {
   ScrollView,
   StyleSheet,
   Text,
-  TouchableOpacity,
   View,
 } from 'react-native';
-import moment from 'moment'
-import {RkButton} from 'react-native-ui-kitten';
-import axios from 'axios'
+import { getSchedule44 } from '../service/api'
 
+import { RkButton } from 'react-native-ui-kitten';
+import moment from 'moment'
 
 export default class HomeScreen extends React.Component {
 
@@ -19,41 +18,29 @@ export default class HomeScreen extends React.Component {
   };
 
   state = {
-    date: 'vazio'
+    data: []
   }
 
   getSchedule = async () => {
-    const date = new Date().toISOString() // Iso Date Format to pass to API
-
-    return axios.get(`https://api.winnipegtransit.com/v3/stops/40318/schedule.json?start=${date}&route=44&api-key=NyQGsU66kIXieXPwhzrD`)
-      .then(({ data }) => {
-        console.log('success',data['stop-schedule']['route-schedules'][0]['scheduled-stops']);
-      })
-      .catch((error) => {
-        // handle error
-        console.log('error get', error);
-      });
+    const data = await getSchedule44();
+    this.setState({ data })
   }
-
-  generateDate = () => {
-    const date = new Date().toISOString() // Iso Date Format to pass to API
-    console.log('date', date);
-    // const date = new Date().toUTCString()
-    // start=2018-10-16T03:28:52.873Z
-    // start=2018-10-22T21:04:13
-    this.setState({ date })
-  };
-
   render() {
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
 
           <View style={styles.getStartedContainer}>
-            <RkButton onPress={this.getSchedule}>Click me!</RkButton>
-            <Text style={styles.getStartedText}>
-              {this.state.date}
-            </Text>
+            <RkButton onPress={this.getSchedule}>Get 44 Route Schedule</RkButton>
+            {this.state.data.map((item, index) => {
+              return (
+                <View key={item.key}>
+                  <Text>{moment(item.times.arrival.estimated).format('MMMM Do YYYY, h:mm:ss')}</Text>
+                  <Text>{moment(item.times.arrival.scheduled).format('MMMM Do YYYY, h:mm:ss')}</Text>
+                  <Text>---------</Text>
+                </View>
+              )
+            })}
           </View>
 
         </ScrollView>
