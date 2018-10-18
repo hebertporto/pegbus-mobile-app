@@ -7,8 +7,7 @@ import {
   View,
 } from 'react-native';
 import { getSchedule44 } from '../service/api'
-
-import { RkButton } from 'react-native-ui-kitten';
+import { RkButton, RkTextInput } from 'react-native-ui-kitten';
 import moment from 'moment'
 
 export default class HomeScreen extends React.Component {
@@ -18,7 +17,8 @@ export default class HomeScreen extends React.Component {
   };
 
   state = {
-    data: []
+    data: [],
+    value: ''
   }
 
   getSchedule = async () => {
@@ -26,11 +26,19 @@ export default class HomeScreen extends React.Component {
     this.setState({ data })
   }
   render() {
+    const inputStyle = { margin: 15 }
+
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
 
           <View style={styles.getStartedContainer}>
+            <RkTextInput
+              style={inputStyle}
+              placeholder='Numero de'
+              value={this.state.value}
+              onChangeText={value => this.setState({ value })}
+            />
             <RkButton onPress={this.getSchedule}>Get 44 Route Schedule</RkButton>
             {this.state.data.map((item, index) => {
               return (
