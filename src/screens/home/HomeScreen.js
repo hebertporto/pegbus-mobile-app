@@ -6,7 +6,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import { getSchedule44 } from '../../services/api'
+import { getStopBusesTime } from '../../services/api'
 import moment from 'moment'
 import InputSearchRow from '../../ui/InputSearchRow';
 
@@ -17,26 +17,47 @@ export default class HomeScreen extends React.Component {
 
   state = {
     data: [],
+    error: false,
   }
 
-  getSchedule = async () => {
-    const data = await getSchedule44();
-    this.setState({ data })
+  getSchedule = async (stopNumber) => {
+    try {
+      this.setState({ error: false })
+      const data = await getStopBusesTime({ stopNumber });
+      data.length ? this.setState({ data }) : this.setState({ error: true, data: [] })
+    } catch (e) {
+      console.log('blah');
+    }
   }
+
+  getTime = (estimated, scheduled) => {
+    if (estimated === scheduled) {
+      return (<Text>
+        On Time: {moment(estimated).format('MMMM Do YYYY, h:mm:ss')}
+      </Text>)
+    }
+    return (<Text>
+      Err .. new time: {moment(scheduled).format('MMMM Do YYYY, h:mm:ss')}
+    </Text>)
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <View style={{ flex: 0.15 }}>
           <InputSearchRow searchHandler={this.getSchedule} />
         </View>
+        {this.state.error && (<View>
+          <Text>Bus Stop Not Found</Text>
+        </View>)}
         <ScrollView
           style={{ flex: 0.85 }}
           contentContainerStyle={styles.contentContainer}>
             {this.state.data.map((item, index) => {
               return (
                 <View key={item.key}>
-                  <Text>{moment(item.times.arrival.estimated).format('MMMM Do YYYY, h:mm:ss')}</Text>
-                  <Text>{moment(item.times.arrival.scheduled).format('MMMM Do YYYY, h:mm:ss')}</Text>
+                  <Text>{item.variant.key.split('-')[0]} | {item.variant.name}</Text>
+                  {this.getTime(item.times.arrival.estimated, item.times.arrival.scheduled)}
                   <Text>---------</Text>
                 </View>
               )
@@ -46,6 +67,30 @@ export default class HomeScreen extends React.Component {
     );
   }
 }
+
+// {
+//     "bus": Object {
+//       "bike-rack": "false",
+//       "key": 814,
+//       "wifi": "false",
+//     },
+//     "cancelled": "false",
+//     "key": "9832164-68",
+//     "times": Object {
+//       "arrival": Object {
+//         "estimated": "2018-10-20T23:18:40",
+//         "scheduled": "2018-10-20T23:18:40",
+//       },
+//       "departure": Object {
+//         "estimated": "2018-10-20T23:18:40",
+//         "scheduled": "2018-10-20T23:18:40",
+//       },
+//     },
+//     "variant": Object {
+//       "key": "11-1-R",
+//       "name": "Portage-Kildonan to North Kildonan via Rothesay",
+//     },
+//   }
 
 const styles = StyleSheet.create({
   container: {

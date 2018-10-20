@@ -21,7 +21,9 @@ export const styles = StyleSheet.create({
   },
   button: {
     borderRadius: 10,
-    width: 50,
+    width: 70,
     height: 50
   }
 });
+
+// 40318   &  10628 ( McDermont )

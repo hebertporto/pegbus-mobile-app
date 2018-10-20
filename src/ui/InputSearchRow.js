@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import { RkButton, RkTextInput } from 'react-native-ui-kitten';
 
 import { styles } from './styles/InputSearchRow.style.js';
 
 class InputSearchRow extends Component {
   state = {
-    value: ''
+    value: '40318'
   }
-
 
   render() {
     return (
@@ -17,7 +16,7 @@ class InputSearchRow extends Component {
         <View style={styles.inputContainer}>
           <RkTextInput
             style={styles.input}
-            placeholder='Search by street, landmark or stop number'
+            placeholder='Search by stop number'
             value={this.state.value}
             placeholderTextColor='green'
             underlineWidth={0}
@@ -28,8 +27,8 @@ class InputSearchRow extends Component {
           <RkButton
             rkType='icon small'
             style={styles.button}
-            onPress={this.props.searchHandler}>
-            44
+            onPress={() => this.props.searchHandler(this.state.value)}>
+            Search
           </RkButton>
         </View>
       </View>

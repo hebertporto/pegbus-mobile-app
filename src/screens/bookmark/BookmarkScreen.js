@@ -1,9 +1,9 @@
 import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet, Text } from 'react-native';
 
 export default class BookmarkScreen extends React.Component {
   static navigationOptions = {
-    title: 'Links',
+    title: 'Bookmark',
   };
 
   render() {
