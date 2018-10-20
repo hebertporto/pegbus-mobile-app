@@ -6,19 +6,17 @@ import {
   Text,
   View,
 } from 'react-native';
-import { getSchedule44 } from '../services/api'
-import { RkButton, RkTextInput } from 'react-native-ui-kitten';
+import { getSchedule44 } from '../../services/api'
 import moment from 'moment'
+import InputSearchRow from '../../ui/InputSearchRow';
 
 export default class HomeScreen extends React.Component {
-
   static navigationOptions = {
-    header: null,
-  };
+    title: 'PegBus'
+  }
 
   state = {
     data: [],
-    value: ''
   }
 
   getSchedule = async () => {
@@ -26,20 +24,14 @@ export default class HomeScreen extends React.Component {
     this.setState({ data })
   }
   render() {
-    const inputStyle = { margin: 15 }
-
     return (
       <View style={styles.container}>
-        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-
-          <View style={styles.getStartedContainer}>
-            <RkTextInput
-              style={inputStyle}
-              placeholder='Numero de'
-              value={this.state.value}
-              onChangeText={value => this.setState({ value })}
-            />
-            <RkButton onPress={this.getSchedule}>Get 44 Route Schedule</RkButton>
+        <View style={{ flex: 0.15 }}>
+          <InputSearchRow searchHandler={this.getSchedule} />
+        </View>
+        <ScrollView
+          style={{ flex: 0.85 }}
+          contentContainerStyle={styles.contentContainer}>
             {this.state.data.map((item, index) => {
               return (
                 <View key={item.key}>
@@ -49,8 +41,6 @@ export default class HomeScreen extends React.Component {
                 </View>
               )
             })}
-          </View>
-
         </ScrollView>
       </View>
     );
@@ -60,6 +50,7 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'column',
     backgroundColor: '#fff',
   },
   developmentModeText: {

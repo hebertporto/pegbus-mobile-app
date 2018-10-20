@@ -4,12 +4,25 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 
 import TabBarIcon from '../ui/TabBarIcon';
 
-import HomeScreen from '../screens/HomeScreen';
-import BookmarkScreen from '../screens/BookmarkScreen';
+import HomeScreen from '../screens/home/HomeScreen';
+import BookmarkScreen from '../screens/bookmark/BookmarkScreen';
 
-const HomeStack = createStackNavigator({
+const navigationOptions = {
+  headerStyle: {
+    backgroundColor: '#2196F3',
+  },
+  headerTintColor: '#fff',
+};
+
+const HomeStack = createStackNavigator(
+  {
   Home: HomeScreen,
-});
+  },
+  {
+    initialRouteName: 'Home',
+    navigationOptions
+  }
+);
 
 HomeStack.navigationOptions = {
   tabBarLabel: 'Home',
