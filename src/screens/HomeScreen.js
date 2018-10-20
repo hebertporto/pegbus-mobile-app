@@ -6,7 +6,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import { getSchedule44 } from '../service/api'
+import { getSchedule44 } from '../services/api'
 import { RkButton, RkTextInput } from 'react-native-ui-kitten';
 import moment from 'moment'
 
