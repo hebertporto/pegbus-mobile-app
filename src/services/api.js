@@ -7,7 +7,7 @@ export const getStopBusesTime = async ({ stopNumber }) => {
   try {
     const date = new Date().toISOString() // Iso Date Format to pass to API
     // &route=44
-    const res = await axios.get(`https://api.winnipegtransit.com/v3/stops/${stopNumber}/schedule.json?start=${date}&api-key=NyQGsU66kIXieXPwhzrD`);
+    const res = await axios.get(`stops/${stopNumber}/schedule.json?start=${date}&api-key=NyQGsU66kIXieXPwhzrD`);
     const schedule = get(res.data, 'stop-schedule.route-schedules[0].scheduled-stops', []);
     console.log('sucess', schedule);
     return schedule;
