@@ -1,7 +1,9 @@
-import Axios from 'axios';
+import axios from 'axios';
 
-import { API_BASE_URL } from './keys';
+import { API_BASE_URL, WINNIPEG_TRANSIT_API } from './keys';
 
 export const initializeAxios = () => {
-  Axios.defaults.baseURL = API_BASE_URL
+  axios.defaults.baseURL = API_BASE_URL
+  axios.defaults.params = {}
+  axios.defaults.params['api-key'] = WINNIPEG_TRANSIT_API
 }
