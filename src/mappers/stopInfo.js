@@ -12,7 +12,7 @@ export const stopInfo = {
     {
       number: '',
       name: '',
-      
+
     }
   ]
 }
