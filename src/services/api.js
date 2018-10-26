@@ -14,3 +14,6 @@ export const getStopBusesTime = async ({ stopNumber }) => {
     return [];
   }
 }
+
+// linhas que passam em um determinado ponto
+// https://api.winnipegtransit.com/v3/routes.json?stop=10628&api-key=NyQGsU66kIXieXPwhzrD

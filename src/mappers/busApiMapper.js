@@ -1,8 +1,24 @@
 import { get } from 'lodash';
 
 export const mapperScheduler = (apiResponse) => {
-  const schedules = get('stop-schedule.stop', []);
-  return schedules;
+  const stopInfo = get('stop-schedule.stop', {});
+  const allShedules = get('stop-schedule.schedules', []);
+  const shedules = allShedules.reduce((acc, cur) => {
+    // curr.route = {}
+    // const { a, b } = curr[scheduled-stops]
+    const newA = {
+      id: 'uuid',
+      number: '',
+      name:  '', // get a name ???
+      timeScheduled: '',
+      timeEstimated: '',
+    }
+
+    const route = {}
+    acc.push(route);
+    return acc;
+  }, []);
+  return { stopInfo, shedules };
 }
 
 export const mapperBusRouterPerStop = (apiResponse) => {
