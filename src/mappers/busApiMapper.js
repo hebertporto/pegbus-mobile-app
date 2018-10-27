@@ -20,9 +20,6 @@ export const mapperScheduler = (apiResponse) => {
     const allRoutes = [ ...acc, ...montendRoutes];
     return allRoutes;
   }, []);
-
-  console.log('shedules', shedules);
-
   return { stopInfo, shedules };
 }
 
