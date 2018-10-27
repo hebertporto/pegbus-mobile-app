@@ -6,8 +6,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import { getStopBusesTime } from '../../services/api'
-import moment from 'moment'
+import { stopBusAndSchedule } from '../../services/stopService'
 import InputSearchRow from '../../ui/InputSearchRow';
 
 export default class HomeScreen extends React.Component {
@@ -17,28 +16,25 @@ export default class HomeScreen extends React.Component {
 
   state = {
     data: [],
+    stopInfo: {},
     error: false,
   }
 
   getSchedule = async (stopNumber) => {
     try {
-      this.setState({ error: false })
-      const data = await getStopBusesTime({ stopNumber });
-      data.length ? this.setState({ data }) : this.setState({ error: true, data: [] })
+      const { shedules, stopInfo } = await stopBusAndSchedule({ stopNumber });
+      this.setState({
+        error: false,
+        data: shedules,
+        stopInfo: stopInfo,
+      })
     } catch (e) {
-      console.log('blah');
+      this.setState({
+        routes: [],
+        stopInfo: {},
+        error: true
+      })
     }
-  }
-
-  getTime = (estimated, scheduled) => {
-    if (estimated === scheduled) {
-      return (<Text>
-        On Time: {moment(estimated).format('MMMM Do YYYY, h:mm:ss')}
-      </Text>)
-    }
-    return (<Text>
-      Err .. new time: {moment(scheduled).format('MMMM Do YYYY, h:mm:ss')}
-    </Text>)
   }
 
   render() {
@@ -53,11 +49,10 @@ export default class HomeScreen extends React.Component {
         <ScrollView
           style={{ flex: 0.85 }}
           contentContainerStyle={styles.contentContainer}>
-            {this.state.data.map((item, index) => {
+            {this.state.data.map(item => {
               return (
-                <View key={item.key}>
-                  <Text>{item.variant.key.split('-')[0]} | {item.variant.name}</Text>
-                  {this.getTime(item.times.arrival.estimated, item.times.arrival.scheduled)}
+                <View key={item.id}>
+                  <Text>{item.number} | {item.name} | {item.timeEstimated}</Text>
                   <Text>---------</Text>
                 </View>
               )
@@ -67,30 +62,6 @@ export default class HomeScreen extends React.Component {
     );
   }
 }
-
-// {
-//     "bus": Object {
-//       "bike-rack": "false",
-//       "key": 814,
-//       "wifi": "false",
-//     },
-//     "cancelled": "false",
-//     "key": "9832164-68",
-//     "times": Object {
-//       "arrival": Object {
-//         "estimated": "2018-10-20T23:18:40",
-//         "scheduled": "2018-10-20T23:18:40",
-//       },
-//       "departure": Object {
-//         "estimated": "2018-10-20T23:18:40",
-//         "scheduled": "2018-10-20T23:18:40",
-//       },
-//     },
-//     "variant": Object {
-//       "key": "11-1-R",
-//       "name": "Portage-Kildonan to North Kildonan via Rothesay",
-//     },
-//   }
 
 const styles = StyleSheet.create({
   container: {

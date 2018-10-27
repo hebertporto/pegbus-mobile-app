@@ -7,7 +7,8 @@ import { styles } from './styles/InputSearchRow.style.js';
 
 class InputSearchRow extends Component {
   state = {
-    value: '40318'
+    // value: '40318'10628
+    value: '10628'
   }
 
   render() {

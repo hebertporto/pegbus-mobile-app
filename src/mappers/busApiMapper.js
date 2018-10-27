@@ -1,5 +1,6 @@
 import { get, sortBy } from 'lodash';
 import moment from 'moment';
+import uuid from 'uuid';
 
 const getHourFromDateIso = date => moment(date).format('h:mm:ss')
 const getNameRoute = name => {
@@ -17,7 +18,7 @@ export const mapperScheduler = (apiResponse) => {
     const montendRoutes = closetTimes.map(route => {
 
       return {
-        id: (index + 1),
+        id: uuid(),
         number: routeInfo.number,
         name:  getNameRoute(route.variant.name),
         timeScheduled: getHourFromDateIso(route.times.arrival.scheduled),
@@ -29,7 +30,6 @@ export const mapperScheduler = (apiResponse) => {
     return allRoutes;
   }, []);
   const shedules = sortBy(shedulesUordened, ['timeEstimated','number'])
-  console.log('shedules', shedules);
   return { stopInfo, shedules };
 }
 
@@ -39,21 +39,6 @@ export const mapperBusRouterPerStop = (apiResponse) => {
     return route.number;
   });
   return routes;
-}
-
-export const stopInfo = {
-  id: '',
-  name: '',
-  stopNumber: '',
-  address: '',
-  buses: [],
-  schedules: [
-    {
-      number: '',
-      name: '',
-
-    }
-  ]
 }
 
 // 10628
