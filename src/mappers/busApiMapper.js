@@ -1,23 +1,28 @@
 import { get } from 'lodash';
 
 export const mapperScheduler = (apiResponse) => {
-  const stopInfo = get('stop-schedule.stop', {});
-  const allShedules = get('stop-schedule.schedules', []);
-  const shedules = allShedules.reduce((acc, cur) => {
-    // curr.route = {}
-    // const { a, b } = curr[scheduled-stops]
-    const newA = {
-      id: 'uuid',
-      number: '',
-      name:  '', // get a name ???
-      timeScheduled: '',
-      timeEstimated: '',
-    }
+  const stopInfo = get(apiResponse, 'stop-schedule.stop', {});
+  const allShedules = get(apiResponse, 'stop-schedule.route-schedules', []);
 
-    const route = {}
-    acc.push(route);
-    return acc;
+  const shedules = allShedules.reduce((acc, curr, index) => {
+    const routeInfo = curr.route;
+    const closetTimes = curr["scheduled-stops"].slice(0, 4);
+    const montendRoutes = closetTimes.map(route => {
+      return {
+        id: (index + 1),
+        number: routeInfo.number,
+        name:  route.variant.name,
+        timeScheduled: route.times.arrival.scheduled,
+        timeEstimated: route.times.arrival.estimated,
+      }
+    });
+
+    const allRoutes = [ ...acc, ...montendRoutes];
+    return allRoutes;
   }, []);
+
+  console.log('shedules', shedules);
+
   return { stopInfo, shedules };
 }
 
