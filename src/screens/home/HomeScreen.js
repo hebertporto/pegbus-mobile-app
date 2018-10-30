@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import { stopBusAndSchedule } from '../../services/stopService'
 import InputSearchRow from '../../ui/InputSearchRow';
+import Banner from '../../ui/Banner';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -47,7 +48,7 @@ export default class HomeScreen extends React.Component {
           <Text>Bus Stop Not Found</Text>
         </View>)}
         <ScrollView
-          style={{ flex: 0.85 }}
+          style={{ flex: 0.7 }}
           contentContainerStyle={styles.contentContainer}>
             {this.state.data.map(item => {
               return (
@@ -58,6 +59,9 @@ export default class HomeScreen extends React.Component {
               )
             })}
         </ScrollView>
+        <View style={{ flex: 0.15 }}>
+            <Banner />
+        </View>
       </View>
     );
   }
