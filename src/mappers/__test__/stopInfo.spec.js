@@ -54,11 +54,13 @@ describe('Schedule Route Mapper', () => {
   test('mapper routes', () => {
     expect(data.shedules).toEqual(
       expect.arrayContaining([
-        expect.objectContaining({ id: 1,
+        expect.objectContaining({
+          id: 1,
           number: 11,
           name: 'to Glenway',
           timeScheduled: '10:14:52',
-          timeEstimated: '10:14:52' })
+          timeEstimated: '10:14:52'
+        })
       ])
     )
   });

@@ -3,18 +3,32 @@ import { View, Text } from "react-native";
 
 import styles from './styles/scheduleItem.style';
 
+const bus = {
+  id: 1,
+  number: 11,
+  name: 'to Glenway',
+  timeScheduled: '10:14:52',
+  timeEstimated: '10:14:52'
+};
+
+const checkOnTime = (estimated, scheduled) => {
+  return 'due'
+}
+
 export default ScheduleItem = () => {
+  const { number, name, timeEstimated, timeScheduled } = bus;
   return (
     <View style={styles.root}>
       <View style={styles.number}>
-        <Text>A</Text>
+        <Text>{number}</Text>
       </View>
       <View style={styles.description}>
-        <Text>B</Text>
+        <Text>{name}</Text>
       </View>
       <View style={styles.hour}>
-        <Text>C</Text>
+        <Text>{checkOnTime(timeEstimated, timeScheduled)}</Text>
       </View>
     </View>
   )
 }
+

@@ -10,6 +10,8 @@ import { stopBusAndSchedule } from '../../services/stopService'
 import InputSearchRow from '../../ui/InputSearchRow';
 import Banner from '../../ui/Banner';
 
+import ScheduleItem from '../../ui/ScheduleItem';
+
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
     title: 'PegBus'
@@ -48,7 +50,7 @@ export default class HomeScreen extends React.Component {
           <Text>Bus Stop Not Found</Text>
         </View>)}
         <ScrollView
-          style={{ flex: 0.7 }}
+          style={{ flex: 0.55 }}
           contentContainerStyle={styles.contentContainer}>
             {this.state.data.map(item => {
               return (
@@ -59,6 +61,9 @@ export default class HomeScreen extends React.Component {
               )
             })}
         </ScrollView>
+        <View style={{ flex: 0.15 }}>
+          <ScheduleItem />
+        </View>
         <View style={{ flex: 0.15 }}>
             <Banner />
         </View>
