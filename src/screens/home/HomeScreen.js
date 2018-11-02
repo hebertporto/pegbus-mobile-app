@@ -11,6 +11,7 @@ import InputSearchRow from '../../ui/InputSearchRow';
 import Banner from '../../ui/Banner';
 
 import ScheduleItem from '../../ui/ScheduleItem';
+import HeaderStopInfo from '../../ui/HeaderStopInfo';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -50,7 +51,7 @@ export default class HomeScreen extends React.Component {
           <Text>Bus Stop Not Found</Text>
         </View>)}
         <ScrollView
-          style={{ flex: 0.55 }}
+          style={{ flex: 0.40 }}
           contentContainerStyle={styles.contentContainer}>
             {this.state.data.map(item => {
               return (
@@ -61,8 +62,11 @@ export default class HomeScreen extends React.Component {
               )
             })}
         </ScrollView>
-        <View style={{ flex: 0.15 }}>
+        {/* <View style={{ flex: 0.15 }}>
           <ScheduleItem />
+        </View> */}
+        <View style={{ flex: 0.30 }}>
+          <HeaderStopInfo />
         </View>
         <View style={{ flex: 0.15 }}>
             <Banner />
