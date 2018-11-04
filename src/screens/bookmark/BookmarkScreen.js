@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
 
 export default class BookmarkScreen extends React.Component {
   static navigationOptions = {
@@ -8,9 +8,9 @@ export default class BookmarkScreen extends React.Component {
 
   render() {
     return (
-      <ScrollView style={styles.container}>
-        <Text>Bookmark</Text>
-      </ScrollView>
+      <View style={styles.container}>
+        <Text>Coming Soon</Text>
+      </View>
     );
   }
 }
@@ -20,5 +20,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 15,
     backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
 });

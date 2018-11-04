@@ -38,16 +38,24 @@ HomeStack.navigationOptions = {
   ),
 };
 
-const BookmarkStack = createStackNavigator({
-  Bookmark: BookmarkScreen,
-});
+const BookmarkStack = createStackNavigator(
+  {
+    Bookmark: BookmarkScreen,
+  },
+  {
+    navigationOptions
+  }
+);
 
 BookmarkStack.navigationOptions = {
   tabBarLabel: 'Bookmark',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? `ios-link${focused ? '' : '-outline'}` : 'md-link'}
+      name={Platform.OS === 'ios'
+        ? `ios-link${focused ? '' : '-outline'}`
+        : 'md-link'
+      }
     />
   ),
 };

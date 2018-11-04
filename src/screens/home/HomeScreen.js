@@ -15,7 +15,8 @@ import HeaderStopInfo from '../../ui/HeaderStopInfo';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
-    title: 'PegBus'
+    title: 'PegBus',
+    tabBarVisible: false
   }
 
   state = {
@@ -56,7 +57,8 @@ export default class HomeScreen extends React.Component {
             {this.state.data.map(item => {
               return (
                 <View key={item.id}>
-                  <Text>{item.number} | {item.name} | {item.timeEstimated}</Text>
+                  <Text>{item.number} | {item.name}</Text>
+                  <Text>Scheduled: {item.timeScheduled} | Estimated: {item.timeEstimated}</Text>
                   <Text>---------</Text>
                 </View>
               )
