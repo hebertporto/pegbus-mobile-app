@@ -8,7 +8,7 @@ import { styles } from './styles/InputSearchRow.style.js';
 class InputSearchRow extends Component {
   state = {
     // value: '40318'10628
-    value: '10628'
+    value: '' // 10628
   }
 
   render() {
@@ -17,7 +17,7 @@ class InputSearchRow extends Component {
         <View style={styles.inputContainer}>
           <RkTextInput
             style={styles.input}
-            placeholder='Search by stop number'
+            placeholder='Search by bus stop number'
             value={this.state.value}
             placeholderTextColor='green'
             underlineWidth={0}

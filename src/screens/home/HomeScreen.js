@@ -62,12 +62,6 @@ export default class HomeScreen extends React.Component {
               )
             })}
         </ScrollView>
-        {/* <View style={{ flex: 0.15 }}>
-          <ScheduleItem />
-        </View> */}
-        <View style={{ flex: 0.30 }}>
-          <HeaderStopInfo />
-        </View>
         <View style={{ flex: 0.15 }}>
             <Banner />
         </View>
