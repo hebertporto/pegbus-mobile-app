@@ -16,13 +16,13 @@
   "dependencies": {
     "@expo/samples": "2.1.1",
     "axios": "^0.18.0",
-    "expo": "^30.0.1",
+    "expo": "^31.0.0",
     "lodash": "^4.17.11",
     "moment": "^2.22.2",
     "prettier": "^1.14.3",
     "prop-types": "^15.6.2",
-    "react": "16.3.1",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
+    "react": "16.5.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
     "react-native-ui-kitten": "^3.1.2",
     "react-navigation": "^2.16.0",
     "uuid": "^3.3.2"
