@@ -10,7 +10,8 @@
       "bundleIdentifier": "com.hebertporto.pegbus"
     },
     "android": {
-      "package": "com.hebertoporto.pegbus"
+      "package": "com.hebertoporto.pegbus",
+      "versionCode": 2
     },
     "platforms": ["ios", "android"],
     "version": "1.0.0",
