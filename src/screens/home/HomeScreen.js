@@ -5,7 +5,6 @@ import {
   StyleSheet,
   Text,
   View,
-  SafeAreaView,
 } from 'react-native';
 import { stopBusAndSchedule } from '../../services/stopService'
 import InputSearchRow from '../../ui/InputSearchRow';
@@ -45,7 +44,7 @@ export default class HomeScreen extends React.Component {
 
   render() {
     return (
-      <SafeAreaView style={styles.container}>
+      <View style={styles.container}>
         <View style={{ flex: 0.15 }}>
           <InputSearchRow searchHandler={this.getSchedule} />
         </View>
@@ -68,7 +67,7 @@ export default class HomeScreen extends React.Component {
         <View style={{ flex: 0.15 }}>
             <Banner />
         </View>
-      </SafeAreaView>
+      </View>
     );
   }
 }
@@ -78,6 +77,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     backgroundColor: '#fff',
+    marginHorizontal: 10
   },
   developmentModeText: {
     marginBottom: 20,
