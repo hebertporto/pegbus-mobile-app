@@ -4,14 +4,20 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 
 import TabBarIcon from '../ui/TabBarIcon';
 
-import HomeScreen from '../screens/home/HomeScreen';
+import { HomeScreen } from '../screens/home/HomeScreen';
 import BookmarkScreen from '../screens/bookmark/BookmarkScreen';
+
+import { COLORS } from '../constants/Colors';
 
 const navigationOptions = {
   headerStyle: {
-    backgroundColor: '#2196F3',
+    backgroundColor: COLORS.NAV_BAR.background,
   },
-  headerTintColor: '#fff',
+  headerTitleStyle: {
+    textAlign: 'center',
+    flexGrow:1,
+  },
+  headerTintColor: COLORS.NAV_BAR.tint
 };
 
 const HomeStack = createStackNavigator(

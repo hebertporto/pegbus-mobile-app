@@ -49,11 +49,11 @@ export const COLORS = {
 
   NAV_BAR: {
     background: isIOS
-      ? '#f3f5f7'
-      : '#F6F8FA',
+      ? '#2196F3'
+      : '#2196F3',
     tint: isIOS
       ? '#00973A'
-      : '#00000089',
+      : '#FFF',
     iosBorderColor: 'rgba(167, 167, 164, 0.25)',
   },
 }
