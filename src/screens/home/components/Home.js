@@ -12,6 +12,7 @@ import Banner from '../../../ui/Banner';
 
 import ScheduleItem from '../../../ui/ScheduleItem';
 import HeaderStopInfo from '../../../ui/HeaderStopInfo';
+import { BusStopHeader } from './BusStopHeader';
 
 class Home extends Component {
   static navigationOptions = {
@@ -43,10 +44,14 @@ class Home extends Component {
   }
 
   render() {
+    const { stopInfo } = this.state;
     return (
       <View style={styles.container}>
         <View style={{ flex: 0.15 }}>
           <InputSearchRow searchHandler={this.getSchedule} />
+        </View>
+        <View>
+          <BusStopHeader stopInfo={stopInfo} />
         </View>
         {this.state.error && (<View>
           <Text>Bus Stop Not Found</Text>
