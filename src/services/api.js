@@ -7,9 +7,15 @@ export const getStopBusesTime = async ({ stopNumber }) => {
     const { data } = await axios.get(`stops/${stopNumber}/schedule.json?start=${date}`);
     return data;
   } catch (e) {
-    throw new Error('Stop Request Failed')
+    throw new Error('getStopBusesTime Failed')
   }
 }
 
-// linhas que passam em um determinado ponto
-// https://api.winnipegtransit.com/v3/routes.json?stop=10628&api-key=NyQGsU66kIXieXPwhzrD
+export const getRoutes = async ({ stopNumber }) => {
+  try {
+    const { data } = await axios.get(`routes.json?stop=${stopNumber}`);
+    return data;
+  } catch (e) {
+    throw new Error('stopBusRoutes Failed')
+  }
+}

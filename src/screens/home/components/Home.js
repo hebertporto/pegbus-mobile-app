@@ -6,37 +6,40 @@ import {
   Text,
   View,
 } from 'react-native';
-import { stopBusAndSchedule } from '../../../services/stopService'
+import { stopBusAndSchedule, stopBusRoutes } from '../../../services/stopService'
 import InputSearchRow from '../../../ui/InputSearchRow';
 import Banner from '../../../ui/Banner';
 
 import ScheduleItem from '../../../ui/ScheduleItem';
 import HeaderStopInfo from '../../../ui/HeaderStopInfo';
+
 import { BusStopHeader } from './BusStopHeader';
 
-class Home extends Component {
-  static navigationOptions = {
-    title: 'PegBus',
-    tabBarVisible: false
-  }
+const defaultState = {
+  data: [],
+  routes: [],
+  stopInfo: {},
+  error: false,
+}
 
-  state = {
-    data: [],
-    stopInfo: {},
-    error: false,
-  }
+class Home extends Component {
+  state = defaultState;
 
   getSchedule = async (stopNumber) => {
+    this.setState(defaultState);
     try {
       const { shedules, stopInfo } = await stopBusAndSchedule({ stopNumber });
+      const routes = await stopBusRoutes({ stopNumber });
       this.setState({
-        error: false,
+        routes,
+        stopInfo,
         data: shedules,
-        stopInfo: stopInfo,
+        error: false,
       })
     } catch (e) {
       this.setState({
         data: [],
+        routes: [],
         stopInfo: {},
         error: true
       })
@@ -44,14 +47,14 @@ class Home extends Component {
   }
 
   render() {
-    const { stopInfo } = this.state;
+    const { stopInfo, routes } = this.state;
     return (
       <View style={styles.container}>
         <View style={{ flex: 0.15 }}>
           <InputSearchRow searchHandler={this.getSchedule} />
         </View>
         <View>
-          <BusStopHeader stopInfo={stopInfo} />
+          <BusStopHeader stopInfo={stopInfo} routes={routes} />
         </View>
         {this.state.error && (<View>
           <Text>Bus Stop Not Found</Text>

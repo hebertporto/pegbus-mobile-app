@@ -3,11 +3,14 @@ import moment from 'moment';
 import uuid from 'uuid';
 
 const getHourFromDateIso = date => moment(date).format('h:mm:ss')
+
 const getNameRoute = name => {
   const splited = name.split(' ')
   const [ a, b ] = splited.reverse();
-  return `${b} ${a}`;
+  const parsedName = `${b} ${a}`;
+  return parsedName;
 }
+
 export const mapperScheduler = (apiResponse) => {
   const stopInfo = get(apiResponse, 'stop-schedule.stop', {});
   const allShedules = get(apiResponse, 'stop-schedule.route-schedules', []);
@@ -38,7 +41,5 @@ export const mapperBusRouterPerStop = (apiResponse) => {
   const routes = fullInfo.map((route) => {
     return route.number;
   });
-  return routes;
+  return routes.sort();
 }
-
-// 10628

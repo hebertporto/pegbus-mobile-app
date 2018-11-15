@@ -3,9 +3,7 @@ import { View, Text } from 'react-native';
 
 import { styles as s } from './styles/BusStopHeader.style';
 
-const routes = [ 44, 43, 11 ];
-
-const BusStopHeader = ({ stopInfo }) =>  {
+const BusStopHeader = ({ stopInfo, routes }) =>  {
   const { name, number } = stopInfo;
 
   return name ? (

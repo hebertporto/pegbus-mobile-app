@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import { RkButton, RkTextInput } from 'react-native-ui-kitten';
 
 import { styles } from './styles/InputSearchRow.style.js';
@@ -23,6 +23,7 @@ class InputSearchRow extends Component {
             underlineWidth={0}
             onChangeText={value => this.setState({ value })}
           />
+          <Text>40318,  10628</Text>
         </View>
         <View style={styles.buttonContainer}>
           <RkButton

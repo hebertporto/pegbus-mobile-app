@@ -14,6 +14,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'column',
   },
   busNumber: {
+    flex: 1,
     backgroundColor: 'grey',
   }
 });
