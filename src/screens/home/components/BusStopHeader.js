@@ -8,25 +8,30 @@ const BusStopHeader = ({ stopInfo, routes }) =>  {
 
   return name ? (
     <View style={s.root}>
+
       <View style={s.map}>
         <Text>
           Mapa
         </Text>
       </View>
+
       <View style={s.info}>
-        <View>
+        {/* <View>
           <Text>
             #{number} | {name}
           </Text>
-        </View>
+        </View> */}
         <View style={s.busNumber}>
           {routes.map((route) => {
-            <Text>
-              {route} |
-            </Text>
+            return (
+              <Text key={route}>
+                {route} |
+              </Text>
+            );
           })}
         </View>
       </View>
+
     </View>
   ) : null;
 }

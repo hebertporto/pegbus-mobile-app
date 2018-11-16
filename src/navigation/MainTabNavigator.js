@@ -25,7 +25,6 @@ const HomeStack = createStackNavigator(
   Home: HomeScreen,
   },
   {
-    initialRouteName: 'Home',
     navigationOptions
   }
 );
@@ -49,6 +48,7 @@ const BookmarkStack = createStackNavigator(
     Bookmark: BookmarkScreen,
   },
   {
+    initialRouteName: 'Bookmark',
     navigationOptions
   }
 );
@@ -67,6 +67,6 @@ BookmarkStack.navigationOptions = {
 };
 
 export default createBottomTabNavigator({
-  HomeStack,
-  BookmarkStack
+  BookmarkStack,
+  HomeStack
 });

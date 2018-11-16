@@ -15,6 +15,8 @@ export const styles = StyleSheet.create({
   },
   busNumber: {
     flex: 1,
+    flexDirection: 'row',
     backgroundColor: 'grey',
+    height: 20
   }
 });
