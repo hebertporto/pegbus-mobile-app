@@ -6,8 +6,19 @@ export default class BookmarkScreen extends React.Component {
   static navigationOptions = {
     title: 'Bookmark',
   };
+  state = {
+    latitude: 49.89699,
+    longitude: -97.1386,
+    latitudeDelta: 0.00072026,
+    longitudeDelta: 0.0014299,
+  }
+  onRegionChange = (info) => {
+    const { latitude, latitudeDelta, longitude, longitudeDelta } = info;
+    this.setState({ latitude, latitudeDelta, longitude, longitudeDelta });
+  }
 
   render() {
+    const { latitude, latitudeDelta, longitude, longitudeDelta } = this.state;
     return (
       <View style={styles.container}>
         <View style={{ flex: 0.5 }}>
@@ -16,13 +27,17 @@ export default class BookmarkScreen extends React.Component {
             initialRegion={{
               latitude: 49.89699,
               longitude: -97.1386,
-              latitudeDelta: 0.0922,
-              longitudeDelta: 0.0421,
+              latitudeDelta: 0.00072026,
+              longitudeDelta: 0.0014299,
             }}
+            onRegionChange={this.onRegionChange}
           />
         </View>
-        <View style={{ flex: 0.5, backgroundColor: 'blue' }}>
-          <Text>Coming Soon</Text>
+        <View style={{ flex: 0.5 }}>
+          <Text>latitude: {latitude}</Text>
+          <Text>latitudeDelta: {latitudeDelta}</Text>
+          <Text>longitude: {longitude}</Text>
+          <Text>longitudeDelta: {longitudeDelta}</Text>
         </View>
       </View>
     );
