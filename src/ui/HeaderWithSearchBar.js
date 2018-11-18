@@ -1,20 +1,21 @@
-import React, { Component } from 'react'
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native'
+import React from 'react';
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Header } from 'react-navigation';
 
-export class HeaderWithSearchBar extends Component {
-  render() {
-    const { isActive, onCancel, render } = this.props
+const HeaderWithSearchBar = ({ isSearchActive, navigation, propsHeader }) =>  {
+   const onCancel = () => navigation.setParams({ isSearchActive: false })
     return (
       <View>
-        {render()}
-        {isActive && (
+        {<Header  {...propsHeader} />}
+        {isSearchActive && (
           <View style={{ ...StyleSheet.absoluteFillObject, backgroundColor: 'white', justifyContent: 'center', elevation: 8 }}>
             <TouchableOpacity onPress={onCancel}>
-              <Text>{`${isActive}`}</Text>
+              <Text>{`${isSearchActive}`}</Text>
             </TouchableOpacity>
           </View>
         )}
       </View>
     )
-  }
 }
+
+export { HeaderWithSearchBar };
