@@ -1,11 +1,29 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { MapView } from 'expo';
+import { Header } from 'react-navigation'
+
+import { HeaderWithSearchBar } from '../../ui/HeaderWithSearchBar'
 
 export default class BookmarkScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Bookmark',
-  };
+  static navigationOptions = ({ navigation }) => {
+    const isSearchActive = navigation.getParam('isSearchActive', false)
+    return {
+      title: 'Bookmark',
+      headerRight: (
+        <TouchableOpacity onPress={() => navigation.setParams({ isSearchActive: true })}>
+          <Text>{`${isSearchActive}`}</Text>
+        </TouchableOpacity>
+      ),
+      header: (props) => (
+        <HeaderWithSearchBar
+          isActive={isSearchActive}
+          onCancel={() => navigation.setParams({ isSearchActive: false })}
+          render={() => <Header  {...props} />}
+        />
+      ),
+    };
+  }
   state = {
     latitude: 49.89699,
     longitude: -97.1386,
