@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
-import { Header } from 'react-navigation';
+import { Header, withNavigation } from 'react-navigation';
 
-const HeaderWithSearchBar = ({ isSearchActive, navigation, propsHeader }) =>  {
-   const onCancel = () => navigation.setParams({ isSearchActive: false })
+class HeaderWithSearchBarContainer extends Component {
+   render() {
+    const { navigation, propsHeader } = this.props;
+    const isSearchActive = navigation.getParam('isSearchActive', false);
+
+    const onCancel = () => navigation.setParams({ isSearchActive: false })
     return (
       <View>
         {<Header  {...propsHeader} />}
@@ -16,6 +20,6 @@ const HeaderWithSearchBar = ({ isSearchActive, navigation, propsHeader }) =>  {
         )}
       </View>
     )
+   }
 }
-
-export { HeaderWithSearchBar };
+export const HeaderWithSearchBar = withNavigation(HeaderWithSearchBarContainer);
