@@ -1,5 +1,3 @@
-import { SearchNavButton } from './SearchNavButton';
+import { SearchNavButton } from './SearchNavButton'
 
-export {
-  SearchNavButton,
-};
+export { SearchNavButton }

@@ -1,18 +1,15 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import React from 'react'
+import { View, Text } from 'react-native'
 
-import { styles as s } from './styles/BusStopHeader.style';
+import { styles as s } from './styles/BusStopHeader.style'
 
-const BusStopHeader = ({ stopInfo, routes }) =>  {
-  const { name, number } = stopInfo;
+const BusStopHeader = ({ stopInfo, routes }) => {
+  const { name, number } = stopInfo
 
   return name ? (
     <View style={s.root}>
-
       <View style={s.map}>
-        <Text>
-          Mapa
-        </Text>
+        <Text>Mapa</Text>
       </View>
 
       <View style={s.info}>
@@ -22,18 +19,13 @@ const BusStopHeader = ({ stopInfo, routes }) =>  {
           </Text>
         </View> */}
         <View style={s.busNumber}>
-          {routes.map((route) => {
-            return (
-              <Text key={route}>
-                {route} |
-              </Text>
-            );
+          {routes.map(route => {
+            return <Text key={route}>{route} |</Text>
           })}
         </View>
       </View>
-
     </View>
-  ) : null;
+  ) : null
 }
 
-export { BusStopHeader };
+export { BusStopHeader }

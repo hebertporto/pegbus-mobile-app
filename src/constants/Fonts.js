@@ -5,21 +5,21 @@ const type = {
   light: {
     ...Platform.select({
       android: { fontFamily: 'sans-serif-light' },
-      ios: { fontWeight: '300' },
-    }),
+      ios: { fontWeight: '300' }
+    })
   },
   regular: {
     ...Platform.select({
       android: { fontFamily: 'sans-serif' },
-      ios: { fontWeight: '400' },
-    }),
+      ios: { fontWeight: '400' }
+    })
   },
   medium: {
     ...Platform.select({
       android: { fontFamily: 'sans-serif-medium' },
-      ios: { fontWeight: '700' },
-    }),
-  },
+      ios: { fontWeight: '700' }
+    })
+  }
 }
 
 const size = {
@@ -29,10 +29,10 @@ const size = {
   h4: 22,
   h5: 20,
   h6: 17,
-  input: (Platform.OS === 'ios') ? 17 : 15,
+  input: Platform.OS === 'ios' ? 17 : 15,
   regular: 17,
-  button: (Platform.OS === 'ios') ? 17 : 14,
-  secondaryButton: (Platform.OS === 'ios') ? 15 : 12,
+  button: Platform.OS === 'ios' ? 17 : 14,
+  secondaryButton: Platform.OS === 'ios' ? 15 : 12,
   medium: 15,
   small: 13,
   tiny: 11
@@ -41,7 +41,7 @@ const size = {
 const lineHeight = {
   boost: 24,
   regular: 20,
-  small: 16,
+  small: 16
 }
 
 const style = {
@@ -55,12 +55,12 @@ const style = {
   },
   secondaryButton: {
     ...type.medium,
-    fontSize: size.secondaryButton,
+    fontSize: size.secondaryButton
   },
   footNote: {
     ...type.regular,
     fontSize: size.small
-  },
+  }
 }
 
 const standardStyle = {
@@ -109,7 +109,7 @@ const standardStyle = {
     lineHeight: lineHeight.small,
     color: COLORS.BLACK_PRIMARY_ALT,
     ...type.regular
-  },
+  }
 }
 
 export const FONTS = {
@@ -117,5 +117,5 @@ export const FONTS = {
   size,
   standardStyle,
   style,
-  type,
+  type
 }

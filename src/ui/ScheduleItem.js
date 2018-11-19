@@ -1,7 +1,7 @@
-import React from "react";
-import { View, Text } from "react-native";
+import React from 'react'
+import { View, Text } from 'react-native'
 
-import styles from './styles/scheduleItem.style';
+import styles from './styles/scheduleItem.style'
 
 const bus = {
   id: 1,
@@ -9,14 +9,14 @@ const bus = {
   name: 'to Glenway',
   timeScheduled: '10:14:52',
   timeEstimated: '10:14:52'
-};
+}
 
 const checkOnTime = (estimated, scheduled) => {
   return 'due'
 }
 
-export default ScheduleItem = () => {
-  const { number, name, timeEstimated, timeScheduled } = bus;
+export default (ScheduleItem = () => {
+  const { number, name, timeEstimated, timeScheduled } = bus
   return (
     <View style={styles.root}>
       <View style={styles.number}>
@@ -30,5 +30,4 @@ export default ScheduleItem = () => {
       </View>
     </View>
   )
-}
-
+})

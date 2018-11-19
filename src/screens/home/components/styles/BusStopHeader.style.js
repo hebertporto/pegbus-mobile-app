@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
   root: {
@@ -7,11 +7,11 @@ export const styles = StyleSheet.create({
     paddingBottom: 5
   },
   map: {
-    flex: 0.3,
+    flex: 0.3
   },
   info: {
     flex: 0.7,
-    flexDirection: 'column',
+    flexDirection: 'column'
   },
   busNumber: {
     flex: 1,
@@ -19,4 +19,4 @@ export const styles = StyleSheet.create({
     backgroundColor: 'grey',
     height: 20
   }
-});
+})

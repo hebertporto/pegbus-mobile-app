@@ -1,7 +1,7 @@
-import { initializeAxios } from './axios';
+import { initializeAxios } from './axios'
 
 initializeConfig = () => {
-  initializeAxios();
+  initializeAxios()
 }
 
-initializeConfig();
+initializeConfig()

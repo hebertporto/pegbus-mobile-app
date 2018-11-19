@@ -1,8 +1,8 @@
-import React from 'react';
-import { View, Text } from 'react-native';
-import { MapView } from 'expo';
+import React from 'react'
+import { View, Text } from 'react-native'
+import { MapView } from 'expo'
 
-import styles from './styles/banner.style';
+import styles from './styles/banner.style'
 
 export default class App extends React.Component {
   render() {
@@ -23,7 +23,7 @@ export default class App extends React.Component {
           />
         </View>
       </View>
-    );
+    )
   }
 }
 

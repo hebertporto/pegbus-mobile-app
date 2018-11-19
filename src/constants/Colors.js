@@ -1,9 +1,8 @@
-
 import { Platform } from 'react-native'
 
 const isIOS = Platform.OS === 'ios'
 
-const tintColor = '#2f95dc';
+const tintColor = '#2f95dc'
 
 export default {
   tintColor,
@@ -15,8 +14,8 @@ export default {
   warningBackground: '#EAEB5E',
   warningText: '#666804',
   noticeBackground: tintColor,
-  noticeText: '#fff',
-};
+  noticeText: '#fff'
+}
 
 export const COLORS = {
   PRIMARY: '#ED323D',
@@ -28,7 +27,9 @@ export const COLORS = {
   SCREEN: '#F3F5F7',
   SURFACE: '#FFFFFF',
   ON_SUCCESS: '#FFFFFF',
-  SURFACE_OPACITY: isIOS ? 'rgba(255, 255, 255, 0.7)' : 'rgba(255, 255, 255, 0.9)',
+  SURFACE_OPACITY: isIOS
+    ? 'rgba(255, 255, 255, 0.7)'
+    : 'rgba(255, 255, 255, 0.9)',
   LIGHT_OVERLAY: 'rgba(255, 255, 255, 0.4)',
 
   DARK: '#261C15',
@@ -48,12 +49,8 @@ export const COLORS = {
   ANDROID_STATUS_BAR: 'rgba(0, 0, 0, 0.12)',
 
   NAV_BAR: {
-    background: isIOS
-      ? '#2196F3'
-      : '#2196F3',
-    tint: isIOS
-      ? '#00973A'
-      : '#FFF',
-    iosBorderColor: 'rgba(167, 167, 164, 0.25)',
-  },
+    background: isIOS ? '#2196F3' : '#2196F3',
+    tint: isIOS ? '#00973A' : '#FFF',
+    iosBorderColor: 'rgba(167, 167, 164, 0.25)'
+  }
 }

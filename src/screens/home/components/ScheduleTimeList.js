@@ -1,11 +1,10 @@
-import React from "react";
-import { FlatList } from "react-native";
-import { ScheduleTimeItem } from './ScheduleTimeItem';
+import React from 'react'
+import { FlatList } from 'react-native'
+import { ScheduleTimeItem } from './ScheduleTimeItem'
 
+const keyExtractor = item => item.id
 
-const keyExtractor = item => item.id;
-
-export default ScheduleList = ({ data }) => {
+export default (ScheduleList = ({ data }) => {
   return (
     <FlatList
       data={data}
@@ -13,4 +12,4 @@ export default ScheduleList = ({ data }) => {
       renderItem={ScheduleTimeItem}
     />
   )
-}
+})

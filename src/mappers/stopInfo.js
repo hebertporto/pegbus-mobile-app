@@ -1,7 +1,4 @@
-
-export const extractStopInfo = (payload) => {
-
-}
+export const extractStopInfo = payload => {}
 
 export const stopInfo = {
   id: '',
@@ -12,8 +9,7 @@ export const stopInfo = {
   schedules: [
     {
       number: '',
-      name: '',
-
+      name: ''
     }
   ]
 }

@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-import { Home } from './components/Home';
+import { Home } from './components/Home'
 
 class HomeScreen extends Component {
   static navigationOptions = {
@@ -9,10 +9,8 @@ class HomeScreen extends Component {
   }
 
   render() {
-    return (
-      <Home />
-    );
+    return <Home />
   }
 }
 
-export { HomeScreen };
+export { HomeScreen }

@@ -1,5 +1,5 @@
-import { StyleSheet }  from 'react-native';
-import { Colors } from '../../constants/Colors';
+import { StyleSheet } from 'react-native'
+import { Colors } from '../../constants/Colors'
 
 export const styles = StyleSheet.create({
   root: {
@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
     maxHeight: 80
   },
   inputContainer: {
-    flex: 0.8,
+    flex: 0.8
   },
   buttonContainer: {
     flex: 0.2,
@@ -17,13 +17,13 @@ export const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   input: {
-    margin: 15,
+    margin: 15
   },
   button: {
     borderRadius: 10,
     width: 70,
     height: 50
   }
-});
+})
 
 // 40318   &  10628 ( McDermont )

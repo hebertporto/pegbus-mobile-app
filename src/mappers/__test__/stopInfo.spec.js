@@ -1,22 +1,16 @@
-import {
-  scheduleStop,
-  routesOnStop
-} from './data'
-import {
-  mapperScheduler,
-  mapperBusRouterPerStop
-} from '../busApiMapper'
+import { scheduleStop, routesOnStop } from './data'
+import { mapperScheduler, mapperBusRouterPerStop } from '../busApiMapper'
 
 describe('Route Mapper', () => {
-  const data = mapperBusRouterPerStop(routesOnStop);
+  const data = mapperBusRouterPerStop(routesOnStop)
 
   test('extract info from api response', () => {
-    expect(data[0]).toEqual(1);
-  });
-});
+    expect(data[0]).toEqual(1)
+  })
+})
 
 describe('Schedule Route Mapper', () => {
-  const data = mapperScheduler(scheduleStop);
+  const data = mapperScheduler(scheduleStop)
 
   test('mapper stop info', () => {
     expect(data.stopInfo).toEqual(
@@ -49,7 +43,7 @@ describe('Schedule Route Mapper', () => {
         }
       })
     )
-  });
+  })
 
   test('mapper routes', () => {
     expect(data.shedules).toEqual(
@@ -63,5 +57,5 @@ describe('Schedule Route Mapper', () => {
         })
       ])
     )
-  });
-});
+  })
+})

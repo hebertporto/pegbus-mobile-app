@@ -1,6 +1,6 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native'
 
-export default styles = StyleSheet.create({
+export default (styles = StyleSheet.create({
   root: {
     flex: 1,
     flexDirection: 'row',
@@ -20,10 +20,10 @@ export default styles = StyleSheet.create({
   hour: {
     flex: 0.2,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   inputContainer: {
-    flex: 0.8,
+    flex: 0.8
   },
   buttonContainer: {
     flex: 0.2,
@@ -31,11 +31,11 @@ export default styles = StyleSheet.create({
     justifyContent: 'center'
   },
   input: {
-    margin: 15,
+    margin: 15
   },
   button: {
     borderRadius: 10,
     width: 70,
     height: 50
   }
-});
+}))

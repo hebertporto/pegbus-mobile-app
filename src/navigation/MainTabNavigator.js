@@ -1,33 +1,36 @@
-import React from 'react';
-import { Platform } from 'react-native';
-import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import React from 'react'
+import { Platform } from 'react-native'
+import {
+  createStackNavigator,
+  createBottomTabNavigator
+} from 'react-navigation'
 
-import TabBarIcon from '../ui/TabBarIcon';
+import TabBarIcon from '../ui/TabBarIcon'
 
-import { HomeScreen } from '../screens/home/HomeScreen';
-import BookmarkScreen from '../screens/bookmark/BookmarkScreen';
+import { HomeScreen } from '../screens/home/HomeScreen'
+import BookmarkScreen from '../screens/bookmark/BookmarkScreen'
 
-import { COLORS } from '../constants/Colors';
+import { COLORS } from '../constants/Colors'
 
 const navigationOptions = {
   headerStyle: {
-    backgroundColor: COLORS.NAV_BAR.background,
+    backgroundColor: COLORS.NAV_BAR.background
   },
   headerTitleStyle: {
     textAlign: 'center',
-    flexGrow:1,
+    flexGrow: 1
   },
   headerTintColor: COLORS.NAV_BAR.tint
-};
+}
 
 const HomeStack = createStackNavigator(
   {
-  Home: HomeScreen,
+    Home: HomeScreen
   },
   {
     navigationOptions
   }
-);
+)
 
 HomeStack.navigationOptions = {
   tabBarLabel: 'Home',
@@ -40,33 +43,34 @@ HomeStack.navigationOptions = {
           : 'md-information-circle'
       }
     />
-  ),
-};
+  )
+}
 
 const BookmarkStack = createStackNavigator(
   {
-    Bookmark: BookmarkScreen,
+    Bookmark: BookmarkScreen
   },
   {
     initialRouteName: 'Bookmark',
     navigationOptions
   }
-);
+)
 
 BookmarkStack.navigationOptions = {
   tabBarLabel: 'Bookmark',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios'
-        ? `ios-link${focused ? '' : '-outline'}`
-        : 'md-link'
+      name={
+        Platform.OS === 'ios'
+          ? `ios-link${focused ? '' : '-outline'}`
+          : 'md-link'
       }
     />
-  ),
-};
+  )
+}
 
 export default createBottomTabNavigator({
   BookmarkStack,
   HomeStack
-});
+})

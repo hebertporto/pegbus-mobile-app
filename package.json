@@ -8,7 +8,11 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "eject": "expo eject",
-    "test": "node ./node_modules/jest/bin/jest.js --watchAll"
+    "test": "node ./node_modules/jest/bin/jest.js --watchAll",
+    "reformat-code": "npm run prettier && npm run lint:fix",
+    "lint:check": "eslint ./src/ ./__tests__/",
+    "lint:fix": "eslint --fix ./src/ ./__tests__/",
+    "prettier": "prettier --single-quote --no-semi --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "jest": {
     "preset": "jest-expo"
@@ -28,7 +32,25 @@
     "uuid": "^3.3.2"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.9.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-config-react-native-prettier": "^1.0.1",
+    "eslint-plugin-prettier": "^3.0.0",
+    "husky": "^1.1.4",
     "jest-expo": "30.0.0",
+    "lint-staged": "^8.0.5",
     "prettier-standard": "^8.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }

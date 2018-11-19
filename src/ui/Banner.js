@@ -1,11 +1,11 @@
-import React from "react";
-import { AdMobBanner } from "expo";
+import React from 'react'
+import { AdMobBanner } from 'expo'
 
-import styles from './styles/banner.style';
+import styles from './styles/banner.style'
 
-const bannerError = (e) => console.log('error', e);
+const bannerError = e => console.log('error', e)
 
-export default Banner = () => {
+export default (Banner = () => {
   return (
     <AdMobBanner
       style={styles.bottomBanner}
@@ -15,6 +15,4 @@ export default Banner = () => {
       didFailToReceiveAdWithError={bannerError}
     />
   )
-}
-
-
+})
