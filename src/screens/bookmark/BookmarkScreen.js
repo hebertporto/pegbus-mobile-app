@@ -1,5 +1,5 @@
 import React from 'react'
-import { Map } from './../../ui/Map'
+import { Anima } from './../../ui/Anima'
 import { SearchNavButton } from '../../ui/buttons'
 import { HeaderWithSearchBar } from '../../ui/HeaderWithSearchBar'
 
@@ -10,6 +10,6 @@ export default class BookmarkScreen extends React.Component {
   }
 
   render() {
-    return <Map />
+    return <Anima />
   }
 }

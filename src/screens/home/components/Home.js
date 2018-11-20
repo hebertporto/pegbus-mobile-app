@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
-import { Platform, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import {
   stopBusAndSchedule,
   stopBusRoutes
 } from '../../../services/stopService'
 import InputSearchRow from '../../../ui/InputSearchRow'
 import Banner from '../../../ui/Banner'
-
-import ScheduleItem from '../../../ui/ScheduleItem'
-import HeaderStopInfo from '../../../ui/HeaderStopInfo'
 
 import { BusStopHeader } from './BusStopHeader'
 
