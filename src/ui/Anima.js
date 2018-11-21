@@ -5,33 +5,26 @@ import {
   View,
   TouchableWithoutFeedback
 } from 'react-native'
+import { RkTextInput } from 'react-native-ui-kitten'
 import { Ionicons } from '@expo/vector-icons'
 
 class Anima extends React.Component {
   state = {
-    witdhAnimation: new Animated.Value(0),
-    heightAnimation: new Animated.Value(1)
+    witdhAnimation: new Animated.Value(50)
   }
 
   handlePress = () => {
     Animated.parallel([
       Animated.timing(this.state.witdhAnimation, {
-        toValue: 400,
+        toValue: 250,
         duration: 500
-      }),
-      Animated.timing(this.state.heightAnimation, {
-        toValue: 50,
-        duration: 300
       })
-    ]).start(() => {
-      alert('completed')
-    })
+    ]).start()
   }
 
   render() {
     const animatedStyles = {
-      width: this.state.witdhAnimation,
-      height: this.state.heightAnimation
+      width: this.state.witdhAnimation
     }
     return (
       <View style={styles.container}>
@@ -42,7 +35,12 @@ class Anima extends React.Component {
         </View>
 
         <View style={styles.row2}>
-          <Animated.View style={[styles.box, animatedStyles]} />
+          <Animated.View style={[styles.box, animatedStyles]}>
+            <TouchableWithoutFeedback onPress={this.handlePress}>
+              <Ionicons name="md-search" size={26} />
+            </TouchableWithoutFeedback>
+            <RkTextInput label={<Ionicons name={'md-search'} size={26} />} />
+          </Animated.View>
         </View>
       </View>
     )
@@ -67,7 +65,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'yellow'
   },
   box: {
-    backgroundColor: 'tomato'
+    height: 50
   }
 })
 

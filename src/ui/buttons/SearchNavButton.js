@@ -1,6 +1,8 @@
 import React from 'react'
-import { Text, TouchableOpacity } from 'react-native'
+import { TouchableWithoutFeedback } from 'react-native'
+import { Ionicons } from '@expo/vector-icons'
 import { withNavigation } from 'react-navigation'
+import { styles } from './styles/SearchNavButton.style'
 
 class SearchNavButtonContainer extends React.Component {
   showSearhInput = () => {
@@ -9,12 +11,13 @@ class SearchNavButtonContainer extends React.Component {
   }
 
   render() {
-    const { navigation } = this.props
-    const isSearchActive = navigation.getParam('isSearchActive', false)
     return (
-      <TouchableOpacity onPress={this.showSearhInput}>
-        <Text>{`${isSearchActive}`}</Text>
-      </TouchableOpacity>
+      <TouchableWithoutFeedback
+        style={styles.root}
+        onPress={this.showSearhInput}
+      >
+        <Ionicons name="md-search" size={26} />
+      </TouchableWithoutFeedback>
     )
   }
 }
