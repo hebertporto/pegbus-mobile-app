@@ -2,6 +2,6 @@ import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
   root: {
-    marginRight: 10
+    paddingRight: 15
   }
 })

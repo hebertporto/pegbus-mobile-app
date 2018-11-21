@@ -1,5 +1,5 @@
 import React from 'react'
-import { TouchableWithoutFeedback } from 'react-native'
+import { View, TouchableWithoutFeedback } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import { withNavigation } from 'react-navigation'
 import { styles } from './styles/SearchNavButton.style'
@@ -12,12 +12,11 @@ class SearchNavButtonContainer extends React.Component {
 
   render() {
     return (
-      <TouchableWithoutFeedback
-        style={styles.root}
-        onPress={this.showSearhInput}
-      >
-        <Ionicons name="md-search" size={26} />
-      </TouchableWithoutFeedback>
+      <View style={styles.root}>
+        <TouchableWithoutFeedback onPress={this.showSearhInput}>
+          <Ionicons name="md-search" size={26} />
+        </TouchableWithoutFeedback>
+      </View>
     )
   }
 }
