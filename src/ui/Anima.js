@@ -10,7 +10,7 @@ import { Ionicons } from '@expo/vector-icons'
 
 class Anima extends React.Component {
   state = {
-    witdhAnimation: new Animated.Value(50)
+    witdhAnimation: new Animated.Value(250)
   }
 
   handlePress = () => {
@@ -39,7 +39,17 @@ class Anima extends React.Component {
             <TouchableWithoutFeedback onPress={this.handlePress}>
               <Ionicons name="md-search" size={26} />
             </TouchableWithoutFeedback>
-            <RkTextInput label={<Ionicons name={'md-search'} size={26} />} />
+            <RkTextInput label={<Ionicons name={'md-search'} />} />
+            <RkTextInput
+              rkType="rounded"
+              label={<Ionicons name={'md-search'} />}
+              labelStyle={{
+                paddingVertical: 10,
+                paddingLeft: 10,
+                fontSize: 28,
+                color: 'black'
+              }}
+            />
           </Animated.View>
         </View>
       </View>
