@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
-import { Text, View, TouchableOpacity, Animated } from 'react-native'
+import { View, Animated } from 'react-native'
 import { Header, withNavigation } from 'react-navigation'
+import { RkTextInput } from 'react-native-ui-kitten'
+import { Ionicons } from '@expo/vector-icons'
+
 import { styles } from './styles/HeaderWithSearchBar.style'
 
 class HeaderWithSearchBarContainer extends Component {
@@ -22,12 +25,12 @@ class HeaderWithSearchBarContainer extends Component {
   render() {
     const { navigation, propsHeader } = this.props
     const isSearchActive = navigation.getParam('isSearchActive', false)
-    if (isSearchActive) {
-      this.startAnimation()
-    }
-    const onCancel = () => navigation.setParams({ isSearchActive: false })
+    // if (isSearchActive) {
+    //   this.startAnimation()
+    // }
+    // const onCancel = () => navigation.setParams({ isSearchActive: false })
     const animatedStyle = {
-      width: this.state.witdhAnimation
+      width: 100
     }
     return (
       <View>
@@ -35,9 +38,16 @@ class HeaderWithSearchBarContainer extends Component {
         {isSearchActive && (
           <View style={styles.root}>
             <Animated.View style={[styles.inputContainer, animatedStyle]}>
-              <TouchableOpacity onPress={onCancel}>
-                <Text>Lupa</Text>
-              </TouchableOpacity>
+              <RkTextInput
+                rkType="rounded"
+                label={<Ionicons name={'md-search'} />}
+                labelStyle={{
+                  paddingVertical: 10,
+                  paddingLeft: 10,
+                  fontSize: 28,
+                  color: 'black'
+                }}
+              />
             </Animated.View>
           </View>
         )}
