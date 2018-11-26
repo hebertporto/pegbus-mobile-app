@@ -4,25 +4,17 @@ import { View, Text } from 'react-native'
 import { styles } from './styles/ScheduleTimeItem.style'
 
 const ScheduleTimeItem = ({ item }) => {
-  const { id } = item
+  const { number, name } = item
   return (
     <View style={styles.root}>
-      <Text>{id} Item</Text>
+      <Text>
+        {number} | {name}
+      </Text>
+      <Text>
+        Scheduled: {item.timeScheduled} | Estimated: {item.timeEstimated}
+      </Text>
     </View>
   )
 }
 
 export { ScheduleTimeItem }
-
-{
-  /* <View key={item.id}>
-  <Text>
-    {item.number} | {item.name}
-  </Text>
-  <Text style={{ marginLeft: 10 }}>x
-    Scheduled: {item.timeScheduled} | Estimated:{' '}
-    {item.timeEstimated}
-  </Text>
-  <Text>---------</Text>
-</View> */
-}

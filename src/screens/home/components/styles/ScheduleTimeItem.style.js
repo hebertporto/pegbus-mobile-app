@@ -8,6 +8,7 @@ export const styles = StyleSheet.create({
     borderColor: 'rgba(0, 0, 0, 0.12)',
     paddingVertical: 15,
     paddingLeft: 21,
-    paddingRight: 25
+    paddingRight: 25,
+    fontFamily: 'archivo'
   }
 })

@@ -18,7 +18,7 @@ const mockData = [
 ]
 
 const defaultState = {
-  data: mockData,
+  data: [],
   routes: [],
   stopInfo: {},
   error: false
