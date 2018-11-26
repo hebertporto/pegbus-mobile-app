@@ -6,7 +6,7 @@ import { styles } from './styles/ScheduleTimeItem.style'
 const ScheduleTimeItem = ({ item }) => {
   const { id } = item
   return (
-    <View styles={styles.root}>
+    <View style={styles.root}>
       <Text>{id} Item</Text>
     </View>
   )

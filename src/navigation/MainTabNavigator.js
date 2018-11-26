@@ -10,17 +10,17 @@ import TabBarIcon from '../ui/TabBarIcon'
 import { HomeScreen } from '../screens/home/HomeScreen'
 import BookmarkScreen from '../screens/bookmark/BookmarkScreen'
 
-import { COLORS } from '../constants/Colors'
+import { Colors } from '../constants/Colors'
 
 const navigationOptions = {
   headerStyle: {
-    backgroundColor: COLORS.NAV_BAR.background
+    backgroundColor: Colors.NAV_BAR.background
   },
   headerTitleStyle: {
     textAlign: 'center',
     flexGrow: 1
   },
-  headerTintColor: COLORS.NAV_BAR.tint
+  headerTintColor: Colors.NAV_BAR.tint
 }
 
 const HomeStack = createStackNavigator(

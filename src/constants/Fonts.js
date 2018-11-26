@@ -1,5 +1,5 @@
 import { Platform } from 'react-native'
-import { COLORS } from './Colors'
+import { Colors } from './Colors'
 
 const type = {
   light: {
@@ -66,53 +66,53 @@ const style = {
 const standardStyle = {
   h2: {
     fontSize: size.h2,
-    color: COLORS.BLACK_PRIMARY_ALT,
+    color: Colors.BLACK_PRIMARY_ALT,
     ...type.medium
   },
   h6: {
     fontSize: size.h6,
-    color: COLORS.BLACK_PRIMARY_ALT,
+    color: Colors.BLACK_PRIMARY_ALT,
     ...type.medium
   },
   p: {
     fontSize: size.regular,
     lineHeight: lineHeight.boost,
-    color: COLORS.BLACK_SECONDARY_ALT,
+    color: Colors.BLACK_SECONDARY_ALT,
     ...type.regular
   },
   pEmphasis: {
     fontSize: size.regular,
     lineHeight: lineHeight.boost,
-    color: COLORS.BLACK_PRIMARY_ALT,
+    color: Colors.BLACK_PRIMARY_ALT,
     ...type.regular
   },
   description: {
     fontSize: size.medium,
     lineHeight: lineHeight.regular,
-    color: COLORS.BLACK_SECONDARY_ALT,
+    color: Colors.BLACK_SECONDARY_ALT,
     ...type.regular
   },
   descriptionEmphasis: {
     fontSize: size.medium,
     lineHeight: lineHeight.regular,
-    color: COLORS.BLACK_PRIMARY_ALT,
+    color: Colors.BLACK_PRIMARY_ALT,
     ...type.regular
   },
   caption: {
     fontSize: size.small,
     lineHeight: lineHeight.small,
-    color: COLORS.BLACK_SECONDARY_ALT,
+    color: Colors.BLACK_SECONDARY_ALT,
     ...type.regular
   },
   captionEmphasis: {
     fontSize: size.small,
     lineHeight: lineHeight.small,
-    color: COLORS.BLACK_PRIMARY_ALT,
+    color: Colors.BLACK_PRIMARY_ALT,
     ...type.regular
   }
 }
 
-export const FONTS = {
+export const Fonts = {
   lineHeight,
   size,
   standardStyle,

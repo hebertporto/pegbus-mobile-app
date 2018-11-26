@@ -10,8 +10,15 @@ import Banner from '../../../ui/Banner'
 import { BusStopHeader } from './BusStopHeader'
 import { ScheduleTimeItem } from './ScheduleTimeItem'
 
+const mockData = [
+  { id: 1, number: 11, name: 'Aaaaa @ BBBBB' },
+  { id: 2, number: 22, name: 'Ccccc @ ggggg' },
+  { id: 3, number: 33, name: 'Dddddd @ Fffff' },
+  { id: 4, number: 44, name: 'GGGGGG @ fffff' }
+]
+
 const defaultState = {
-  data: [],
+  data: mockData,
   routes: [],
   stopInfo: {},
   error: false

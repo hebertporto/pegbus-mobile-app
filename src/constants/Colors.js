@@ -17,7 +17,7 @@ export default {
   noticeText: '#fff'
 }
 
-export const COLORS = {
+export const Colors = {
   PRIMARY: '#ED323D',
   PRIMARY_OPACITY: 'rgba(237, 50, 61, 0.3)',
   ALERT: '#FF9F1C',

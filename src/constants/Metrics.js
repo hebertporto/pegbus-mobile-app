@@ -14,7 +14,7 @@ const SPINNER_HEIGHT = {
   small: 20
 }
 
-export const METRICS = {
+export const Metrics = {
   NANO: 4,
   MILLI: 6,
   BIT: 8,
