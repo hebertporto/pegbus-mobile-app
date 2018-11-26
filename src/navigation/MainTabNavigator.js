@@ -71,6 +71,6 @@ BookmarkStack.navigationOptions = {
 }
 
 export default createBottomTabNavigator({
-  BookmarkStack,
-  HomeStack
+  HomeStack,
+  BookmarkStack
 })

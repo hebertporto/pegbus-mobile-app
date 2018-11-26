@@ -8,6 +8,7 @@ import InputSearchRow from '../../../ui/InputSearchRow'
 import Banner from '../../../ui/Banner'
 
 import { BusStopHeader } from './BusStopHeader'
+import { ScheduleTimeItem } from './ScheduleTimeItem'
 
 const defaultState = {
   data: [],
@@ -60,18 +61,7 @@ class Home extends Component {
           contentContainerStyle={styles.contentContainer}
         >
           {this.state.data.map(item => {
-            return (
-              <View key={item.id}>
-                <Text>
-                  {item.number} | {item.name}
-                </Text>
-                <Text style={{ marginLeft: 10 }}>
-                  Scheduled: {item.timeScheduled} | Estimated:{' '}
-                  {item.timeEstimated}
-                </Text>
-                <Text>---------</Text>
-              </View>
-            )
+            return <ScheduleTimeItem key={item.id} item={item} />
           })}
         </ScrollView>
         <View style={{ flex: 0.15 }}>
