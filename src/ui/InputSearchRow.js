@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { View, Text } from 'react-native'
+import { View, Text, Keyboard } from 'react-native'
 import { RkButton, RkTextInput } from 'react-native-ui-kitten'
 
 import { styles } from './styles/InputSearchRow.style.js'
@@ -11,25 +11,34 @@ class InputSearchRow extends Component {
     value: '' // 10628
   }
 
+  handleChangeText = value => this.setState({ value })
+
+  handleSearch = () => {
+    Keyboard.dismiss()
+    this.props.searchHandler(this.state.value)
+  }
+
   render() {
+    const { value } = this.state
+    const { root, inputContainer, input, button, buttonContainer } = styles
     return (
-      <View style={styles.root}>
-        <View style={styles.inputContainer}>
+      <View style={root}>
+        <View style={inputContainer}>
           <RkTextInput
-            style={styles.input}
+            style={input}
             placeholder="Search by bus stop number"
-            value={this.state.value}
-            placeholderTextColor="green"
+            value={value}
+            placeholderTextColor="black"
             underlineWidth={0}
-            onChangeText={value => this.setState({ value })}
+            onChangeText={this.handleChangeText}
           />
           <Text>40318, 10628</Text>
         </View>
-        <View style={styles.buttonContainer}>
+        <View style={buttonContainer}>
           <RkButton
             rkType="icon small"
-            style={styles.button}
-            onPress={() => this.props.searchHandler(this.state.value)}
+            style={button}
+            onPress={this.handleSearch}
           >
             Search
           </RkButton>
