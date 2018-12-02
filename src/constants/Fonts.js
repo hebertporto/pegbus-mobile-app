@@ -4,19 +4,19 @@ import { Colors } from './Colors'
 const type = {
   light: {
     ...Platform.select({
-      android: { fontFamily: 'sans-serif-light' },
+      android: { fontFamily: 'space-mono' },
       ios: { fontWeight: '300' }
     })
   },
   regular: {
     ...Platform.select({
-      android: { fontFamily: 'sans-serif' },
+      android: { fontFamily: 'archivo' },
       ios: { fontWeight: '400' }
     })
   },
   medium: {
     ...Platform.select({
-      android: { fontFamily: 'sans-serif-medium' },
+      android: { fontFamily: 'archivo-semibold' },
       ios: { fontWeight: '700' }
     })
   }
