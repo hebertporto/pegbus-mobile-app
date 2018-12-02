@@ -19,6 +19,8 @@ const mockData = [
 
 const defaultState = {
   data: [],
+  dataFiltered: [],
+  selectedRoutes: [],
   routes: [],
   stopInfo: {},
   error: false
@@ -27,20 +29,45 @@ const defaultState = {
 class Home extends Component {
   state = defaultState
 
+  handleSelectRoute = route => {
+    const { selectedRoutes } = this.state
+    let newSelected
+    if (selectedRoutes.includes(route)) {
+      newSelected = selectedRoutes.filter(r => r !== route)
+    } else {
+      newSelected = [route].concat(selectedRoutes)
+    }
+    this.setState({ selectedRoutes: newSelected }, this.filterSchedule)
+  }
+
+  filterSchedule = () => {
+    const { data, selectedRoutes } = this.state
+    const dataFiltered = selectedRoutes.length
+      ? data.filter(busSchedule => {
+          return selectedRoutes.includes(busSchedule.number)
+        })
+      : data
+    this.setState({ dataFiltered })
+  }
+
   getSchedule = async stopNumber => {
     this.setState(defaultState)
     try {
       const { shedules, stopInfo } = await stopBusAndSchedule({ stopNumber })
+      console.log('shedules: ', shedules)
       const routes = await stopBusRoutes({ stopNumber })
+      console.log('routes', routes)
       this.setState({
         routes,
         stopInfo,
         data: shedules,
+        dataFiltered: shedules,
         error: false
       })
     } catch (e) {
       this.setState({
         data: [],
+        dataFiltered: [],
         routes: [],
         stopInfo: {},
         error: true
@@ -49,28 +76,36 @@ class Home extends Component {
   }
 
   render() {
-    const { stopInfo, routes } = this.state
+    const { stopInfo, routes, selectedRoutes, data } = this.state
     return (
       <View style={styles.container}>
         <View style={{ flex: 0.15 }}>
           <InputSearchRow searchHandler={this.getSchedule} />
         </View>
-        <View>
-          <BusStopHeader stopInfo={stopInfo} routes={routes} />
-        </View>
-        {this.state.error && (
-          <View>
-            <Text>Bus Stop Not Found</Text>
-          </View>
-        )}
+
         <ScrollView
           style={{ flex: 0.4 }}
+          stickyHeaderIndices={[0]}
           contentContainerStyle={styles.contentContainer}
         >
-          {this.state.data.map(item => {
+          {data.length ? (
+            <BusStopHeader
+              stopInfo={stopInfo}
+              routes={routes}
+              handleSelectRoute={this.handleSelectRoute}
+              filteredRoutes={selectedRoutes}
+            />
+          ) : null}
+          {this.state.error && (
+            <View>
+              <Text>Bus Stop Not Found</Text>
+            </View>
+          )}
+          {this.state.dataFiltered.map(item => {
             return <ScheduleTimeItem key={item.id} item={item} />
           })}
         </ScrollView>
+
         <View style={{ flex: 0.15 }}>
           <Banner />
         </View>
@@ -96,7 +131,7 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   contentContainer: {
-    paddingTop: 30
+    marginTop: 0
   },
   welcomeContainer: {
     alignItems: 'center',

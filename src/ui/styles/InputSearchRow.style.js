@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { Fonts } from '../../constants/Fonts'
+import { Fonts } from '../../constants'
 
 export const styles = StyleSheet.create({
   root: {
@@ -18,9 +18,6 @@ export const styles = StyleSheet.create({
   inputTextContainer: {
     borderBottomWidth: 0
   },
-  labelInput: {
-    fontSize: 10
-  },
   button: {
     borderRadius: 10,
     width: 70,
@@ -31,5 +28,3 @@ export const styles = StyleSheet.create({
     color: 'white'
   }
 })
-
-// 40318   &  10628 ( McDermont )

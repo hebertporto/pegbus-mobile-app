@@ -1,26 +1,40 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 
-import { styles as s } from './styles/BusStopHeader.style'
+import { styles } from './styles/BusStopHeader.style'
 
-const BusStopHeader = ({ stopInfo, routes }) => {
+const Item = ({ number, onSelectRoute, selected }) => {
+  return (
+    <TouchableOpacity onPress={() => onSelectRoute(number)}>
+      <View style={styles.itemFilter}>
+        <Text style={selected ? styles.textSelected : null}>{number}</Text>
+      </View>
+    </TouchableOpacity>
+  )
+}
+
+const BusStopHeader = ({
+  stopInfo,
+  routes,
+  handleSelectRoute,
+  filteredRoutes
+}) => {
   const { name, number } = stopInfo
 
-  return name ? (
-    <View style={s.root}>
-      <View style={s.map}>
-        <Text>Mapa</Text>
-      </View>
-
-      <View style={s.info}>
-        {/* <View>
-          <Text>
-            #{number} | {name}
-          </Text>
-        </View> */}
-        <View style={s.busNumber}>
+  const mockRoutes = [1, 11, 18, 44, 45, 47, 48, 55, 66, 80, 88]
+  return true ? (
+    <View style={styles.root}>
+      <View style={styles.info}>
+        <View style={styles.busNumber}>
           {routes.map(route => {
-            return <Text key={route}>{route} |</Text>
+            return (
+              <Item
+                key={route}
+                number={route}
+                onSelectRoute={handleSelectRoute}
+                selected={filteredRoutes.includes(route)}
+              />
+            )
           })}
         </View>
       </View>
