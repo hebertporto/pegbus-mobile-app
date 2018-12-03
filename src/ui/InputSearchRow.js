@@ -8,7 +8,7 @@ import { styles } from './styles/InputSearchRow.style.js'
 
 class InputSearchRow extends Component {
   state = {
-    value: '10628'
+    value: ''
   }
 
   handleChangeText = value => this.setState({ value })

@@ -1,9 +1,10 @@
 import axios from 'axios'
-import { get } from 'lodash'
 
 export const getStopBusesTime = async ({ stopNumber }) => {
   try {
     const date = new Date().toISOString()
+    // console.log(`stops/${stopNumber}/schedule.json?start=${date}`)
+    // const date = '2018-12-02T23:35:03.047Z'
     const { data } = await axios.get(
       `stops/${stopNumber}/schedule.json?start=${date}`
     )

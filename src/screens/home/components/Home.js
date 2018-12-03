@@ -54,9 +54,8 @@ class Home extends Component {
     this.setState(defaultState)
     try {
       const { shedules, stopInfo } = await stopBusAndSchedule({ stopNumber })
-      console.log('shedules: ', shedules)
+      // console.log('shedules: ', shedules)
       const routes = await stopBusRoutes({ stopNumber })
-      console.log('routes', routes)
       this.setState({
         routes,
         stopInfo,
