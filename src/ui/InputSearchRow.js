@@ -8,7 +8,7 @@ import { styles } from './styles/InputSearchRow.style.js'
 
 class InputSearchRow extends Component {
   state = {
-    value: ''
+    value: '10628'
   }
 
   handleChangeText = value => this.setState({ value })
@@ -31,6 +31,7 @@ class InputSearchRow extends Component {
             onChangeText={this.handleChangeText}
           />
         </View>
+
         <View style={styles.buttonContainer}>
           <RkButton
             rkType="icon small"
@@ -39,6 +40,10 @@ class InputSearchRow extends Component {
           >
             <Text style={styles.buttonText}>Search</Text>
           </RkButton>
+        </View>
+
+        <View style={styles.iconContainer}>
+          <Text style={{ color: 'black' }}>Filter</Text>
         </View>
       </View>
     )

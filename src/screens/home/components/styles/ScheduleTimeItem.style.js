@@ -24,7 +24,8 @@ export const styles = StyleSheet.create({
     fontSize: 12
   },
   onTime: {
-    fontSize: 16
+    fontSize: 16,
+    fontWeight: '600'
   },
   numberAndName: {
     flex: 0.5,

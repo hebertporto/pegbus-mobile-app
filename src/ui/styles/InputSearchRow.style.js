@@ -7,11 +7,17 @@ export const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   inputContainer: {
-    flex: 0.8,
+    flex: 0.6,
     justifyContent: 'center'
   },
   buttonContainer: {
     flex: 0.2,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  iconContainer: {
+    flex: 0.15,
+    marginLeft: 5,
     alignItems: 'center',
     justifyContent: 'center'
   },

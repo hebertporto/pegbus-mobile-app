@@ -1,21 +1,14 @@
 import React, { Component } from 'react'
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
+
+import InputSearchRow from '../../../ui/InputSearchRow'
+import { BusStopHeader } from './BusStopHeader'
+import { ScheduleTimeItem } from './ScheduleTimeItem'
+
 import {
   stopBusAndSchedule,
   stopBusRoutes
 } from '../../../services/stopService'
-import InputSearchRow from '../../../ui/InputSearchRow'
-import Banner from '../../../ui/Banner'
-
-import { BusStopHeader } from './BusStopHeader'
-import { ScheduleTimeItem } from './ScheduleTimeItem'
-
-const mockData = [
-  { id: 1, number: 11, name: 'Aaaaa @ BBBBB' },
-  { id: 2, number: 22, name: 'Ccccc @ ggggg' },
-  { id: 3, number: 33, name: 'Dddddd @ Fffff' },
-  { id: 4, number: 44, name: 'GGGGGG @ fffff' }
-]
 
 const defaultState = {
   data: [],
@@ -83,7 +76,7 @@ class Home extends Component {
         </View>
 
         <ScrollView
-          style={{ flex: 0.4 }}
+          style={{ flex: 0.85 }}
           stickyHeaderIndices={[0]}
           contentContainerStyle={styles.contentContainer}
         >
@@ -104,10 +97,6 @@ class Home extends Component {
             return <ScheduleTimeItem key={item.id} item={item} />
           })}
         </ScrollView>
-
-        <View style={{ flex: 0.15 }}>
-          <Banner />
-        </View>
       </View>
     )
   }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { View, Text } from 'react-native'
+import moment from 'moment'
 
 import { styles } from './styles/ScheduleTimeItem.style'
 
@@ -24,8 +25,8 @@ const showTime = (scheduled, estimated) => {
   return (
     <View style={styles.timeContainer}>
       <Text>Time: </Text>
-      <Text style={styles.delayedTime}>{scheduled}</Text>
-      <Text style={styles.onTime}>{estimated}</Text>
+      <Text style={styles.delayedTime}>{moment(scheduled).format('h:mm')}</Text>
+      <Text style={styles.onTime}>{moment(estimated).format('h:mm')}</Text>
     </View>
   )
 }
