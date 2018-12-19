@@ -1,45 +1,82 @@
 import React from 'react'
 import { View, Text } from 'react-native'
+import { Ionicons } from '@expo/vector-icons'
 import moment from 'moment'
 
 import { styles } from './styles/ScheduleTimeItem.style'
 
-const parseHour = hour => parseInt(hour.split(':').join(''), 10)
-
-const showTime = (scheduled, estimated) => {
-  // if (parseHour(scheduled) < parseHour(estimated)) {
-  //   return (
-  //     <View style={styles.timeContainer}>
-  //       <Text>Time: </Text>
-  //       <Text style={styles.delayedTime}>{scheduled}</Text>
-  //       <Text style={styles.onTime}>{estimated}</Text>
-  //     </View>
-  //   )
-  // }
-  // return (
-  //   <View style={styles.timeContainer}>
-  //     <Text>Time: </Text>
-  //     <Text>{estimated}</Text>
-  //   </View>
-  // )
-  return (
-    <View style={styles.timeContainer}>
-      <Text>Time: </Text>
-      <Text style={styles.delayedTime}>{moment(scheduled).format('h:mm')}</Text>
-      <Text style={styles.onTime}>{moment(estimated).format('h:mm')}</Text>
-    </View>
-  )
-}
-
 const ScheduleTimeItem = ({ item }) => {
   const { number, name, timeEstimated, timeScheduled } = item
+  if (moment(timeScheduled).isBefore(moment(timeEstimated))) {
+    return (
+      <View style={styles.root}>
+
+        <View style={styles.iconContainer}>
+          <Ionicons name="md-bus" size={26} color="red" />
+        </View>
+
+        <View style={styles.numberAndNameContainer}>
+          <Text style={styles.textNumber}>{number} </Text>
+          <Text style={styles.routeName}>| {name}</Text>
+        </View>
+
+        <View style={styles.timeContainer}>
+          <Text>Late: </Text>
+          <Text style={styles.delayedTime}>
+            {moment(timeScheduled).format('h:mm')}
+          </Text>
+          <Text style={styles.onTime}>
+            {moment(timeEstimated).format('h:mm')}
+          </Text>
+        </View>
+
+      </View>
+    )
+  }
+  if (moment(timeScheduled).isAfter(moment(timeEstimated))) {
+    return (
+      <View style={styles.root}>
+        <View style={styles.iconContainer}>
+          <Ionicons name="md-bus" size={26} color="#eab53a" />
+        </View>
+
+        <View style={styles.numberAndNameContainer}>
+          <Text style={styles.textNumber}>{number} </Text>
+          <Text style={styles.routeName}>| {name}</Text>
+        </View>
+
+        <View style={styles.timeContainer}>
+          <Text>Early: </Text>
+          <Text style={styles.delayedTime}>
+            {moment(timeScheduled).format('h:mm')}
+          </Text>
+          <Text style={styles.onTime}>
+            {moment(timeEstimated).format('h:mm')}
+          </Text>
+        </View>
+      </View>
+    )
+  }
   return (
     <View style={styles.root}>
-      <View style={styles.numberAndName}>
+      <View style={styles.iconContainer}>
+        <Ionicons name="md-bus" size={26} color="green" />
+      </View>
+
+      <View style={styles.numberAndNameContainer}>
         <Text style={styles.textNumber}>{number} </Text>
         <Text style={styles.routeName}>| {name}</Text>
       </View>
-      {showTime(timeScheduled, timeEstimated)}
+
+      <View style={styles.timeContainer}>
+        <Text>Due: </Text>
+        <Text style={styles.delayedTime}>
+          {moment(timeScheduled).format('h:mm')}
+        </Text>
+        <Text style={styles.onTime}>
+          {moment(timeEstimated).format('h:mm')}
+        </Text>
+      </View>
     </View>
   )
 }

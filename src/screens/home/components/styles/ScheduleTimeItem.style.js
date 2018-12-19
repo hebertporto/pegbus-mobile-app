@@ -12,8 +12,17 @@ export const styles = StyleSheet.create({
     paddingRight: 25,
     fontFamily: 'archivo'
   },
+  iconContainer: {
+    flex: 0.1
+  },
+  numberAndNameContainer: {
+    flex: 0.55,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start'
+  },
   timeContainer: {
-    flex: 0.5,
+    flex: 0.35,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start'
@@ -26,12 +35,6 @@ export const styles = StyleSheet.create({
   onTime: {
     fontSize: 16,
     fontWeight: '600'
-  },
-  numberAndName: {
-    flex: 0.5,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-start'
   },
   textNumber: {
     fontSize: 18

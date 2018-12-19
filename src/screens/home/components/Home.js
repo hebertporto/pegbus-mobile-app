@@ -16,7 +16,8 @@ const defaultState = {
   selectedRoutes: [],
   routes: [],
   stopInfo: {},
-  error: false
+  error: false,
+  showFilter: false
 }
 
 class Home extends Component {
@@ -58,29 +59,33 @@ class Home extends Component {
       })
     } catch (e) {
       this.setState({
-        data: [],
-        dataFiltered: [],
-        routes: [],
-        stopInfo: {},
+        ...defaultState,
         error: true
       })
     }
   }
 
+  toogleFilter = () =>
+    this.setState(preState => ({ showFilter: !preState.showFilter }))
+
   render() {
-    const { stopInfo, routes, selectedRoutes, data } = this.state
+    const { stopInfo, routes, selectedRoutes, showFilter } = this.state
     return (
       <View style={styles.container}>
         <View style={{ flex: 0.15 }}>
-          <InputSearchRow searchHandler={this.getSchedule} />
+          <InputSearchRow
+            searchHandler={this.getSchedule}
+            isFilterOpen={showFilter}
+            filterToogle={this.toogleFilter}
+          />
         </View>
 
         <ScrollView
           style={{ flex: 0.85 }}
-          stickyHeaderIndices={[0]}
+          stickyHeaderIndices={showFilter ? [0] : null}
           contentContainerStyle={styles.contentContainer}
         >
-          {data.length ? (
+          {showFilter ? (
             <BusStopHeader
               stopInfo={stopInfo}
               routes={routes}

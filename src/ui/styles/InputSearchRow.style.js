@@ -12,12 +12,11 @@ export const styles = StyleSheet.create({
   },
   buttonContainer: {
     flex: 0.2,
-    alignItems: 'center',
+    alignItems: 'flex-end',
     justifyContent: 'center'
   },
   iconContainer: {
-    flex: 0.15,
-    marginLeft: 5,
+    flex: 0.2,
     alignItems: 'center',
     justifyContent: 'center'
   },
@@ -26,7 +25,12 @@ export const styles = StyleSheet.create({
   },
   button: {
     borderRadius: 10,
-    width: 70,
+    width: 50,
+    height: 35
+  },
+  buttonFilter: {
+    borderRadius: 10,
+    width: 50,
     height: 35
   },
   buttonText: {

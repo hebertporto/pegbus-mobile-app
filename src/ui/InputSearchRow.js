@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { Ionicons } from '@expo/vector-icons'
 
 import { View, Text, Keyboard } from 'react-native'
 import { RkButton, RkTextInput } from 'react-native-ui-kitten'
@@ -20,6 +21,7 @@ class InputSearchRow extends Component {
 
   render() {
     const { value } = this.state
+    const { filterToogle, isFilterOpen } = this.props
     return (
       <View style={styles.root}>
         <View style={styles.inputContainer}>
@@ -38,12 +40,21 @@ class InputSearchRow extends Component {
             style={styles.button}
             onPress={this.handleSearch}
           >
-            <Text style={styles.buttonText}>Search</Text>
+            <Ionicons name="md-search" size={22} color="white" />
           </RkButton>
         </View>
 
         <View style={styles.iconContainer}>
-          <Text style={{ color: 'black' }}>Filter</Text>
+          <RkButton
+            style={
+              isFilterOpen
+                ? { ...styles.buttonFilter, backgroundColor: 'green' }
+                : styles.buttonFilter
+            }
+            onPress={filterToogle}
+          >
+            <Ionicons name="md-funnel" size={22} color="white" />
+          </RkButton>
         </View>
       </View>
     )
@@ -51,7 +62,9 @@ class InputSearchRow extends Component {
 }
 
 InputSearchRow.propTypes = {
-  searchHandler: PropTypes.func.isRequired
+  searchHandler: PropTypes.func.isRequired,
+  filterToogle: PropTypes.func.isRequired,
+  isFilterOpen: PropTypes.bool.isRequired
 }
 
 export default InputSearchRow
