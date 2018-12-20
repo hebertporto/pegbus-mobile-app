@@ -6,7 +6,7 @@ import {
 
 export const stopBusAndSchedule = async ({ stopNumber }) => {
   try {
-    const response = await getStopBusesTime({ stopNumber })
+    const { response, dateRequested } = await getStopBusesTime({ stopNumber })
     const busInfoAndSchedule = await mapperScheduler(response)
     return busInfoAndSchedule
   } catch (e) {

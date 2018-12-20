@@ -8,7 +8,7 @@ export const getStopBusesTime = async ({ stopNumber }) => {
     const { data } = await axios.get(
       `stops/${stopNumber}/schedule.json?start=${date}`
     )
-    return data
+    return { response: data, dateRequested: date }
   } catch (e) {
     throw new Error('getStopBusesTime Failed')
   }

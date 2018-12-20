@@ -35,7 +35,7 @@ export default class App extends React.Component {
   }
 
   render() {
-    if (this.state.isReady) {
+    if (!this.state.isReady) {
       return (
         <AppLoading
           startAsync={this.loadResourcesAsync}

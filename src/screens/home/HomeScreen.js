@@ -4,8 +4,7 @@ import { Home } from './components/Home'
 
 class HomeScreen extends Component {
   static navigationOptions = {
-    title: 'Peg Bus',
-    tabBarVisible: false
+    title: 'Peg Bus'
   }
 
   render() {
