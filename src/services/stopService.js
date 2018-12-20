@@ -7,8 +7,8 @@ import {
 export const stopBusAndSchedule = async ({ stopNumber }) => {
   try {
     const { response, dateRequested } = await getStopBusesTime({ stopNumber })
-    const busInfoAndSchedule = await mapperScheduler(response)
-    return busInfoAndSchedule
+    const { stopInfo, shedules } = await mapperScheduler(response)
+    return { stopInfo, shedules, dateRequested }
   } catch (e) {
     throw Error('stopBusAndSchedule Failed', e)
   }

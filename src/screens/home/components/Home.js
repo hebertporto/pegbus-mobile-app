@@ -1,7 +1,13 @@
 import React, { Component } from 'react'
-import { ScrollView, StyleSheet, Text, View } from 'react-native'
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  ActivityIndicator
+} from 'react-native'
 
-import InputSearchRow from '../../../ui/InputSearchRow'
+import { InputSearchRow } from '../../../ui/InputSearchRow'
 import { BusStopHeader } from './BusStopHeader'
 import { ScheduleTimeItem } from './ScheduleTimeItem'
 
@@ -13,11 +19,13 @@ import {
 const defaultState = {
   data: [],
   dataFiltered: [],
+  dateRequested: '',
   selectedRoutes: [],
   routes: [],
   stopInfo: {},
   error: false,
-  showFilter: false
+  showFilter: false,
+  loading: false
 }
 
 class Home extends Component {
@@ -45,9 +53,11 @@ class Home extends Component {
   }
 
   getSchedule = async stopNumber => {
-    this.setState(defaultState)
+    this.setState({ ...defaultState, loading: true })
     try {
-      const { shedules, stopInfo } = await stopBusAndSchedule({ stopNumber })
+      const { shedules, stopInfo, dateRequested } = await stopBusAndSchedule({
+        stopNumber
+      })
       // console.log('shedules: ', shedules)
       const routes = await stopBusRoutes({ stopNumber })
       this.setState({
@@ -55,21 +65,31 @@ class Home extends Component {
         stopInfo,
         data: shedules,
         dataFiltered: shedules,
-        error: false
+        error: false,
+        loading: false,
+        dateRequested
       })
     } catch (e) {
       this.setState({
         ...defaultState,
-        error: true
+        error: true,
+        loading: false
       })
     }
   }
 
   toogleFilter = () =>
-    this.setState(preState => ({ showFilter: !preState.showFilter }))
+    this.setState(prevState => ({ showFilter: !prevState.showFilter }))
 
   render() {
-    const { stopInfo, routes, selectedRoutes, showFilter } = this.state
+    const {
+      stopInfo,
+      routes,
+      selectedRoutes,
+      showFilter,
+      dateRequested,
+      loading
+    } = this.state
     return (
       <View style={styles.container}>
         <View style={{ flex: 0.15 }}>
@@ -77,11 +97,12 @@ class Home extends Component {
             searchHandler={this.getSchedule}
             isFilterOpen={showFilter}
             filterToogle={this.toogleFilter}
+            dateRequested={dateRequested}
           />
         </View>
 
         <ScrollView
-          style={{ flex: 0.85 }}
+          style={{ flex: 0.8 }}
           stickyHeaderIndices={showFilter ? [0] : null}
           contentContainerStyle={styles.contentContainer}
         >
@@ -93,14 +114,15 @@ class Home extends Component {
               filteredRoutes={selectedRoutes}
             />
           ) : null}
+          {loading && <ActivityIndicator size="large" color="#0000ff" />}
+          {this.state.dataFiltered.map(item => {
+            return <ScheduleTimeItem key={item.id} item={item} />
+          })}
           {this.state.error && (
             <View>
               <Text>Bus Stop Not Found</Text>
             </View>
           )}
-          {this.state.dataFiltered.map(item => {
-            return <ScheduleTimeItem key={item.id} item={item} />
-          })}
         </ScrollView>
       </View>
     )
@@ -115,48 +137,5 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: '#fff',
     marginHorizontal: 10
-  },
-  developmentModeText: {
-    marginBottom: 20,
-    color: 'rgba(0,0,0,0.4)',
-    fontSize: 14,
-    lineHeight: 19,
-    textAlign: 'center'
-  },
-  contentContainer: {
-    marginTop: 0
-  },
-  welcomeContainer: {
-    alignItems: 'center',
-    marginTop: 10,
-    marginBottom: 20
-  },
-  welcomeImage: {
-    width: 100,
-    height: 80,
-    resizeMode: 'contain',
-    marginTop: 3,
-    marginLeft: -10
-  },
-  getStartedContainer: {
-    alignItems: 'center',
-    marginHorizontal: 50
-  },
-  homeScreenFilename: {
-    marginVertical: 7
-  },
-  codeHighlightText: {
-    color: 'rgba(96,100,109, 0.8)'
-  },
-  codeHighlightContainer: {
-    backgroundColor: 'rgba(0,0,0,0.05)',
-    borderRadius: 3,
-    paddingHorizontal: 4
-  },
-  getStartedText: {
-    fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    lineHeight: 24,
-    textAlign: 'center'
   }
 })

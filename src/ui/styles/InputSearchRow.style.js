@@ -4,7 +4,7 @@ import { Fonts } from '../../constants'
 export const styles = StyleSheet.create({
   root: {
     flex: 1,
-    flexDirection: 'row'
+    flexDirection: 'column'
   },
   inputContainer: {
     flex: 0.6,
@@ -21,7 +21,9 @@ export const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   inputTextContainer: {
-    borderBottomWidth: 0
+    borderColor: 'grey',
+    borderWidth: 1,
+    borderRadius: 10
   },
   button: {
     borderRadius: 10,
