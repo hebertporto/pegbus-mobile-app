@@ -18,11 +18,13 @@ export const styles = StyleSheet.create({
   busNumber: {
     flex: 1,
     flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
     flexWrap: 'wrap'
   },
   itemFilter: {
-    padding: 4,
-    minWidth: 45,
+    padding: 10,
+    minWidth: 50,
     // borderRightColor: 'blue',
     // borderRightWidth: 1,
     alignItems: 'center',
@@ -31,7 +33,7 @@ export const styles = StyleSheet.create({
   textSelected: {
     backgroundColor: 'green',
     color: 'white',
-    padding: 2,
-    borderRadius: 35
+    padding: 5,
+    borderRadius: 20
   }
 })

@@ -4,7 +4,9 @@ import { Fonts } from '../../constants'
 export const styles = StyleSheet.create({
   root: {
     flex: 1,
-    flexDirection: 'column'
+    flexDirection: 'column',
+    marginBottom: 25,
+    elevation: 5
   },
   inputContainer: {
     flex: 0.6,

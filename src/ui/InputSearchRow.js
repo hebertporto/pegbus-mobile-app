@@ -61,7 +61,8 @@ class InputSearchRow extends Component {
         </View>
         {dateRequested ? (
           <View>
-            <Text>Consulted {' '}
+            <Text>
+              Time Requested:{' '}
               {moment(dateRequested)
                 .tz('America/Winnipeg')
                 .format('MMMM Do YYYY, h:mm a')}

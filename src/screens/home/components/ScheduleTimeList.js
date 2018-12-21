@@ -4,12 +4,15 @@ import { ScheduleTimeItem } from './ScheduleTimeItem'
 
 const keyExtractor = item => item.id
 
-export default (ScheduleList = ({ data }) => {
+const ScheduleTimeList = ({ data, showFilter, filter }) => {
   return (
     <FlatList
+      ListHeaderComponent={showFilter ? filter : null}
       data={data}
       keyExtractor={keyExtractor}
       renderItem={ScheduleTimeItem}
     />
   )
-})
+}
+
+export { ScheduleTimeList }

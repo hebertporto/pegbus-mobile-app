@@ -16,6 +16,9 @@ import {
   stopBusRoutes
 } from '../../../services/stopService'
 
+import { ScheduleTimeList } from './ScheduleTimeList'
+import { ScheduleTimeListFooter } from './ScheduleTimeListFooter'
+
 const defaultState = {
   data: [],
   dataFiltered: [],
@@ -86,13 +89,14 @@ class Home extends Component {
       stopInfo,
       routes,
       selectedRoutes,
+      dataFiltered,
       showFilter,
       dateRequested,
       loading
     } = this.state
     return (
       <View style={styles.container}>
-        <View style={{ flex: 0.15 }}>
+        <View style={{ flex: 0.2 }}>
           <InputSearchRow
             searchHandler={this.getSchedule}
             isFilterOpen={showFilter}
@@ -101,29 +105,37 @@ class Home extends Component {
           />
         </View>
 
-        <ScrollView
+        {/* <ScrollView
           style={{ flex: 0.8 }}
           stickyHeaderIndices={showFilter ? [0] : null}
           contentContainerStyle={styles.contentContainer}
         >
-          {showFilter ? (
-            <BusStopHeader
-              stopInfo={stopInfo}
-              routes={routes}
-              handleSelectRoute={this.handleSelectRoute}
-              filteredRoutes={selectedRoutes}
-            />
-          ) : null}
           {loading && <ActivityIndicator size="large" color="#0000ff" />}
-          {this.state.dataFiltered.map(item => {
-            return <ScheduleTimeItem key={item.id} item={item} />
-          })}
           {this.state.error && (
             <View>
               <Text>Bus Stop Not Found</Text>
             </View>
           )}
-        </ScrollView>
+        </ScrollView> */}
+        <View style={{ flex: 0.7 }}>
+          <ScheduleTimeList
+            data={dataFiltered}
+            showFilter={showFilter}
+            filter={
+              <BusStopHeader
+                stopInfo={stopInfo}
+                routes={routes}
+                handleSelectRoute={this.handleSelectRoute}
+                filteredRoutes={selectedRoutes}
+              />
+            }
+          />
+        </View>
+        {dateRequested.length ? (
+          <View style={{ flex: 0.1 }}>
+            <ScheduleTimeListFooter />
+          </View>
+        ) : null}
       </View>
     )
   }
