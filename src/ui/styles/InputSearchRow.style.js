@@ -1,44 +1,55 @@
 import { StyleSheet } from 'react-native'
-import { Fonts } from '../../constants'
+import { Fonts, Colors } from '../../constants'
 
 export const styles = StyleSheet.create({
   root: {
     flex: 1,
-    flexDirection: 'column',
-    marginBottom: 25,
-    elevation: 5
+    flexDirection: 'column'
   },
-  inputContainer: {
+  rowInput: {
+    flex: 0.7,
+    flexDirection: 'row'
+  },
+  rowInfo: {
+    flex: 0.3,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingLeft: 15
+  },
+  inputWrapper: {
     flex: 0.6,
     justifyContent: 'center'
   },
-  buttonContainer: {
+  buttonSearchWrapper: {
     flex: 0.2,
-    alignItems: 'flex-end',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    alignItems: 'flex-end'
   },
-  iconContainer: {
+  filterButtonWrapper: {
     flex: 0.2,
-    alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    alignItems: 'center'
   },
-  inputTextContainer: {
-    borderColor: 'grey',
-    borderWidth: 1,
-    borderRadius: 10
+  inputText: {
+    borderColor: Colors.BLACK_SECONDARY_ALT,
+    borderBottomWidth: 1,
+    width: '90%',
+    paddingLeft: 5,
+    marginLeft: 15,
+    ...Fonts.standardStyle.p
   },
-  button: {
-    borderRadius: 10,
+  buttonSearch: {
+    borderRadius: 5,
     width: 50,
     height: 35
   },
   buttonFilter: {
-    borderRadius: 10,
+    borderRadius: 5,
     width: 50,
     height: 35
   },
-  buttonText: {
-    ...Fonts.standardStyle.caption,
-    color: 'white'
+  labelTime: {
+    paddingLeft: 5,
+    ...Fonts.standardStyle.caption
   }
 })

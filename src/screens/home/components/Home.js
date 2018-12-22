@@ -1,15 +1,8 @@
 import React, { Component } from 'react'
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-  ActivityIndicator
-} from 'react-native'
+import { StyleSheet, View, ActivityIndicator } from 'react-native'
 
 import { InputSearchRow } from '../../../ui/InputSearchRow'
 import { BusStopHeader } from './BusStopHeader'
-import { ScheduleTimeItem } from './ScheduleTimeItem'
 
 import {
   stopBusAndSchedule,
@@ -61,7 +54,6 @@ class Home extends Component {
       const { shedules, stopInfo, dateRequested } = await stopBusAndSchedule({
         stopNumber
       })
-      // console.log('shedules: ', shedules)
       const routes = await stopBusRoutes({ stopNumber })
       this.setState({
         routes,
@@ -84,6 +76,15 @@ class Home extends Component {
   toogleFilter = () =>
     this.setState(prevState => ({ showFilter: !prevState.showFilter }))
 
+  renderLoading = () => {
+    return (
+      <View
+        style={{ flex: 0.75, justifyContent: 'center', alignItems: 'center' }}
+      >
+        <ActivityIndicator size="large" color="#2196F3" />
+      </View>
+    )
+  }
   render() {
     const {
       stopInfo,
@@ -92,11 +93,12 @@ class Home extends Component {
       dataFiltered,
       showFilter,
       dateRequested,
-      loading
+      loading,
+      error
     } = this.state
     return (
       <View style={styles.container}>
-        <View style={{ flex: 0.2 }}>
+        <View style={{ flex: 0.15 }}>
           <InputSearchRow
             searchHandler={this.getSchedule}
             isFilterOpen={showFilter}
@@ -105,32 +107,26 @@ class Home extends Component {
           />
         </View>
 
-        {/* <ScrollView
-          style={{ flex: 0.8 }}
-          stickyHeaderIndices={showFilter ? [0] : null}
-          contentContainerStyle={styles.contentContainer}
-        >
-          {loading && <ActivityIndicator size="large" color="#0000ff" />}
-          {this.state.error && (
-            <View>
-              <Text>Bus Stop Not Found</Text>
-            </View>
-          )}
-        </ScrollView> */}
-        <View style={{ flex: 0.7 }}>
-          <ScheduleTimeList
-            data={dataFiltered}
-            showFilter={showFilter}
-            filter={
-              <BusStopHeader
-                stopInfo={stopInfo}
-                routes={routes}
-                handleSelectRoute={this.handleSelectRoute}
-                filteredRoutes={selectedRoutes}
-              />
-            }
-          />
-        </View>
+        {loading ? (
+          this.renderLoading()
+        ) : (
+          <View style={{ flex: 0.75 }}>
+            <ScheduleTimeList
+              data={dataFiltered}
+              showFilter={showFilter}
+              filter={
+                <BusStopHeader
+                  stopInfo={stopInfo}
+                  routes={routes}
+                  handleSelectRoute={this.handleSelectRoute}
+                  filteredRoutes={selectedRoutes}
+                />
+              }
+              notFound={error}
+            />
+          </View>
+        )}
+
         {dateRequested.length ? (
           <View style={{ flex: 0.1 }}>
             <ScheduleTimeListFooter />
@@ -146,8 +142,6 @@ export { Home }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column',
-    backgroundColor: '#fff',
-    marginHorizontal: 10
+    flexDirection: 'column'
   }
 })

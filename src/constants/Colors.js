@@ -2,21 +2,6 @@ import { Platform } from 'react-native'
 
 const isIOS = Platform.OS === 'ios'
 
-const tintColor = '#2f95dc'
-
-export default {
-  tintColor,
-  tabIconDefault: '#ccc',
-  tabIconSelected: tintColor,
-  tabBar: '#fefefe',
-  errorBackground: 'red',
-  errorText: '#fff',
-  warningBackground: '#EAEB5E',
-  warningText: '#666804',
-  noticeBackground: tintColor,
-  noticeText: '#fff'
-}
-
 export const Colors = {
   PRIMARY: '#ED323D',
   PRIMARY_OPACITY: 'rgba(237, 50, 61, 0.3)',

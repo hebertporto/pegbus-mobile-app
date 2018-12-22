@@ -4,7 +4,7 @@ import { Colors } from './Colors'
 const type = {
   light: {
     ...Platform.select({
-      android: { fontFamily: 'space-mono' },
+      android: { fontFamily: 'cabin' },
       ios: { fontWeight: '300' }
     })
   },

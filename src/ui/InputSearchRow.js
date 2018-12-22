@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Ionicons } from '@expo/vector-icons'
+import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons'
 import moment from 'moment-timezone'
 
-import { View, Text, Keyboard } from 'react-native'
-import { RkButton, RkTextInput } from 'react-native-ui-kitten'
+import { View, Text, Keyboard, TextInput } from 'react-native'
+import { RkButton } from 'react-native-ui-kitten'
 
 import { styles } from './styles/InputSearchRow.style.js'
 
@@ -25,29 +25,30 @@ class InputSearchRow extends Component {
     const { filterToogle, isFilterOpen, dateRequested } = this.props
     return (
       <View style={styles.root}>
-        <View style={{ flex: 1, flexDirection: 'row' }}>
-          <View style={styles.inputContainer}>
-            <RkTextInput
-              style={styles.inputTextContainer}
+        <View style={styles.rowInput}>
+          <View style={styles.inputWrapper}>
+            <TextInput
+              style={styles.inputText}
               placeholder="e.g: 40318, 10628"
               value={value}
-              placeholderTextColor="black"
               onChangeText={this.handleChangeText}
+              underlineColorAndroid="transparent"
             />
           </View>
 
-          <View style={styles.buttonContainer}>
+          <View style={styles.buttonSearchWrapper}>
             <RkButton
               rkType="icon small"
-              style={styles.button}
+              style={styles.buttonSearch}
               onPress={this.handleSearch}
             >
               <Ionicons name="md-search" size={22} color="white" />
             </RkButton>
           </View>
 
-          <View style={styles.iconContainer}>
+          <View style={styles.filterButtonWrapper}>
             <RkButton
+              rkType="icon small"
               style={
                 isFilterOpen
                   ? { ...styles.buttonFilter, backgroundColor: 'green' }
@@ -59,11 +60,16 @@ class InputSearchRow extends Component {
             </RkButton>
           </View>
         </View>
+
         {dateRequested ? (
-          <View>
-            <Text>
-              Time Requested:{' '}
-              {moment(dateRequested)
+          <View style={styles.rowInfo}>
+            <MaterialCommunityIcons
+              name="clock-outline"
+              size={14}
+              color="#6A6F78"
+            />
+            <Text style={styles.labelTime}>
+              {moment(new Date())
                 .tz('America/Winnipeg')
                 .format('MMMM Do YYYY, h:mm a')}
             </Text>

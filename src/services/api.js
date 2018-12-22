@@ -1,12 +1,8 @@
 import axios from 'axios'
-import moment from 'moment'
 
 export const getStopBusesTime = async ({ stopNumber }) => {
   try {
     const date = new Date().toISOString()
-    console.log('# # # # # # #', moment(date).format('h:mm:ss a'))
-    // console.log(`stops/${stopNumber}/schedule.json?start=${date}`)
-    // const date = '2018-12-02T23:35:03.047Z'
     const { data } = await axios.get(
       `stops/${stopNumber}/schedule.json?start=${date}`
     )

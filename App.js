@@ -17,7 +17,6 @@ export default class App extends React.Component {
       ]),
       Font.loadAsync({
         ...Icon.Ionicons.font,
-        'space-mono': require('./src/assets/fonts/SpaceMono-Regular.ttf'),
         archivo: require('./src/assets/fonts/Archivo-Regular.ttf'),
         'archivo-semibold': require('./src/assets/fonts/Archivo-SemiBold.ttf'),
         cabin: require('./src/assets/fonts/Cabin-Regular.ttf'),
