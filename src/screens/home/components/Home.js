@@ -110,7 +110,7 @@ class Home extends Component {
         {loading ? (
           this.renderLoading()
         ) : (
-          <View style={{ flex: 0.75 }}>
+          <View style={{ flex: 0.78 }}>
             <ScheduleTimeList
               data={dataFiltered}
               showFilter={showFilter}
@@ -128,7 +128,7 @@ class Home extends Component {
         )}
 
         {dateRequested.length ? (
-          <View style={{ flex: 0.1 }}>
+          <View style={{ flex: 0.07 }}>
             <ScheduleTimeListFooter />
           </View>
         ) : null}
