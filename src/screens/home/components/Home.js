@@ -12,6 +12,29 @@ import {
 import { ScheduleTimeList } from './ScheduleTimeList'
 import { ScheduleTimeListFooter } from './ScheduleTimeListFooter'
 
+const t = [
+  {
+    id: 'da3fd863-d724-457d-9256-082ed402ed24',
+    name: 'to Downtown',
+    number: 16,
+    timeEstimated: '2018-12-21T10:14:24',
+    timeScheduled: '2018-12-21T20:14:24'
+  },
+  {
+    id: 'd7e8c677-4ea1-4179-a8ac-7086acf3d5b4',
+    name: '& Leighton',
+    number: 20,
+    timeEstimated: '2018-12-21T20:14:53',
+    timeScheduled: '2018-12-21T10:14:53'
+  },
+  {
+    id: 'f221a942-63d7-4ab5-b504-ab77fc9dfffa',
+    name: 'via London',
+    number: 44,
+    timeEstimated: '2018-12-21T20:15:01',
+    timeScheduled: '2018-12-21T20:15:01'
+  }
+]
 const defaultState = {
   data: [],
   dataFiltered: [],
@@ -26,6 +49,10 @@ const defaultState = {
 
 class Home extends Component {
   state = defaultState
+
+  componentDidMount() {
+    this.getSchedule()
+  }
 
   handleSelectRoute = route => {
     const { selectedRoutes } = this.state

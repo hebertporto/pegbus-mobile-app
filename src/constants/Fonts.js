@@ -69,6 +69,11 @@ const standardStyle = {
     color: Colors.BLACK_PRIMARY_ALT,
     ...type.medium
   },
+  h5: {
+    fontSize: size.h5,
+    color: Colors.BLACK_PRIMARY_ALT,
+    ...type.medium
+  },
   h6: {
     fontSize: size.h6,
     color: Colors.BLACK_PRIMARY_ALT,

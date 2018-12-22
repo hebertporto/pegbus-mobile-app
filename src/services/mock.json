@@ -1,0 +1,1884 @@
+{
+  "stop-schedule": {
+      "stop": {
+          "key": 10628,
+          "name": "Northbound Main at McDermot",
+          "number": 10628,
+          "direction": "Northbound",
+          "side": "Nearside",
+          "street": {
+              "key": 2265,
+              "name": "Main Street",
+              "type": "Street"
+          },
+          "cross-street": {
+              "key": 2400,
+              "name": "McDermot Avenue",
+              "type": "Avenue"
+          },
+          "centre": {
+              "utm": {
+                  "zone": "14U",
+                  "x": 633682,
+                  "y": 5528839
+              },
+              "geographic": {
+                  "latitude": "49.89699",
+                  "longitude": "-97.1386"
+              }
+          }
+      },
+      "route-schedules": [
+          {
+              "route": {
+                  "key": 44,
+                  "number": 44,
+                  "name": "Route 44 Grey",
+                  "customer-type": "regular",
+                  "coverage": "regular"
+              },
+              "scheduled-stops": [
+                  {
+                      "key": "10589920-11",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T21:50:01",
+                              "estimated": "2018-12-21T22:02:10"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T21:50:01",
+                              "estimated": "2018-12-21T22:02:10"
+                          }
+                      },
+                      "variant": {
+                          "key": "44-0-L",
+                          "name": "Grey to Kildonan Place via London"
+                      },
+                      "bus": {
+                          "key": 122,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10589913-11",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T22:24:01",
+                              "estimated": "2018-12-21T22:24:01"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T22:24:01",
+                              "estimated": "2018-12-21T22:24:01"
+                          }
+                      },
+                      "variant": {
+                          "key": "44-0-M",
+                          "name": "Grey to Kildonan Place via Louelda"
+                      },
+                      "bus": {
+                          "key": 117,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10589879-11",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T22:53:01",
+                              "estimated": "2018-12-21T22:53:01"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T22:53:01",
+                              "estimated": "2018-12-21T22:53:01"
+                          }
+                      },
+                      "variant": {
+                          "key": "44-0-L",
+                          "name": "Grey to Kildonan Place via London"
+                      },
+                      "bus": {
+                          "key": 711,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10589885-11",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T23:26:01",
+                              "estimated": "2018-12-21T23:26:01"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T23:26:01",
+                              "estimated": "2018-12-21T23:26:01"
+                          }
+                      },
+                      "variant": {
+                          "key": "44-0-M",
+                          "name": "Grey to Kildonan Place via Louelda"
+                      },
+                      "bus": {
+                          "key": 122,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10589880-11",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T23:58:01",
+                              "estimated": "2018-12-21T23:58:01"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T23:58:01",
+                              "estimated": "2018-12-21T23:58:01"
+                          }
+                      },
+                      "variant": {
+                          "key": "44-0-L",
+                          "name": "Grey to Kildonan Place via London"
+                      },
+                      "bus": {
+                          "key": 117,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10589917-11",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T00:30:01",
+                              "estimated": "2018-12-22T00:30:01"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T00:30:01",
+                              "estimated": "2018-12-22T00:30:01"
+                          }
+                      },
+                      "variant": {
+                          "key": "44-0-M",
+                          "name": "Grey to Kildonan Place via Louelda"
+                      },
+                      "bus": {
+                          "key": 711,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10589886-11",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T01:01:01",
+                              "estimated": "2018-12-22T01:01:01"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T01:01:01",
+                              "estimated": "2018-12-22T01:01:01"
+                          }
+                      },
+                      "variant": {
+                          "key": "44-0-L",
+                          "name": "Grey to Kildonan Place via London"
+                      },
+                      "bus": {
+                          "key": 122,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10589919-11",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T01:39:01",
+                              "estimated": "2018-12-22T01:39:01"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T01:39:01",
+                              "estimated": "2018-12-22T01:39:01"
+                          }
+                      },
+                      "variant": {
+                          "key": "44-0-M",
+                          "name": "Grey to Kildonan Place via Louelda"
+                      },
+                      "bus": {
+                          "key": 117,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  }
+              ]
+          },
+          {
+              "route": {
+                  "key": 11,
+                  "number": 11,
+                  "name": "Route 11 Portage-Kildonan",
+                  "customer-type": "regular",
+                  "coverage": "regular"
+              },
+              "scheduled-stops": [
+                  {
+                      "key": "10586085-75",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T21:54:40",
+                              "estimated": "2018-12-21T21:55:34"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T21:54:40",
+                              "estimated": "2018-12-21T21:55:34"
+                          }
+                      },
+                      "variant": {
+                          "key": "11-1-R",
+                          "name": "Portage-Kildonan to North Kildonan via Rothesay"
+                      },
+                      "bus": {
+                          "key": 154,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10586074-74",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T22:06:52",
+                              "estimated": "2018-12-21T22:06:52"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T22:06:52",
+                              "estimated": "2018-12-21T22:06:52"
+                          }
+                      },
+                      "variant": {
+                          "key": "11-1-G",
+                          "name": "Portage-Kildonan to Glenway"
+                      },
+                      "bus": {
+                          "key": 747,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10586100-75",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T22:23:40",
+                              "estimated": "2018-12-21T22:23:40"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T22:23:40",
+                              "estimated": "2018-12-21T22:23:40"
+                          }
+                      },
+                      "variant": {
+                          "key": "11-1-D",
+                          "name": "Portage-Kildonan via Donwood"
+                      },
+                      "bus": {
+                          "key": 307,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10586111-68",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T22:36:40",
+                              "estimated": "2018-12-21T22:36:40"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T22:36:40",
+                              "estimated": "2018-12-21T22:36:40"
+                          }
+                      },
+                      "variant": {
+                          "key": "11-1-G",
+                          "name": "Portage-Kildonan to Glenway"
+                      },
+                      "bus": {
+                          "key": 724,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10586101-75",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T22:50:40",
+                              "estimated": "2018-12-21T22:50:40"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T22:50:40",
+                              "estimated": "2018-12-21T22:50:40"
+                          }
+                      },
+                      "variant": {
+                          "key": "11-1-R",
+                          "name": "Portage-Kildonan to North Kildonan via Rothesay"
+                      },
+                      "bus": {
+                          "key": 113,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10586106-74",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T23:06:40",
+                              "estimated": "2018-12-21T23:06:40"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T23:06:40",
+                              "estimated": "2018-12-21T23:06:40"
+                          }
+                      },
+                      "variant": {
+                          "key": "11-1-G",
+                          "name": "Portage-Kildonan to Glenway"
+                      },
+                      "bus": {
+                          "key": 123,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10586112-68",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T23:18:40",
+                              "estimated": "2018-12-21T23:18:40"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T23:18:40",
+                              "estimated": "2018-12-21T23:18:40"
+                          }
+                      },
+                      "variant": {
+                          "key": "11-1-D",
+                          "name": "Portage-Kildonan via Donwood"
+                      },
+                      "bus": {
+                          "key": 837,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10586102-75",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T23:32:40",
+                              "estimated": "2018-12-21T23:32:40"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T23:32:40",
+                              "estimated": "2018-12-21T23:32:40"
+                          }
+                      },
+                      "variant": {
+                          "key": "11-1-G",
+                          "name": "Portage-Kildonan to Glenway"
+                      },
+                      "bus": {
+                          "key": 795,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10586107-74",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T23:46:40",
+                              "estimated": "2018-12-21T23:46:40"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T23:46:40",
+                              "estimated": "2018-12-21T23:46:40"
+                          }
+                      },
+                      "variant": {
+                          "key": "11-1-R",
+                          "name": "Portage-Kildonan to North Kildonan via Rothesay"
+                      },
+                      "bus": {
+                          "key": 719,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10586113-68",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T00:00:40",
+                              "estimated": "2018-12-22T00:00:40"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T00:00:40",
+                              "estimated": "2018-12-22T00:00:40"
+                          }
+                      },
+                      "variant": {
+                          "key": "11-1-G",
+                          "name": "Portage-Kildonan to Glenway"
+                      },
+                      "bus": {
+                          "key": 174,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10586103-75",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T00:14:40",
+                              "estimated": "2018-12-22T00:14:40"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T00:14:40",
+                              "estimated": "2018-12-22T00:14:40"
+                          }
+                      },
+                      "variant": {
+                          "key": "11-1-D",
+                          "name": "Portage-Kildonan via Donwood"
+                      },
+                      "bus": {
+                          "key": 154,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10586108-74",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T00:27:40",
+                              "estimated": "2018-12-22T00:27:40"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T00:27:40",
+                              "estimated": "2018-12-22T00:27:40"
+                          }
+                      },
+                      "variant": {
+                          "key": "11-1-G",
+                          "name": "Portage-Kildonan to Glenway"
+                      },
+                      "bus": {
+                          "key": 747,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10586114-68",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T00:42:40",
+                              "estimated": "2018-12-22T00:42:40"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T00:42:40",
+                              "estimated": "2018-12-22T00:42:40"
+                          }
+                      },
+                      "variant": {
+                          "key": "11-1-R",
+                          "name": "Portage-Kildonan to North Kildonan via Rothesay"
+                      },
+                      "bus": {
+                          "key": 307,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10586104-75",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T00:56:40",
+                              "estimated": "2018-12-22T00:56:40"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T00:56:40",
+                              "estimated": "2018-12-22T00:56:40"
+                          }
+                      },
+                      "variant": {
+                          "key": "11-1-G",
+                          "name": "Portage-Kildonan to Glenway"
+                      },
+                      "bus": {
+                          "key": 724,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10586109-74",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T01:10:40",
+                              "estimated": "2018-12-22T01:10:40"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T01:10:40",
+                              "estimated": "2018-12-22T01:10:40"
+                          }
+                      },
+                      "variant": {
+                          "key": "11-1-G",
+                          "name": "Portage-Kildonan to Glenway"
+                      },
+                      "bus": {
+                          "key": 113,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10586115-68",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T01:24:40",
+                              "estimated": "2018-12-22T01:24:40"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T01:24:40",
+                              "estimated": "2018-12-22T01:24:40"
+                          }
+                      },
+                      "variant": {
+                          "key": "11-1-G",
+                          "name": "Portage-Kildonan to Glenway"
+                      },
+                      "bus": {
+                          "key": 123,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10586186-75",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T01:38:40",
+                              "estimated": "2018-12-22T01:38:40"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T01:38:40",
+                              "estimated": "2018-12-22T01:38:40"
+                          }
+                      },
+                      "variant": {
+                          "key": "11-1-G",
+                          "name": "Portage-Kildonan to Glenway"
+                      },
+                      "bus": {
+                          "key": 837,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  }
+              ]
+          },
+          {
+              "route": {
+                  "key": 45,
+                  "number": 45,
+                  "name": "Route 45 Talbot",
+                  "customer-type": "regular",
+                  "coverage": "regular"
+              },
+              "scheduled-stops": [
+                  {
+                      "key": "10590029-9",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T22:04:01",
+                              "estimated": "2018-12-21T22:04:01"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T22:04:01",
+                              "estimated": "2018-12-21T22:04:01"
+                          }
+                      },
+                      "variant": {
+                          "key": "45-0-K",
+                          "name": "Talbot to Kildonan Place"
+                      },
+                      "bus": {
+                          "key": 767,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10590037-9",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T22:45:01",
+                              "estimated": "2018-12-21T22:45:01"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T22:45:01",
+                              "estimated": "2018-12-21T22:45:01"
+                          }
+                      },
+                      "variant": {
+                          "key": "45-0-K",
+                          "name": "Talbot to Kildonan Place"
+                      },
+                      "bus": {
+                          "key": 326,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10590063-9",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T23:31:01",
+                              "estimated": "2018-12-21T23:31:01"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T23:31:01",
+                              "estimated": "2018-12-21T23:31:01"
+                          }
+                      },
+                      "variant": {
+                          "key": "45-0-K",
+                          "name": "Talbot to Kildonan Place"
+                      },
+                      "bus": {
+                          "key": 767,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10590065-9",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T00:49:01",
+                              "estimated": "2018-12-22T00:49:01"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T00:49:01",
+                              "estimated": "2018-12-22T00:49:01"
+                          }
+                      },
+                      "variant": {
+                          "key": "45-0-K",
+                          "name": "Talbot to Kildonan Place"
+                      },
+                      "bus": {
+                          "key": 767,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10590067-9",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T01:39:01",
+                              "estimated": "2018-12-22T01:39:01"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T01:39:01",
+                              "estimated": "2018-12-22T01:39:01"
+                          }
+                      },
+                      "variant": {
+                          "key": "45-0-K",
+                          "name": "Talbot to Kildonan Place"
+                      },
+                      "bus": {
+                          "key": 347,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  }
+              ]
+          },
+          {
+              "route": {
+                  "key": 47,
+                  "number": 47,
+                  "name": "Route 47 Transcona",
+                  "customer-type": "regular",
+                  "coverage": "regular"
+              },
+              "scheduled-stops": [
+                  {
+                      "key": "10590222-10",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T21:58:17",
+                              "estimated": "2018-12-21T21:58:17"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T21:58:17",
+                              "estimated": "2018-12-21T21:58:17"
+                          }
+                      },
+                      "variant": {
+                          "key": "47-0-K",
+                          "name": "Transcona to Transcona via Kildare"
+                      },
+                      "bus": {
+                          "key": 312,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10590239-10",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T22:22:17",
+                              "estimated": "2018-12-21T22:22:17"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T22:22:17",
+                              "estimated": "2018-12-21T22:22:17"
+                          }
+                      },
+                      "variant": {
+                          "key": "47-0-R",
+                          "name": "Transcona to Transcona via Regent"
+                      },
+                      "bus": {
+                          "key": 866,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10590244-10",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T22:52:17",
+                              "estimated": "2018-12-21T22:52:17"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T22:52:17",
+                              "estimated": "2018-12-21T22:52:17"
+                          }
+                      },
+                      "variant": {
+                          "key": "47-0-K",
+                          "name": "Transcona to Transcona via Kildare"
+                      },
+                      "bus": {
+                          "key": 320,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10590240-10",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T23:25:17",
+                              "estimated": "2018-12-21T23:25:17"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T23:25:17",
+                              "estimated": "2018-12-21T23:25:17"
+                          }
+                      },
+                      "variant": {
+                          "key": "47-0-R",
+                          "name": "Transcona to Transcona via Regent"
+                      },
+                      "bus": {
+                          "key": 312,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10590245-10",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T23:54:17",
+                              "estimated": "2018-12-21T23:54:17"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T23:54:17",
+                              "estimated": "2018-12-21T23:54:17"
+                          }
+                      },
+                      "variant": {
+                          "key": "47-0-K",
+                          "name": "Transcona to Transcona via Kildare"
+                      },
+                      "bus": {
+                          "key": 866,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10590241-10",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T00:27:17",
+                              "estimated": "2018-12-22T00:27:17"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T00:27:17",
+                              "estimated": "2018-12-22T00:27:17"
+                          }
+                      },
+                      "variant": {
+                          "key": "47-0-R",
+                          "name": "Transcona to Transcona via Regent"
+                      },
+                      "bus": {
+                          "key": 320,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10590246-10",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T00:54:17",
+                              "estimated": "2018-12-22T00:54:17"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T00:54:17",
+                              "estimated": "2018-12-22T00:54:17"
+                          }
+                      },
+                      "variant": {
+                          "key": "47-0-K",
+                          "name": "Transcona to Transcona via Kildare"
+                      },
+                      "bus": {
+                          "key": 312,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10590242-10",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T01:24:17",
+                              "estimated": "2018-12-22T01:24:17"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T01:24:17",
+                              "estimated": "2018-12-22T01:24:17"
+                          }
+                      },
+                      "variant": {
+                          "key": "47-0-R",
+                          "name": "Transcona to Transcona via Regent"
+                      },
+                      "bus": {
+                          "key": 866,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10590243-10",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T01:39:17",
+                              "estimated": "2018-12-22T01:39:17"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T01:39:17",
+                              "estimated": "2018-12-22T01:39:17"
+                          }
+                      },
+                      "variant": {
+                          "key": "47-0-K",
+                          "name": "Transcona to Transcona via Kildare"
+                      },
+                      "bus": {
+                          "key": 191,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10595927-10",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T05:34:01",
+                              "estimated": "2018-12-22T05:34:01"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T05:34:01",
+                              "estimated": "2018-12-22T05:34:01"
+                          }
+                      },
+                      "variant": {
+                          "key": "47-0-K",
+                          "name": "Transcona to Transcona via Kildare"
+                      }
+                  }
+              ]
+          },
+          {
+              "route": {
+                  "key": 15,
+                  "number": 15,
+                  "name": "Route 15 Sargent-Mountain",
+                  "customer-type": "regular",
+                  "coverage": "regular"
+              },
+              "scheduled-stops": [
+                  {
+                      "key": "10586615-38",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T21:50:15",
+                              "estimated": "2018-12-21T21:53:22"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T21:50:15",
+                              "estimated": "2018-12-21T21:53:22"
+                          }
+                      },
+                      "variant": {
+                          "key": "15-1-L",
+                          "name": "Sargent-Mountain to Mountain & Fife"
+                      },
+                      "bus": {
+                          "key": 750,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10586616-38",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T22:14:00",
+                              "estimated": "2018-12-21T22:14:00"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T22:14:00",
+                              "estimated": "2018-12-21T22:14:00"
+                          }
+                      },
+                      "variant": {
+                          "key": "15-1-C",
+                          "name": "Sargent-Mountain via Church"
+                      },
+                      "bus": {
+                          "key": 624,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10586617-38",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T22:39:00",
+                              "estimated": "2018-12-21T22:39:00"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T22:39:00",
+                              "estimated": "2018-12-21T22:39:00"
+                          }
+                      },
+                      "variant": {
+                          "key": "15-1-C",
+                          "name": "Sargent-Mountain via Church"
+                      },
+                      "bus": {
+                          "key": 155,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10586620-38",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T23:06:00",
+                              "estimated": "2018-12-21T23:06:00"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T23:06:00",
+                              "estimated": "2018-12-21T23:06:00"
+                          }
+                      },
+                      "variant": {
+                          "key": "15-1-I",
+                          "name": "Sargent-Mountain via Inkster"
+                      },
+                      "bus": {
+                          "key": 149,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10586618-38",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T23:31:00",
+                              "estimated": "2018-12-21T23:31:00"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T23:31:00",
+                              "estimated": "2018-12-21T23:31:00"
+                          }
+                      },
+                      "variant": {
+                          "key": "15-1-C",
+                          "name": "Sargent-Mountain via Church"
+                      },
+                      "bus": {
+                          "key": 750,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10586621-38",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T23:57:00",
+                              "estimated": "2018-12-21T23:57:00"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T23:57:00",
+                              "estimated": "2018-12-21T23:57:00"
+                          }
+                      },
+                      "variant": {
+                          "key": "15-1-I",
+                          "name": "Sargent-Mountain via Inkster"
+                      },
+                      "bus": {
+                          "key": 624,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10586619-38",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T00:25:00",
+                              "estimated": "2018-12-22T00:25:00"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T00:25:00",
+                              "estimated": "2018-12-22T00:25:00"
+                          }
+                      },
+                      "variant": {
+                          "key": "15-1-C",
+                          "name": "Sargent-Mountain via Church"
+                      },
+                      "bus": {
+                          "key": 155,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10586622-38",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T00:53:00",
+                              "estimated": "2018-12-22T00:53:00"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T00:53:00",
+                              "estimated": "2018-12-22T00:53:00"
+                          }
+                      },
+                      "variant": {
+                          "key": "15-1-I",
+                          "name": "Sargent-Mountain via Inkster"
+                      },
+                      "bus": {
+                          "key": 149,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10586623-38",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T01:13:00",
+                              "estimated": "2018-12-22T01:13:00"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T01:13:00",
+                              "estimated": "2018-12-22T01:13:00"
+                          }
+                      },
+                      "variant": {
+                          "key": "15-1-L",
+                          "name": "Sargent-Mountain to Mountain & Fife"
+                      },
+                      "bus": {
+                          "key": 750,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10586624-38",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T01:39:00",
+                              "estimated": "2018-12-22T01:39:00"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T01:39:00",
+                              "estimated": "2018-12-22T01:39:00"
+                          }
+                      },
+                      "variant": {
+                          "key": "15-1-L",
+                          "name": "Sargent-Mountain to Mountain & Fife"
+                      },
+                      "bus": {
+                          "key": 624,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  }
+              ]
+          },
+          {
+              "route": {
+                  "key": 16,
+                  "number": 16,
+                  "name": "Route 16 Selkirk-Osborne",
+                  "customer-type": "regular",
+                  "coverage": "regular"
+              },
+              "scheduled-stops": [
+                  {
+                      "key": "10587223-40",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T22:04:24",
+                              "estimated": "2018-12-21T22:04:24"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T22:04:24",
+                              "estimated": "2018-12-21T22:04:24"
+                          }
+                      },
+                      "variant": {
+                          "key": "16-0-M",
+                          "name": "Selkirk-Osborne to Tyndall Park via Manitoba"
+                      },
+                      "bus": {
+                          "key": 193,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10587230-39",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T22:32:24",
+                              "estimated": "2018-12-21T22:32:24"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T22:32:24",
+                              "estimated": "2018-12-21T22:32:24"
+                          }
+                      },
+                      "variant": {
+                          "key": "16-0-B",
+                          "name": "Selkirk-Osborne to Tyndall Park via Burrows"
+                      },
+                      "bus": {
+                          "key": 157,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10587224-40",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T22:59:24",
+                              "estimated": "2018-12-21T22:59:24"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T22:59:24",
+                              "estimated": "2018-12-21T22:59:24"
+                          }
+                      },
+                      "variant": {
+                          "key": "16-0-M",
+                          "name": "Selkirk-Osborne to Tyndall Park via Manitoba"
+                      },
+                      "bus": {
+                          "key": 787,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10587231-39",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T23:26:24",
+                              "estimated": "2018-12-21T23:26:24"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T23:26:24",
+                              "estimated": "2018-12-21T23:26:24"
+                          }
+                      },
+                      "variant": {
+                          "key": "16-0-B",
+                          "name": "Selkirk-Osborne to Tyndall Park via Burrows"
+                      },
+                      "bus": {
+                          "key": 142,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10587225-40",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T23:53:24",
+                              "estimated": "2018-12-21T23:53:24"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T23:53:24",
+                              "estimated": "2018-12-21T23:53:24"
+                          }
+                      },
+                      "variant": {
+                          "key": "16-0-M",
+                          "name": "Selkirk-Osborne to Tyndall Park via Manitoba"
+                      },
+                      "bus": {
+                          "key": 834,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10587232-39",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T00:17:56",
+                              "estimated": "2018-12-22T00:17:56"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T00:17:56",
+                              "estimated": "2018-12-22T00:17:56"
+                          }
+                      },
+                      "variant": {
+                          "key": "16-0-B",
+                          "name": "Selkirk-Osborne to Tyndall Park via Burrows"
+                      },
+                      "bus": {
+                          "key": 193,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10587226-40",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T00:45:56",
+                              "estimated": "2018-12-22T00:45:56"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T00:45:56",
+                              "estimated": "2018-12-22T00:45:56"
+                          }
+                      },
+                      "variant": {
+                          "key": "16-0-M",
+                          "name": "Selkirk-Osborne to Tyndall Park via Manitoba"
+                      },
+                      "bus": {
+                          "key": 157,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10587233-39",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T01:11:56",
+                              "estimated": "2018-12-22T01:11:56"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T01:11:56",
+                              "estimated": "2018-12-22T01:11:56"
+                          }
+                      },
+                      "variant": {
+                          "key": "16-0-B",
+                          "name": "Selkirk-Osborne to Tyndall Park via Burrows"
+                      },
+                      "bus": {
+                          "key": 787,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10587227-40",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T01:38:56",
+                              "estimated": "2018-12-22T01:38:56"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T01:38:56",
+                              "estimated": "2018-12-22T01:38:56"
+                          }
+                      },
+                      "variant": {
+                          "key": "16-0-*",
+                          "name": "Selkirk-Osborne to Selkirk & McPhillips"
+                      },
+                      "bus": {
+                          "key": 142,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10594450-14",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T05:38:24",
+                              "estimated": "2018-12-22T05:38:24"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T05:38:24",
+                              "estimated": "2018-12-22T05:38:24"
+                          }
+                      },
+                      "variant": {
+                          "key": "16-0-B",
+                          "name": "Selkirk-Osborne to Tyndall Park via Burrows"
+                      }
+                  }
+              ]
+          },
+          {
+              "route": {
+                  "key": 18,
+                  "number": 18,
+                  "name": "Route 18 North Main-Corydon",
+                  "customer-type": "regular",
+                  "coverage": "regular"
+              },
+              "scheduled-stops": [
+                  {
+                      "key": "10587704-47",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T21:49:56",
+                              "estimated": "2018-12-21T21:50:18"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T21:49:56",
+                              "estimated": "2018-12-21T21:50:18"
+                          }
+                      },
+                      "variant": {
+                          "key": "18-0-J",
+                          "name": "North Main-Corydon to Garden City Centre via Jefferson"
+                      },
+                      "bus": {
+                          "key": 798,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10587721-47",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T22:08:56",
+                              "estimated": "2018-12-21T22:08:56"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T22:08:56",
+                              "estimated": "2018-12-21T22:08:56"
+                          }
+                      },
+                      "variant": {
+                          "key": "18-0-R",
+                          "name": "North Main-Corydon to Riverbend"
+                      },
+                      "bus": {
+                          "key": 158,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10587705-47",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T22:29:56",
+                              "estimated": "2018-12-21T22:29:56"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T22:29:56",
+                              "estimated": "2018-12-21T22:29:56"
+                          }
+                      },
+                      "variant": {
+                          "key": "18-0-J",
+                          "name": "North Main-Corydon to Garden City Centre via Jefferson"
+                      },
+                      "bus": {
+                          "key": 703,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10587722-47",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T22:50:56",
+                              "estimated": "2018-12-21T22:50:56"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T22:50:56",
+                              "estimated": "2018-12-21T22:50:56"
+                          }
+                      },
+                      "variant": {
+                          "key": "18-0-R",
+                          "name": "North Main-Corydon to Riverbend"
+                      },
+                      "bus": {
+                          "key": 758,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10587706-47",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T23:11:56",
+                              "estimated": "2018-12-21T23:11:56"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T23:11:56",
+                              "estimated": "2018-12-21T23:11:56"
+                          }
+                      },
+                      "variant": {
+                          "key": "18-0-J",
+                          "name": "North Main-Corydon to Garden City Centre via Jefferson"
+                      },
+                      "bus": {
+                          "key": 342,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10587723-47",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T23:32:56",
+                              "estimated": "2018-12-21T23:32:56"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T23:32:56",
+                              "estimated": "2018-12-21T23:32:56"
+                          }
+                      },
+                      "variant": {
+                          "key": "18-0-R",
+                          "name": "North Main-Corydon to Riverbend"
+                      },
+                      "bus": {
+                          "key": 804,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10587707-47",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T23:53:56",
+                              "estimated": "2018-12-21T23:53:56"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T23:53:56",
+                              "estimated": "2018-12-21T23:53:56"
+                          }
+                      },
+                      "variant": {
+                          "key": "18-0-J",
+                          "name": "North Main-Corydon to Garden City Centre via Jefferson"
+                      },
+                      "bus": {
+                          "key": 158,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10587724-47",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T00:14:56",
+                              "estimated": "2018-12-22T00:14:56"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T00:14:56",
+                              "estimated": "2018-12-22T00:14:56"
+                          }
+                      },
+                      "variant": {
+                          "key": "18-0-R",
+                          "name": "North Main-Corydon to Riverbend"
+                      },
+                      "bus": {
+                          "key": 703,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10587708-47",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T00:37:56",
+                              "estimated": "2018-12-22T00:37:56"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T00:37:56",
+                              "estimated": "2018-12-22T00:37:56"
+                          }
+                      },
+                      "variant": {
+                          "key": "18-0-J",
+                          "name": "North Main-Corydon to Garden City Centre via Jefferson"
+                      },
+                      "bus": {
+                          "key": 758,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10587726-47",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T00:56:56",
+                              "estimated": "2018-12-22T00:56:56"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T00:56:56",
+                              "estimated": "2018-12-22T00:56:56"
+                          }
+                      },
+                      "variant": {
+                          "key": "18-0-R",
+                          "name": "North Main-Corydon to Riverbend"
+                      },
+                      "bus": {
+                          "key": 342,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10587727-47",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T01:16:56",
+                              "estimated": "2018-12-22T01:16:56"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T01:16:56",
+                              "estimated": "2018-12-22T01:16:56"
+                          }
+                      },
+                      "variant": {
+                          "key": "18-0-T",
+                          "name": "North Main-Corydon to Main & Templeton"
+                      },
+                      "bus": {
+                          "key": 804,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10587728-47",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T01:38:56",
+                              "estimated": "2018-12-22T01:38:56"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T01:38:56",
+                              "estimated": "2018-12-22T01:38:56"
+                          }
+                      },
+                      "variant": {
+                          "key": "18-0-T",
+                          "name": "North Main-Corydon to Main & Templeton"
+                      },
+                      "bus": {
+                          "key": 158,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10587729-47",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T02:01:56",
+                              "estimated": "2018-12-22T02:01:56"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T02:01:56",
+                              "estimated": "2018-12-22T02:01:56"
+                          }
+                      },
+                      "variant": {
+                          "key": "18-0-#",
+                          "name": "North Main-Corydon to Downtown"
+                      },
+                      "bus": {
+                          "key": 703,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  }
+              ]
+          },
+          {
+              "route": {
+                  "key": 20,
+                  "number": 20,
+                  "name": "Route 20 Academy-Watt",
+                  "customer-type": "regular",
+                  "coverage": "regular"
+              },
+              "scheduled-stops": [
+                  {
+                      "key": "10588223-53",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T22:19:53",
+                              "estimated": "2018-12-21T22:19:53"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T22:19:53",
+                              "estimated": "2018-12-21T22:19:53"
+                          }
+                      },
+                      "variant": {
+                          "key": "20-0-W",
+                          "name": "Watt-Academy to Watt & Leighton"
+                      },
+                      "bus": {
+                          "key": 813,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10588222-53",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T22:58:53",
+                              "estimated": "2018-12-21T22:58:53"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T22:58:53",
+                              "estimated": "2018-12-21T22:58:53"
+                          }
+                      },
+                      "variant": {
+                          "key": "20-0-W",
+                          "name": "Watt-Academy to Watt & Leighton"
+                      },
+                      "bus": {
+                          "key": 793,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10588235-53",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-21T23:37:53",
+                              "estimated": "2018-12-21T23:37:53"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-21T23:37:53",
+                              "estimated": "2018-12-21T23:37:53"
+                          }
+                      },
+                      "variant": {
+                          "key": "20-0-W",
+                          "name": "Watt-Academy to Watt & Leighton"
+                      },
+                      "bus": {
+                          "key": 871,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  },
+                  {
+                      "key": "10588236-53",
+                      "cancelled": "false",
+                      "times": {
+                          "arrival": {
+                              "scheduled": "2018-12-22T00:21:53",
+                              "estimated": "2018-12-22T00:21:53"
+                          },
+                          "departure": {
+                              "scheduled": "2018-12-22T00:21:53",
+                              "estimated": "2018-12-22T00:21:53"
+                          }
+                      },
+                      "variant": {
+                          "key": "20-0-W",
+                          "name": "Watt-Academy to Watt & Leighton"
+                      },
+                      "bus": {
+                          "key": 813,
+                          "bike-rack": "false",
+                          "wifi": "false"
+                      }
+                  }
+              ]
+          }
+      ]
+  },
+  "query-time": "2018-12-21T21:49:03"
+}
