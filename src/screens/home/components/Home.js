@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { StyleSheet, View, ActivityIndicator } from 'react-native'
 
 import { InputSearchRow } from '../../../ui/InputSearchRow'
-import { BusStopHeader } from './BusStopHeader'
+import { BusRoutesFilter } from './BusRoutesFilter'
 
 import {
   stopBusAndSchedule,
@@ -40,7 +40,7 @@ const defaultState = {
   dataFiltered: [],
   dateRequested: '',
   selectedRoutes: [],
-  routes: [1, 12, 18, 23, 44, 55],
+  routes: [],
   stopInfo: {},
   error: false,
   showFilter: false,
@@ -142,7 +142,7 @@ class Home extends Component {
               data={dataFiltered}
               showFilter={showFilter}
               filter={
-                <BusStopHeader
+                <BusRoutesFilter
                   stopInfo={stopInfo}
                   routes={routes}
                   handleSelectRoute={this.handleSelectRoute}

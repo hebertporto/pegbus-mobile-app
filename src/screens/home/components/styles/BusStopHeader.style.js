@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import { Fonts } from '../../../../constants'
 
 export const styles = StyleSheet.create({
   root: {
@@ -13,32 +14,39 @@ export const styles = StyleSheet.create({
     borderBottomLeftRadius: 2,
     marginHorizontal: 5
   },
-  map: {
-    flex: 0.3
+  labelWrapper: {
+    flex: 0.1,
+    paddingTop: 10,
+    paddingLeft: 15,
+    marginBottom: 5
+  },
+  label: {
+    ...Fonts.standardStyle.p,
+    fontWeight: '600',
+    fontSize: 12
   },
   info: {
-    flex: 0.7,
+    flex: 0.9,
     flexDirection: 'column'
   },
   busNumber: {
     flex: 1,
     flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-around',
     flexWrap: 'wrap'
   },
   itemFilter: {
-    padding: 10,
     minWidth: 50,
-    // borderRightColor: 'blue',
-    // borderRightWidth: 1,
     alignItems: 'center',
     justifyContent: 'center'
   },
   textSelected: {
-    backgroundColor: 'green',
+    backgroundColor: '#2196F3',
     color: 'white',
-    padding: 5,
-    borderRadius: 20
+    fontWeight: '600',
+    padding: 3,
+    borderRadius: 5
+  },
+  textUnselected: {
+    padding: 5
   }
 })
