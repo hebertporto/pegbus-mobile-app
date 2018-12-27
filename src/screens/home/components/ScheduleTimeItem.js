@@ -40,25 +40,34 @@ const ScheduleTimeItem = ({ item }) => {
       </View>
 
       <View style={styles.timeContainer}>
-        {/* {!time.isOnTime ? (
+        {!time.isOnTime ? (
+          <View style={styles.delayTimeWrapper}>
+            <Text style={styles.delayedTime}>
+              {moment(timeScheduled).format('h:mm')}
+            </Text>
+          </View>
+        ) : null}
 
-        ) : null} */}
+        {!time.isOnTime ? (
+          <View style={{ flex: 0.1 }}>
+            <MaterialCommunityIcons
+              name="arrow-right"
+              size={12}
+              color="black"
+            />
+          </View>
+        ) : null}
 
-        <View style={styles.delayTimeWrapper}>
-          <Text style={styles.delayedTime}>
-            {moment(timeScheduled).format('h:mm')}
-          </Text>
-        </View>
-
-        <View style={{ flex: 0.15 }}>
-          <MaterialCommunityIcons name="arrow-right" size={12} color="black" />
-        </View>
-
-        <View style={styles.onTimeWrapper}>
+        <View
+          style={
+            !time.isOnTime ? styles.onTimeWrapper : styles.onTimeWrapperSingle
+          }
+        >
           <Text style={styles.onTime}>
             {moment(timeEstimated).format('h:mm')}
           </Text>
         </View>
+
       </View>
     </View>
   )

@@ -6,13 +6,9 @@ export const styles = StyleSheet.create({
     flex: 1,
     paddingLeft: 15,
     flexDirection: 'row',
-    elevation: 2,
-    // backgroundColor: 'pink',
     paddingVertical: 10,
     marginBottom: 5,
-    // borderRightWidth: 1,
-    // borderTopRightRadius: 10,
-    // borderBottomRightRadius: 10,
+    elevation: 2,
     borderTopRightRadius: 5,
     borderBottomRightRadius: 5,
     borderTopLeftRadius: 5,
@@ -33,12 +29,6 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center'
   },
-  delayedTime: {
-    color: 'grey',
-    textDecorationLine: 'line-through',
-    fontSize: 16,
-    marginRight: 3
-  },
   textNumber: {
     ...Fonts.standardStyle.h5,
     marginRight: 5
@@ -56,9 +46,12 @@ export const styles = StyleSheet.create({
   delayTimeWrapper: {
     flex: 0.45,
     flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    paddingRight: 5
+    alignItems: 'center'
+  },
+  delayedTime: {
+    color: 'grey',
+    textDecorationLine: 'line-through',
+    fontSize: 16
   },
   onTime: {
     fontSize: 16,
@@ -67,7 +60,12 @@ export const styles = StyleSheet.create({
   onTimeWrapper: {
     flex: 0.45,
     alignItems: 'flex-end',
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
     paddingRight: 10
+  },
+  onTimeWrapperSingle: {
+    flex: 1,
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start'
   }
 })
