@@ -31,18 +31,13 @@ export const styles = StyleSheet.create({
   timeContainer: {
     flex: 0.35,
     flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-start'
+    alignItems: 'center'
   },
   delayedTime: {
     color: 'grey',
     textDecorationLine: 'line-through',
-    fontSize: 12,
-    marginRight: 3
-  },
-  onTime: {
     fontSize: 16,
-    fontWeight: '600'
+    marginRight: 3
   },
   textNumber: {
     ...Fonts.standardStyle.h5,
@@ -57,5 +52,22 @@ export const styles = StyleSheet.create({
     paddingLeft: 10,
     fontFamily: 'archivo',
     fontWeight: '400'
+  },
+  delayTimeWrapper: {
+    flex: 0.45,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    paddingRight: 5
+  },
+  onTime: {
+    fontSize: 16,
+    fontWeight: '600'
+  },
+  onTimeWrapper: {
+    flex: 0.45,
+    alignItems: 'flex-end',
+    justifyContent: 'center',
+    paddingRight: 10
   }
 })

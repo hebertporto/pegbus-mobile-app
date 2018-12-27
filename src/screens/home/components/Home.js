@@ -24,7 +24,7 @@ const t = [
     id: 'd7e8c677-4ea1-4179-a8ac-7086acf3d5b4',
     name: '& Leighton',
     number: 20,
-    timeEstimated: '2018-12-21T20:14:53',
+    timeEstimated: '2018-12-21T00:14:53',
     timeScheduled: '2018-12-21T10:14:53'
   },
   {
@@ -36,11 +36,11 @@ const t = [
   }
 ]
 const defaultState = {
-  data: [],
-  dataFiltered: [],
+  data: t,
+  dataFiltered: t,
   dateRequested: '',
   selectedRoutes: [],
-  routes: [],
+  routes: [1, 12, 18, 23, 44, 55],
   stopInfo: {},
   error: false,
   showFilter: false,
