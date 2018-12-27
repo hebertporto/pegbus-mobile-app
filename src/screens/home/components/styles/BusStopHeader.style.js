@@ -4,9 +4,14 @@ export const styles = StyleSheet.create({
   root: {
     flex: 1,
     flexDirection: 'column',
-    marginHorizontal: 10,
-    backgroundColor: 'white',
-    elevation: 5
+    marginBottom: 5,
+    marginTop: 5,
+    elevation: 2,
+    borderTopRightRadius: 1,
+    borderTopLeftRadius: 1,
+    borderBottomRightRadius: 2,
+    borderBottomLeftRadius: 2,
+    marginHorizontal: 5
   },
   map: {
     flex: 0.3

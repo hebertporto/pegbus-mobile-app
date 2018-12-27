@@ -1,17 +1,21 @@
 import React from 'react'
-import { FlatList } from 'react-native'
+import { View, FlatList } from 'react-native'
 import { ScheduleTimeItem } from './ScheduleTimeItem'
 
 const keyExtractor = item => item.id
 
 const ScheduleTimeList = ({ data, showFilter, filter }) => {
   return (
-    <FlatList
-      ListHeaderComponent={showFilter ? filter : null}
-      data={data}
-      keyExtractor={keyExtractor}
-      renderItem={ScheduleTimeItem}
-    />
+    <View style={{ flex: 1 }}>
+      {showFilter ? <View style={{ flex: 0.35 }}>{filter}</View> : null}
+      <View style={showFilter ? { flex: 0.65 } : { flex: 1 }}>
+        <FlatList
+          data={data}
+          keyExtractor={keyExtractor}
+          renderItem={ScheduleTimeItem}
+        />
+      </View>
+    </View>
   )
 }
 

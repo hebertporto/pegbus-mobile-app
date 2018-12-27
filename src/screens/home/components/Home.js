@@ -36,8 +36,8 @@ const t = [
   }
 ]
 const defaultState = {
-  data: t,
-  dataFiltered: t,
+  data: [],
+  dataFiltered: [],
   dateRequested: '',
   selectedRoutes: [],
   routes: [1, 12, 18, 23, 44, 55],

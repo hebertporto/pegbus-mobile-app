@@ -4,7 +4,16 @@ import { Fonts, Colors } from '../../constants'
 export const styles = StyleSheet.create({
   root: {
     flex: 1,
-    flexDirection: 'column'
+    flexDirection: 'column',
+    marginBottom: 5,
+    marginTop: 5,
+    elevation: 2,
+    // borderWidth: 1,
+    borderTopRightRadius: 1,
+    borderTopLeftRadius: 1,
+    borderBottomRightRadius: 2,
+    borderBottomLeftRadius: 2,
+    marginHorizontal: 5
   },
   rowInput: {
     flex: 0.7,

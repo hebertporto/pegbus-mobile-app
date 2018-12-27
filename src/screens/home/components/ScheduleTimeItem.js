@@ -67,7 +67,6 @@ const ScheduleTimeItem = ({ item }) => {
             {moment(timeEstimated).format('h:mm')}
           </Text>
         </View>
-
       </View>
     </View>
   )
