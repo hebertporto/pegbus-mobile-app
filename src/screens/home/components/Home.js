@@ -123,6 +123,7 @@ class Home extends Component {
       loading,
       error
     } = this.state
+    console.log('stopInfo', stopInfo)
     return (
       <View style={styles.container}>
         <View style={{ flex: 0.15 }}>
@@ -131,6 +132,7 @@ class Home extends Component {
             isFilterOpen={showFilter}
             filterToogle={this.toogleFilter}
             dateRequested={dateRequested}
+            isButtonDisable={routes.length <= 0}
           />
         </View>
 

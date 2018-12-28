@@ -39,6 +39,11 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
+  labelInputText: {
+    ...Fonts.standardStyle.caption,
+    fontWeight: '600',
+    paddingLeft: 15
+  },
   inputText: {
     borderColor: Colors.BLACK_SECONDARY_ALT,
     borderBottomWidth: 1,

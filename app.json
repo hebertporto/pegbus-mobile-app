@@ -11,7 +11,7 @@
     },
     "android": {
       "package": "com.hebertoporto.pegbus",
-      "versionCode": 13,
+      "versionCode": 14,
       "permissions": []
     },
     "platforms": ["ios", "android"],
@@ -20,7 +20,7 @@
     "icon": "./src/assets/images/icon.png",
     "splash": {
       "image": "./src/assets/images/splash.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "updates": {

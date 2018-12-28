@@ -27,7 +27,8 @@ export const styles = StyleSheet.create({
   timeContainer: {
     flex: 0.35,
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    paddingLeft: 5
   },
   textNumber: {
     ...Fonts.standardStyle.h5,
@@ -61,7 +62,7 @@ export const styles = StyleSheet.create({
     flex: 0.45,
     alignItems: 'flex-end',
     justifyContent: 'flex-end',
-    paddingRight: 10
+    paddingRight: 15
   },
   onTimeWrapperSingle: {
     flex: 1,

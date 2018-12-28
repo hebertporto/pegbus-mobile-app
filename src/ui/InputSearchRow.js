@@ -10,7 +10,7 @@ import { styles } from './styles/InputSearchRow.style.js'
 
 class InputSearchRow extends Component {
   state = {
-    value: '10628'
+    value: ''
   }
 
   handleChangeText = value => this.setState({ value })
@@ -20,19 +20,32 @@ class InputSearchRow extends Component {
     this.props.searchHandler(this.state.value)
   }
 
+  getFilterStyle = () => {
+    const { isButtonDisable, isFilterOpen } = this.props
+    if (isButtonDisable) {
+      return { ...styles.buttonFilter, backgroundColor: 'grey' }
+    } else if (isFilterOpen) {
+      return { ...styles.buttonFilter, backgroundColor: 'green' }
+    } else {
+      return styles.buttonFilter
+    }
+  }
+
   render() {
     const { value } = this.state
-    const { filterToogle, isFilterOpen, dateRequested } = this.props
+    const { filterToogle, dateRequested, isButtonDisable } = this.props
     return (
       <View style={styles.root}>
         <View style={styles.rowInput}>
           <View style={styles.inputWrapper}>
+            <Text style={styles.labelInputText}>Bus Stop Number</Text>
             <TextInput
               style={styles.inputText}
-              placeholder="e.g: 40318, 10628"
+              placeholder="e.g 10628"
               value={value}
               onChangeText={this.handleChangeText}
               underlineColorAndroid="transparent"
+              keyboardType="numeric"
             />
           </View>
 
@@ -49,11 +62,8 @@ class InputSearchRow extends Component {
           <View style={styles.filterButtonWrapper}>
             <RkButton
               rkType="icon small"
-              style={
-                isFilterOpen
-                  ? { ...styles.buttonFilter, backgroundColor: 'green' }
-                  : styles.buttonFilter
-              }
+              disabled={isButtonDisable}
+              style={this.getFilterStyle()}
               onPress={filterToogle}
             >
               <Ionicons name="md-funnel" size={22} color="white" />
@@ -84,7 +94,8 @@ InputSearchRow.propTypes = {
   searchHandler: PropTypes.func.isRequired,
   filterToogle: PropTypes.func.isRequired,
   isFilterOpen: PropTypes.bool.isRequired,
-  dateRequested: PropTypes.string.isRequired
+  dateRequested: PropTypes.string.isRequired,
+  isButtonDisable: PropTypes.bool.isRequired
 }
 
 export { InputSearchRow }
