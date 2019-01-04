@@ -6,13 +6,13 @@
     "privacy": "public",
     "sdkVersion": "31.0.0",
     "ios": {
-      "supportsTablet": true,
+      "supportsTablet": false,
       "bundleIdentifier": "com.hebertporto.pegbus"
     },
     "android": {
       "package": "com.hebertoporto.pegbus",
-      "versionCode": 14,
-      "permissions": []
+      "versionCode": 16,
+      "permissions": ["LOCATION"]
     },
     "platforms": ["ios", "android"],
     "version": "1.0.0",

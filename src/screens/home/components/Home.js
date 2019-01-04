@@ -11,6 +11,7 @@ import {
 
 import { ScheduleTimeList } from './ScheduleTimeList'
 import { ScheduleTimeListFooter } from './ScheduleTimeListFooter'
+import { trackRouteSearch } from '../../../config/analytics'
 
 const t = [
   {
@@ -50,10 +51,6 @@ const defaultState = {
 class Home extends Component {
   state = defaultState
 
-  componentDidMount() {
-    this.getSchedule()
-  }
-
   handleSelectRoute = route => {
     const { selectedRoutes } = this.state
     let newSelected
@@ -78,6 +75,7 @@ class Home extends Component {
   getSchedule = async stopNumber => {
     this.setState({ ...defaultState, loading: true })
     try {
+      trackRouteSearch(stopNumber)
       const { shedules, stopInfo, dateRequested } = await stopBusAndSchedule({
         stopNumber
       })
