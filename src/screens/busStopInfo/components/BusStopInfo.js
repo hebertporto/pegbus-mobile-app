@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, ActivityIndicator } from 'react-native'
+import { StyleSheet, View, Text, ActivityIndicator } from 'react-native'
 
-import { InputSearchRow } from '../../../ui/InputSearchRow'
+import { RouteInfo } from './RouteInfo'
 import { BusRoutesFilter } from './BusRoutesFilter'
 
 import {
@@ -12,6 +12,8 @@ import {
 import { ScheduleTimeList } from './ScheduleTimeList'
 import { ScheduleTimeListFooter } from './ScheduleTimeListFooter'
 import { trackRouteSearch } from '../../../config/analytics'
+
+import { routes, dateRequested, stopInfo, shedules } from './../../../domain'
 
 const defaultState = {
   data: [],
@@ -25,10 +27,23 @@ const defaultState = {
   loading: false
 }
 
-class Home extends Component {
+class BusStopInfo extends Component {
   state = defaultState
 
-  navigate = stopNumber => this.props.navigateTo(stopNumber)
+  componentDidMount() {
+    this.devData()
+    // this.getSchedule(this.props.stopNumber)
+  }
+
+  devData = () => {
+    this.setState({
+      data: shedules,
+      dataFiltered: shedules,
+      routes,
+      dateRequested,
+      stopInfo
+    })
+  }
 
   handleSelectRoute = route => {
     const { selectedRoutes } = this.state
@@ -51,14 +66,19 @@ class Home extends Component {
     this.setState({ dataFiltered })
   }
 
-  getSchedule = async stopNumber => {
-    this.setState({ ...defaultState, loading: true })
+  getSchedule = async () => {
+    this.setState({ loading: true })
+    console.log('# # # # # # # # # #')
     try {
-      trackRouteSearch(stopNumber)
-      const { shedules, stopInfo, dateRequested } = await stopBusAndSchedule({
-        stopNumber
-      })
-      const routes = await stopBusRoutes({ stopNumber })
+      // trackRouteSearch(stopNumber)
+      const {
+        shedules,
+        stopInfo,
+        dateRequested
+      } = await this.props.getBusesTime()
+
+      const routes = await this.props.getBusesNumber()
+
       this.setState({
         routes,
         stopInfo,
@@ -69,6 +89,7 @@ class Home extends Component {
         dateRequested
       })
     } catch (e) {
+      console.log('ERROR', e)
       this.setState({
         ...defaultState,
         error: true,
@@ -102,20 +123,21 @@ class Home extends Component {
     } = this.state
     return (
       <View style={styles.container}>
-        <View style={{ flex: 0.15 }}>
-          <InputSearchRow
-            searchHandler={this.navigate}
-            isFilterOpen={showFilter}
-            filterToogle={this.toogleFilter}
+        <View style={{ flex: 0.25 }}>
+          <RouteInfo
+            stopInfo={stopInfo}
             dateRequested={dateRequested}
-            isButtonDisable={routes.length <= 0}
+            isButtonDisable={false}
+            isFilterOpen={false}
+            filterToogle={this.toogleFilter}
+            reload={this.getSchedule}
           />
         </View>
 
         {loading ? (
           this.renderLoading()
         ) : (
-          <View style={{ flex: 0.78 }}>
+          <View style={{ flex: 0.68 }}>
             <ScheduleTimeList
               data={dataFiltered}
               showFilter={showFilter}
@@ -142,7 +164,7 @@ class Home extends Component {
   }
 }
 
-export { Home }
+export { BusStopInfo }
 
 const styles = StyleSheet.create({
   container: {

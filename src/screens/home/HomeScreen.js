@@ -13,7 +13,13 @@ class HomeScreen extends Component {
     trackView('Home')
   }
   render() {
-    return <Home />
+    return (
+      <Home
+        navigateTo={routeNumber =>
+          this.props.navigation.navigate('BusStop', { routeNumber })
+        }
+      />
+    )
   }
 }
 
