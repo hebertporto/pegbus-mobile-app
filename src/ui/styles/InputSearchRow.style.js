@@ -5,6 +5,7 @@ export const styles = StyleSheet.create({
   root: {
     flex: 1,
     flexDirection: 'column',
+    paddingTop: 10,
     marginBottom: 5,
     marginTop: 5,
     elevation: 2,
@@ -26,13 +27,13 @@ export const styles = StyleSheet.create({
     paddingLeft: 15
   },
   inputWrapper: {
-    flex: 0.6,
+    flex: 0.8,
     justifyContent: 'center'
   },
   buttonSearchWrapper: {
     flex: 0.2,
     justifyContent: 'center',
-    alignItems: 'flex-end'
+    alignItems: 'flex-start'
   },
   filterButtonWrapper: {
     flex: 0.2,

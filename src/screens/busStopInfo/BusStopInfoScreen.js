@@ -11,30 +11,26 @@ class BusStopInfoScreen extends Component {
   }
 
   componentDidMount() {
-    trackView('Result Screen')
+    const { stopNumber } = this.props.navigation.state.params
+    trackView(`${stopNumber}`)
   }
 
   getSchedule = async () => {
-    // const { routeNumber } = this.props.navigation.state.params
-    const stopNumber = 10628
-    const res = await stopBusAndSchedule({ stopNumber })
-    console.log('getSchedule ', res)
-    return res
+    const { stopNumber } = this.props.navigation.state.params
+    return stopBusAndSchedule({ stopNumber })
   }
 
   getStopBusRoutes = async () => {
-    // const { routeNumber } = this.props.navigation.state.params
-    const stopNumber = 10628
+    const { stopNumber } = this.props.navigation.state.params
     const res = await stopBusRoutes({ stopNumber })
-    console.log('getRoute: ', res)
     return res
   }
 
   render() {
-    // const { routeNumber } = this.props.navigation.state.params
+    const { stopNumber } = this.props.navigation.state.params
     return (
       <BusStopInfo
-        stopNumber={123}
+        stopNumber={stopNumber}
         getBusesTime={this.getSchedule}
         getBusesNumber={this.getStopBusRoutes}
       />

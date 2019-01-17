@@ -4,14 +4,8 @@ import { StyleSheet, View, Text, ActivityIndicator } from 'react-native'
 import { RouteInfo } from './RouteInfo'
 import { BusRoutesFilter } from './BusRoutesFilter'
 
-import {
-  stopBusAndSchedule,
-  stopBusRoutes
-} from '../../../services/stopService'
-
 import { ScheduleTimeList } from './ScheduleTimeList'
 import { ScheduleTimeListFooter } from './ScheduleTimeListFooter'
-import { trackRouteSearch } from '../../../config/analytics'
 
 import { routes, dateRequested, stopInfo, shedules } from './../../../domain'
 
@@ -31,8 +25,8 @@ class BusStopInfo extends Component {
   state = defaultState
 
   componentDidMount() {
-    this.devData()
-    // this.getSchedule(this.props.stopNumber)
+    // this.devData()
+    this.getSchedule()
   }
 
   devData = () => {
@@ -66,9 +60,28 @@ class BusStopInfo extends Component {
     this.setState({ dataFiltered })
   }
 
+  reloadSchedule = async () => {
+    this.setState({ loading: true })
+    try {
+      const { shedules, dateRequested } = await this.props.getBusesTime()
+      await this.setState({
+        data: shedules,
+        dataFiltered: shedules,
+        error: false,
+        loading: false,
+        dateRequested
+      })
+      this.filterSchedule()
+    } catch (e) {
+      this.setState({
+        error: true,
+        loading: false
+      })
+    }
+  }
+
   getSchedule = async () => {
     this.setState({ loading: true })
-    console.log('# # # # # # # # # #')
     try {
       // trackRouteSearch(stopNumber)
       const {
@@ -127,10 +140,10 @@ class BusStopInfo extends Component {
           <RouteInfo
             stopInfo={stopInfo}
             dateRequested={dateRequested}
-            isButtonDisable={false}
-            isFilterOpen={false}
+            isButtonDisable={routes.length <= 2}
+            isFilterOpen={showFilter}
             filterToogle={this.toogleFilter}
-            reload={this.getSchedule}
+            reload={this.reloadSchedule}
           />
         </View>
 

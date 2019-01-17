@@ -56,7 +56,6 @@ const RouteInfo = ({
             <RkButton
               rkType="icon small"
               disabled={isButtonDisable}
-              // style={getFilterStyle({ isButtonDisable, isFilterOpen })}
               style={{ width: 40 }}
               onPress={reload}
             >
@@ -83,7 +82,8 @@ RouteInfo.propTypes = {
   stopInfo: PropTypes.shape({}).isRequired,
   isButtonDisable: PropTypes.bool.isRequired,
   isFilterOpen: PropTypes.bool.isRequired,
-  filterToogle: PropTypes.func.isRequired
+  filterToogle: PropTypes.func.isRequired,
+  reload: PropTypes.func.isRequired
 }
 
 export { RouteInfo }

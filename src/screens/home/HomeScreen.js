@@ -15,8 +15,8 @@ class HomeScreen extends Component {
   render() {
     return (
       <Home
-        navigateTo={routeNumber =>
-          this.props.navigation.navigate('BusStop', { routeNumber })
+        navigateTo={stopNumber =>
+          this.props.navigation.navigate('BusStop', { stopNumber })
         }
       />
     )
