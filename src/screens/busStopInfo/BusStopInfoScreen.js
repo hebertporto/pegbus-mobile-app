@@ -4,10 +4,16 @@ import { BusStopInfo } from './components/BusStopInfo'
 import { NavBarStyle } from '../../constants'
 import { trackView } from '../../config/analytics'
 import { stopBusAndSchedule, stopBusRoutes } from '../../services/stopService'
+import { HeaderStarButton } from '../../ui/buttons/HeaderStartButton'
 
 class BusStopInfoScreen extends Component {
   static navigationOptions = {
-    ...NavBarStyle
+    ...NavBarStyle,
+    headerTitleStyle: {
+      ...NavBarStyle.headerTitleStyle,
+      paddingLeft: 50
+    },
+    headerRight: <HeaderStarButton />
   }
 
   componentDidMount() {

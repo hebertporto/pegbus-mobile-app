@@ -1,27 +1,13 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, ActivityIndicator } from 'react-native'
+import PropTypes from 'prop-types'
+import { StyleSheet, View, Text } from 'react-native'
 
 import { InputSearchRow } from '../../../ui/InputSearchRow'
-import { BusRoutesFilter } from './BusRoutesFilter'
-
-import {
-  stopBusAndSchedule,
-  stopBusRoutes
-} from '../../../services/stopService'
-
-import { ScheduleTimeList } from './ScheduleTimeList'
-import { ScheduleTimeListFooter } from './ScheduleTimeListFooter'
-import { trackRouteSearch } from '../../../config/analytics'
+import { Loader } from '../../../ui/Loader'
+import { BookmarkList } from './BookmarkList'
 
 const defaultState = {
-  data: [],
-  dataFiltered: [],
-  dateRequested: '',
-  selectedRoutes: [],
-  routes: [],
-  stopInfo: {},
   error: false,
-  showFilter: false,
   loading: false
 }
 
@@ -30,123 +16,38 @@ class Home extends Component {
 
   navigate = stopNumber => this.props.navigateTo(stopNumber)
 
-  handleSelectRoute = route => {
-    const { selectedRoutes } = this.state
-    let newSelected
-    if (selectedRoutes.includes(route)) {
-      newSelected = selectedRoutes.filter(r => r !== route)
-    } else {
-      newSelected = [route].concat(selectedRoutes)
-    }
-    this.setState({ selectedRoutes: newSelected }, this.filterSchedule)
-  }
-
-  filterSchedule = () => {
-    const { data, selectedRoutes } = this.state
-    const dataFiltered = selectedRoutes.length
-      ? data.filter(busSchedule => {
-          return selectedRoutes.includes(busSchedule.number)
-        })
-      : data
-    this.setState({ dataFiltered })
-  }
-
-  getSchedule = async stopNumber => {
-    this.setState({ ...defaultState, loading: true })
-    try {
-      trackRouteSearch(stopNumber)
-      const { shedules, stopInfo, dateRequested } = await stopBusAndSchedule({
-        stopNumber
-      })
-      const routes = await stopBusRoutes({ stopNumber })
-      this.setState({
-        routes,
-        stopInfo,
-        data: shedules,
-        dataFiltered: shedules,
-        error: false,
-        loading: false,
-        dateRequested
-      })
-    } catch (e) {
-      this.setState({
-        ...defaultState,
-        error: true,
-        loading: false
-      })
-    }
-  }
-
-  toogleFilter = () =>
-    this.setState(prevState => ({ showFilter: !prevState.showFilter }))
-
-  renderLoading = () => {
-    return (
-      <View
-        style={{ flex: 0.75, justifyContent: 'center', alignItems: 'center' }}
-      >
-        <ActivityIndicator size="large" color="#2196F3" />
-      </View>
-    )
-  }
   render() {
-    const {
-      stopInfo,
-      routes,
-      selectedRoutes,
-      dataFiltered,
-      showFilter,
-      dateRequested,
-      loading,
-      error
-    } = this.state
+    const { loading, error } = this.state
+    const { favourites } = this.props
     return (
-      <View style={styles.container}>
+      <View style={styles.root}>
         <View style={{ flex: 0.15 }}>
-          <InputSearchRow
-            searchHandler={this.navigate}
-            isFilterOpen={showFilter}
-            filterToogle={this.toogleFilter}
-            dateRequested={dateRequested}
-            isButtonDisable={routes.length <= 0}
-          />
+          <InputSearchRow searchHandler={this.navigate} />
         </View>
 
-        {loading ? (
-          this.renderLoading()
-        ) : (
-          <View style={{ flex: 0.78 }}>
-            <ScheduleTimeList
-              data={dataFiltered}
-              showFilter={showFilter}
-              filter={
-                <BusRoutesFilter
-                  stopInfo={stopInfo}
-                  routes={routes}
-                  handleSelectRoute={this.handleSelectRoute}
-                  filteredRoutes={selectedRoutes}
-                />
-              }
-              notFound={error}
-            />
-          </View>
-        )}
-
-        {dateRequested.length ? (
-          <View style={{ flex: 0.07 }}>
-            <ScheduleTimeListFooter />
-          </View>
-        ) : null}
+        <View style={styles.mainWrapper}>
+          <Loader loading={loading}>
+            <BookmarkList data={favourites} />
+          </Loader>
+        </View>
       </View>
     )
   }
 }
 
+Home.propTypes = {
+  navigateTo: PropTypes.func.isRequired,
+  favourites: PropTypes.array.isRequired
+}
+
 export { Home }
 
 const styles = StyleSheet.create({
-  container: {
+  root: {
     flex: 1,
     flexDirection: 'column'
+  },
+  mainWrapper: {
+    flex: 0.78
   }
 })

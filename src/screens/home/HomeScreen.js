@@ -3,21 +3,45 @@ import React, { Component } from 'react'
 import { Home } from './components/Home'
 import { NavBarStyle } from '../../constants'
 import { trackView } from '../../config/analytics'
+import { HeaderStarButton } from '../../ui/buttons/HeaderStartButton'
+import { getBookmarkList } from '../../services/bookmarkService'
 
 class HomeScreen extends Component {
-  static navigationOptions = {
-    title: 'Peg Bus',
-    ...NavBarStyle
+  state = {
+    favourites: []
   }
+
+  static navigationOptions = () => {
+    return {
+      title: 'Peg Bus',
+      ...NavBarStyle,
+      headerTitleStyle: {
+        ...NavBarStyle.headerTitleStyle,
+        paddingLeft: 50
+      },
+      headerRight: <HeaderStarButton />
+    }
+  }
+
   componentDidMount() {
     trackView('Home')
+    this.getFavourites()
   }
+
+  getFavourites = async () => {
+    const favourites = await getBookmarkList()
+    console.log('favourites: ', favourites)
+    this.setState({ favourites })
+  }
+
   render() {
+    const { favourites } = this.state
     return (
       <Home
         navigateTo={stopNumber =>
           this.props.navigation.navigate('BusStop', { stopNumber })
         }
+        favourites={favourites}
       />
     )
   }
