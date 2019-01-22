@@ -6,8 +6,7 @@ import { Ionicons } from '@expo/vector-icons'
 import {
   saveBookmark,
   getBookmarkStored,
-  deleteBookmark,
-  getBookmarkList
+  deleteBookmark
 } from '../../services/bookmarkService'
 
 const info = {
@@ -34,9 +33,6 @@ class HeaderStarButton extends Component {
   checkBookmark = async () => {
     const favorito = await getBookmarkStored(10628)
     this.setState({ favorito })
-
-    const a = await getBookmarkList()
-    console.log('a', a)
   }
 
   toggleStar = async () => {
