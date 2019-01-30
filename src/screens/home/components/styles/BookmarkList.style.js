@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import { Colors } from '../../../../constants'
 
 export const styles = StyleSheet.create({
   root: {
@@ -9,9 +10,14 @@ export const styles = StyleSheet.create({
     marginHorizontal: 5
   },
   titleWrapper: {
-    flex: 0.1
+    paddingVertical: 5,
+    paddingLeft: 15
   },
   listWrapper: {
-    flex: 0.9
+    flex: 1
+  },
+  text: {
+    color: Colors.TEXT_DEFAULT,
+    fontWeight: '700'
   }
 })

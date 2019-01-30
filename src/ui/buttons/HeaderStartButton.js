@@ -32,13 +32,20 @@ class StarButton extends Component {
   }
 
   checkBookmark = async () => {
+    const stopInfo = this.props.navigation.getParam('stopInfo', {})
+    console.log('** ** ** ** **', stopInfo)
     const favorito = await getBookmarkStored(10628)
+    console.log('ponto favorito', favorito)
     this.setState({ favorito })
   }
 
   toggleStar = async () => {
     const { favorito } = this.state
-    favorito ? await deleteBookmark(10628) : await saveBookmark(info)
+    const stopInfo = this.props.navigation.getParam('stopInfo', {})
+    console.log('=> => => ', stopInfo)
+    favorito
+      ? await deleteBookmark(stopInfo.number)
+      : await saveBookmark(stopInfo)
     this.setState(prevState => ({ favorito: !prevState.favorito }))
   }
 

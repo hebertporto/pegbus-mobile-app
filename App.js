@@ -4,6 +4,7 @@ import { Provider as PaperProvider } from 'react-native-paper'
 import AppNavigator from './src/navigation/AppNavigator'
 
 import './src/config'
+import { clearAllBookmarks } from './src/services/bookmarkService'
 
 export default class App extends React.Component {
   state = {
@@ -11,6 +12,7 @@ export default class App extends React.Component {
   }
 
   loadResourcesAsync = async () => {
+    // clearAllBookmarks()
     return Promise.all([
       Asset.loadAsync([
         require('./src/assets/images/robot-dev.png'),
@@ -26,26 +28,23 @@ export default class App extends React.Component {
     ])
   }
 
-  handleLoadingError = error => {
-    console.warn(error)
-  }
+  handleLoadingError = error => console.warn(error)
 
-  handleFinishLoading = () => {
-    this.setState({ isReady: true })
-  }
+  handleFinishLoading = () => this.setState({ isReady: true })
 
   render() {
-    if (!this.state.isReady) {
-      return (
-        <PaperProvider>
-          <AppLoading
-            startAsync={this.loadResourcesAsync}
-            onError={this.handleLoadingError}
-            onFinish={this.handleFinishLoading}
-          />
-        </PaperProvider>
-      )
-    }
-    return <AppNavigator />
+    const { isReady } = this.state
+
+    return isReady ? (
+      <AppNavigator />
+    ) : (
+      <PaperProvider>
+        <AppLoading
+          startAsync={this.loadResourcesAsync}
+          onError={this.handleLoadingError}
+          onFinish={this.handleFinishLoading}
+        />
+      </PaperProvider>
+    )
   }
 }
