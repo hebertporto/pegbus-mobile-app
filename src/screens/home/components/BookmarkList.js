@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Surface } from 'react-native-paper'
 import { View, FlatList, Text } from 'react-native'
 import { BookmarkListItem } from './BookmarkListItem'
 
@@ -12,7 +13,7 @@ const BookmarkList = ({ data, navigate }) => {
     <BookmarkListItem item={item} navigate={navigate} />
   )
   return (
-    <View style={styles.root}>
+    <Surface style={styles.root}>
       <View style={styles.titleWrapper}>
         <Text>Favorites</Text>
       </View>
@@ -23,7 +24,7 @@ const BookmarkList = ({ data, navigate }) => {
           renderItem={renderItem}
         />
       </View>
-    </View>
+    </Surface>
   )
 }
 

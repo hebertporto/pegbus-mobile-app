@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import { Home } from './components/Home'
 import { NavBarStyle } from '../../constants'
 import { trackView } from '../../config/analytics'
-import { HeaderStarButton } from '../../ui/buttons/HeaderStartButton'
 import { getBookmarkList } from '../../services/bookmarkService'
 
 class HomeScreen extends Component {
@@ -14,12 +13,7 @@ class HomeScreen extends Component {
   static navigationOptions = () => {
     return {
       title: 'Peg Bus',
-      ...NavBarStyle,
-      headerTitleStyle: {
-        ...NavBarStyle.headerTitleStyle,
-        paddingLeft: 50
-      },
-      headerRight: <HeaderStarButton />
+      ...NavBarStyle
     }
   }
 

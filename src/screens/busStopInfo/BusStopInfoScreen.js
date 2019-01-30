@@ -23,7 +23,9 @@ class BusStopInfoScreen extends Component {
 
   getSchedule = async () => {
     const { stopNumber } = this.props.navigation.state.params
-    return stopBusAndSchedule({ stopNumber })
+    const res = await stopBusAndSchedule({ stopNumber })
+    this.props.navigation.setParams({ stopInfo: res.shedules })
+    return res
   }
 
   getStopBusRoutes = async () => {

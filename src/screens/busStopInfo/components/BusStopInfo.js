@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text, ActivityIndicator } from 'react-native'
+import { StyleSheet, View, ActivityIndicator } from 'react-native'
 
 import { RouteInfo } from './RouteInfo'
 import { BusRoutesFilter } from './BusRoutesFilter'

@@ -22,7 +22,9 @@ class Map extends Component {
             latitudeDelta,
             longitudeDelta
           }}
-        />
+        >
+          <MapView.Marker coordinate={{ latitude, longitude }} />
+        </MapView>
       </View>
     )
   }

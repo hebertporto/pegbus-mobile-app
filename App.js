@@ -1,5 +1,6 @@
 import React from 'react'
 import { AppLoading, Asset, Font, Icon } from 'expo'
+import { Provider as PaperProvider } from 'react-native-paper'
 import AppNavigator from './src/navigation/AppNavigator'
 
 import './src/config'
@@ -36,11 +37,13 @@ export default class App extends React.Component {
   render() {
     if (!this.state.isReady) {
       return (
-        <AppLoading
-          startAsync={this.loadResourcesAsync}
-          onError={this.handleLoadingError}
-          onFinish={this.handleFinishLoading}
-        />
+        <PaperProvider>
+          <AppLoading
+            startAsync={this.loadResourcesAsync}
+            onError={this.handleLoadingError}
+            onFinish={this.handleFinishLoading}
+          />
+        </PaperProvider>
       )
     }
     return <AppNavigator />

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { withNavigation } from 'react-navigation'
 
 import { RkButton } from 'react-native-ui-kitten'
 import { Ionicons } from '@expo/vector-icons'
@@ -21,7 +22,7 @@ const info = {
 
 // TODO: withNavigation, retirar a stopNumber do navigation e usar como parametro
 
-class HeaderStarButton extends Component {
+class StarButton extends Component {
   state = {
     favorito: false
   }
@@ -58,5 +59,7 @@ class HeaderStarButton extends Component {
     )
   }
 }
+
+const HeaderStarButton = withNavigation(StarButton)
 
 export { HeaderStarButton }
