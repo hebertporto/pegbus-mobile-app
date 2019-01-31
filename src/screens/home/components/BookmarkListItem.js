@@ -9,7 +9,6 @@ import { SquareIndicator } from '../../../ui/SquareIndicator'
 const BookmarkListItem = ({ item }) => {
   const { number, geographic, direction, name } = item
   const { longitude, latitude } = geographic
-  // console.log('item', item)
   return (
     <View style={styles.root}>
       <View style={styles.mapWrapper}>

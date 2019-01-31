@@ -9,40 +9,39 @@ import {
   getBookmarkStored,
   deleteBookmark
 } from '../../services/bookmarkService'
+import { getTempItem } from '../../services/tempStop'
 
-const info = {
-  name: 'Northbound Main at McDermot',
-  number: 10628,
-  direction: 'Northbound',
-  geographic: {
-    latitude: '49.89699',
-    longitude: '-97.1386'
-  }
-}
+// const info = {
+//   name: 'Northbound Main at McDermot',
+//   number: 10628,
+//   direction: 'Northbound',
+//   geographic: {
+//     latitude: '49.89699',
+//     longitude: '-97.1386'
+//   }
+// }
 
 // TODO: withNavigation, retirar a stopNumber do navigation e usar como parametro
 
 class StarButton extends Component {
   state = {
-    favorito: false
+    favorito: false,
+    stopInfo: {}
   }
 
   componentDidMount() {
+    console.log('CHECK START')
     this.checkBookmark()
   }
 
   checkBookmark = async () => {
-    const stopInfo = this.props.navigation.getParam('stopInfo', {})
-    console.log('** ** ** ** **', stopInfo)
-    const favorito = await getBookmarkStored(10628)
-    console.log('ponto favorito', favorito)
-    this.setState({ favorito })
+    const stopInfo = await getTempItem()
+    const favorito = await getBookmarkStored(stopInfo.number)
+    this.setState({ favorito, stopInfo })
   }
 
   toggleStar = async () => {
-    const { favorito } = this.state
-    const stopInfo = this.props.navigation.getParam('stopInfo', {})
-    console.log('=> => => ', stopInfo)
+    const { favorito, stopInfo } = this.state
     favorito
       ? await deleteBookmark(stopInfo.number)
       : await saveBookmark(stopInfo)

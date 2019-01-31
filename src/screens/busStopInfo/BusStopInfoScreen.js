@@ -5,6 +5,7 @@ import { NavBarStyle } from '../../constants'
 import { trackView } from '../../config/analytics'
 import { stopBusAndSchedule, stopBusRoutes } from '../../services/stopService'
 import { HeaderStarButton } from '../../ui/buttons/HeaderStartButton'
+import { saveTempStop } from '../../services/tempStop'
 
 class BusStopInfoScreen extends Component {
   static navigationOptions = {
@@ -24,7 +25,7 @@ class BusStopInfoScreen extends Component {
   getSchedule = async () => {
     const { stopNumber } = this.props.navigation.state.params
     const res = await stopBusAndSchedule({ stopNumber })
-    await this.props.navigation.setParams({ stopInfo: res.stopInfo })
+    await saveTempStop(res.stopInfo)
     return res
   }
 
