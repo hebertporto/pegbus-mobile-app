@@ -1,16 +1,25 @@
-import { createStackNavigator, createAppContainer } from 'react-navigation'
+import {
+  createStackNavigator,
+  createAppContainer,
+  createSwitchNavigator
+} from 'react-navigation'
 
 import { HomeScreen } from './../screens/home/HomeScreen'
 import { BusStopInfoScreen } from './../screens/busStopInfo/BusStopInfoScreen'
+import { TestScreen } from '../screens/TestScreen'
 
-const AppNavigator = createStackNavigator(
-  {
-    Home: HomeScreen,
-    BusStop: BusStopInfoScreen
-  },
-  {
-    initialRouteName: 'Home'
-  }
-)
+const HomeStack = createStackNavigator({
+  Home: HomeScreen,
+  Play: TestScreen
+})
 
-export default createAppContainer(AppNavigator)
+const BusStack = createStackNavigator({
+  BusStop: BusStopInfoScreen
+})
+
+const AppSwitchNavigator = createSwitchNavigator({
+  MainStack: HomeStack,
+  Welcome: BusStack
+})
+
+export default createAppContainer(AppSwitchNavigator)

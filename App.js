@@ -5,6 +5,7 @@ import AppNavigator from './src/navigation/AppNavigator'
 
 import './src/config'
 import { clearAllBookmarks } from './src/services/bookmarkService'
+import { LocalProvider } from './src/context/LocalContext'
 
 export default class App extends React.Component {
   state = {
@@ -36,15 +37,17 @@ export default class App extends React.Component {
     const { isReady } = this.state
 
     return isReady ? (
-      <AppNavigator />
-    ) : (
       <PaperProvider>
-        <AppLoading
-          startAsync={this.loadResourcesAsync}
-          onError={this.handleLoadingError}
-          onFinish={this.handleFinishLoading}
-        />
+        <LocalProvider>
+          <AppNavigator />
+        </LocalProvider>
       </PaperProvider>
+    ) : (
+      <AppLoading
+        startAsync={this.loadResourcesAsync}
+        onError={this.handleLoadingError}
+        onFinish={this.handleFinishLoading}
+      />
     )
   }
 }
