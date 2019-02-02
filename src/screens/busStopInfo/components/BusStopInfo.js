@@ -83,7 +83,6 @@ class BusStopInfo extends Component {
   getSchedule = async () => {
     this.setState({ loading: true })
     try {
-      // trackRouteSearch(stopNumber)
       const {
         shedules,
         stopInfo,
