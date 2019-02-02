@@ -2,16 +2,6 @@ import { AsyncStorage } from 'react-native'
 
 const INDICE = 'bookmarks'
 
-const extractInfo = busInfo => {
-  const { key, direction, name, centre } = busInfo
-  return {
-    number: key,
-    name,
-    direction,
-    geographic: centre.geographic
-  }
-}
-
 const getAll = async () => {
   const list = await AsyncStorage.getItem(INDICE)
   return list ? JSON.parse(list) : []
@@ -20,11 +10,10 @@ const getAll = async () => {
 export const saveBookmarkList = async bookmarkList =>
   AsyncStorage.setItem(INDICE, JSON.stringify(bookmarkList))
 
-export const saveBookmark = async stopInfo => {
+export const saveBookmark = async ({ stopInfo }) => {
   try {
-    const info = extractInfo(stopInfo)
     const bookmarkList = await getAll()
-    bookmarkList.push(info)
+    bookmarkList.push(stopInfo)
     await saveBookmarkList(bookmarkList)
   } catch (e) {
     console.log('error save stop bus', e)
@@ -32,10 +21,8 @@ export const saveBookmark = async stopInfo => {
 }
 
 export const getBookmarkStored = async stopNumber => {
-  console.log('busNumber', stopNumber)
   const bookmarks = await getAll()
   const isBookmarkStored = bookmarks.reduce((acc, curr) => {
-    console.log(parseInt(curr.number, 10), parseInt(stopNumber, 10))
     if (parseInt(curr.number, 10) === parseInt(stopNumber, 10)) {
       return true
     }
@@ -46,10 +33,12 @@ export const getBookmarkStored = async stopNumber => {
 
 export const getBookmark = () => {}
 
-export const deleteBookmark = async stopNumber => {
+export const deleteBookmark = async ({ stopNumber }) => {
   try {
     const bookmarks = await getAll()
-    const newBookmarks = bookmarks.filter(b => b.number !== stopNumber)
+    const newBookmarks = bookmarks.filter(
+      b => parseInt(b.number, 10) !== parseInt(stopNumber, 10)
+    )
     await saveBookmarkList(newBookmarks)
   } catch (e) {
     console.log('error remove bookmark')

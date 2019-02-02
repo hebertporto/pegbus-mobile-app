@@ -4,7 +4,7 @@ export const LocalContext = React.createContext()
 
 class LocalProvider extends React.Component {
   state = {
-    stopInfo: {},
+    stopInfo: null,
     infoTest: 'Eu vim do Lo'
   }
 
@@ -12,7 +12,12 @@ class LocalProvider extends React.Component {
 
   render() {
     return (
-      <LocalContext.Provider value={this.state}>
+      <LocalContext.Provider
+        value={{
+          state: this.state,
+          updateStopInfo: stopInfo => this.updateStopInfo(stopInfo)
+        }}
+      >
         {this.props.children}
       </LocalContext.Provider>
     )

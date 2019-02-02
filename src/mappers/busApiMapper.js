@@ -8,8 +8,21 @@ const getNameRoute = name => {
   return parsedName
 }
 
+const mapperStopInfo = busInfo => {
+  const { key, direction, name, centre } = busInfo
+  return centre
+    ? {
+        number: key,
+        name,
+        direction,
+        geographic: centre.geographic
+      }
+    : {}
+}
+
 export const mapperScheduler = apiResponse => {
-  const stopInfo = get(apiResponse, 'stop-schedule.stop', {})
+  const stopInfoResponse = get(apiResponse, 'stop-schedule.stop', {})
+  const stopInfo = mapperStopInfo(stopInfoResponse)
   const allShedules = get(apiResponse, 'stop-schedule.route-schedules', [])
 
   const shedulesUordened = allShedules.reduce((acc, curr) => {

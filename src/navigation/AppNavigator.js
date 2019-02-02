@@ -6,11 +6,9 @@ import {
 
 import { HomeScreen } from './../screens/home/HomeScreen'
 import { BusStopInfoScreen } from './../screens/busStopInfo/BusStopInfoScreen'
-import { TestScreen } from '../screens/TestScreen'
 
 const HomeStack = createStackNavigator({
-  Home: HomeScreen,
-  Play: TestScreen
+  Home: HomeScreen
 })
 
 const BusStack = createStackNavigator({

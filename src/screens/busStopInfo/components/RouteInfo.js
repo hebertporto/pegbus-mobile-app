@@ -26,14 +26,14 @@ const RouteInfo = ({
   filterToogle,
   reload
 }) => {
-  const { name, number, direction, centre } = stopInfo
+  const { name, number, direction, geographic } = stopInfo
   return (
     <View style={styles.root}>
       <View style={styles.mapContainer}>
-        {centre ? (
+        {geographic ? (
           <Map
-            longitude={centre.geographic.longitude}
-            latitude={centre.geographic.latitude}
+            longitude={geographic.longitude}
+            latitude={geographic.latitude}
           />
         ) : null}
       </View>

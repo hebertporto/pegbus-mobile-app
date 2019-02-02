@@ -2,26 +2,20 @@ import { AsyncStorage } from 'react-native'
 
 const INDICE = 'temp'
 
-const extractInfo = busInfo => {
-  const { key, direction, name, centre } = busInfo
-  return {
-    number: key,
-    name,
-    direction,
-    geographic: centre.geographic
+export const removeTemp = async () => AsyncStorage.removeItem(INDICE)
+
+export const getTempItem = async () => {
+  try {
+    const item = await AsyncStorage.getItem(INDICE)
+    return item ? JSON.parse(item) : {}
+  } catch (e) {
+    console.log('errpr getTempItem ', e)
   }
 }
 
-export const getTempItem = async () => {
-  const item = await AsyncStorage.getItem(INDICE)
-  AsyncStorage.removeItem(INDICE)
-  return item ? JSON.parse(item) : {}
-}
-
-export const saveTempStop = async stopInfo => {
+export const saveTempStop = async ({ stopInfo }) => {
   try {
-    const info = extractInfo(stopInfo)
-    await AsyncStorage.setItem(INDICE, JSON.stringify(info))
+    await AsyncStorage.setItem(INDICE, JSON.stringify(stopInfo))
   } catch (e) {
     console.log('error save saveTemp', e)
   }

@@ -4,6 +4,7 @@ import { Home } from './components/Home'
 import { NavBarStyle } from '../../constants'
 import { trackView } from '../../config/analytics'
 import { getBookmarkList } from '../../services/bookmarkService'
+import { removeTemp } from '../../services/tempStop'
 
 class HomeScreen extends Component {
   state = {
@@ -19,6 +20,7 @@ class HomeScreen extends Component {
 
   componentDidMount() {
     trackView('Home')
+    removeTemp()
     this.getFavourites()
   }
 
