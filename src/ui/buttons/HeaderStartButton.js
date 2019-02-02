@@ -14,7 +14,6 @@ import { getTempItem } from '../../services/tempStop'
 class StarButton extends Component {
   state = {
     favorito: false,
-    stopInfo: {},
     stopNumber: 0
   }
 
@@ -30,12 +29,15 @@ class StarButton extends Component {
 
   toggleStar = async () => {
     const { favorito, stopNumber } = this.state
-    const stopInfo = await getTempItem()
-
-    favorito
-      ? await deleteBookmark({ stopNumber })
-      : await saveBookmark({ stopInfo })
-    this.setState(prevState => ({ favorito: !prevState.favorito }))
+    try {
+      const stopInfo = await getTempItem()
+      favorito
+        ? await deleteBookmark({ stopNumber })
+        : await saveBookmark({ stopInfo })
+      this.setState(prevState => ({ favorito: !prevState.favorito }))
+    } catch (e) {
+      console.log('error saving stop bus')
+    }
   }
 
   render() {

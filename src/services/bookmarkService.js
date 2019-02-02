@@ -12,9 +12,11 @@ export const saveBookmarkList = async bookmarkList =>
 
 export const saveBookmark = async ({ stopInfo }) => {
   try {
-    const bookmarkList = await getAll()
-    bookmarkList.push(stopInfo)
-    await saveBookmarkList(bookmarkList)
+    if (stopInfo && stopInfo.number) {
+      const bookmarkList = await getAll()
+      bookmarkList.push(stopInfo)
+      await saveBookmarkList(bookmarkList)
+    }
   } catch (e) {
     console.log('error save stop bus', e)
   }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, ActivityIndicator } from 'react-native'
+import { StyleSheet, View, Text, ActivityIndicator } from 'react-native'
 
 import { RouteInfo } from './RouteInfo'
 import { BusRoutesFilter } from './BusRoutesFilter'
@@ -133,7 +133,15 @@ class BusStopInfo extends Component {
       loading,
       error
     } = this.state
-    return (
+    return loading ? (
+      this.renderLoading()
+    ) : error ? (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text style={{ fontSize: 16, fontWeight: '700' }}>
+          Sorry, Stop Bus Number Not Found.
+        </Text>
+      </View>
+    ) : (
       <View style={styles.container}>
         <View style={{ flex: 0.25 }}>
           <RouteInfo
@@ -145,32 +153,24 @@ class BusStopInfo extends Component {
             reload={this.reloadSchedule}
           />
         </View>
-
-        {loading ? (
-          this.renderLoading()
-        ) : (
-          <View style={{ flex: 0.68 }}>
-            <ScheduleTimeList
-              data={dataFiltered}
-              showFilter={showFilter}
-              filter={
-                <BusRoutesFilter
-                  stopInfo={stopInfo}
-                  routes={routes}
-                  handleSelectRoute={this.handleSelectRoute}
-                  filteredRoutes={selectedRoutes}
-                />
-              }
-              notFound={error}
-            />
-          </View>
-        )}
-
-        {dateRequested.length ? (
-          <View style={{ flex: 0.07 }}>
-            <ScheduleTimeListFooter />
-          </View>
-        ) : null}
+        <View style={{ flex: 0.68 }}>
+          <ScheduleTimeList
+            data={dataFiltered}
+            showFilter={showFilter}
+            filter={
+              <BusRoutesFilter
+                stopInfo={stopInfo}
+                routes={routes}
+                handleSelectRoute={this.handleSelectRoute}
+                filteredRoutes={selectedRoutes}
+              />
+            }
+            notFound={error}
+          />
+        </View>
+        <View style={{ flex: 0.07 }}>
+          <ScheduleTimeListFooter />
+        </View>
       </View>
     )
   }

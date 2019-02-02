@@ -26,6 +26,8 @@ class HomeScreen extends Component {
 
   getFavourites = async () => {
     const favourites = await getBookmarkList()
+    console.log('favourites: ', favourites)
+
     this.setState({ favourites })
   }
 
