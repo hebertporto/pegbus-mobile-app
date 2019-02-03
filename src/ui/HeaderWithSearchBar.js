@@ -25,10 +25,6 @@ class HeaderWithSearchBarContainer extends Component {
   render() {
     const { navigation, propsHeader } = this.props
     const isSearchActive = navigation.getParam('isSearchActive', false)
-    // if (isSearchActive) {
-    //   this.startAnimation()
-    // }
-    // const onCancel = () => navigation.setParams({ isSearchActive: false })
     const animatedStyle = {
       width: 100
     }

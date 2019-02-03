@@ -25,7 +25,6 @@ class BusStopInfo extends Component {
   state = defaultState
 
   componentDidMount() {
-    // this.devData()
     this.getSchedule()
   }
 

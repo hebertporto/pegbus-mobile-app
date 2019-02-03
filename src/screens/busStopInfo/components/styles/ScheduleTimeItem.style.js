@@ -4,16 +4,13 @@ import { Fonts } from '../../../../constants'
 export const styles = StyleSheet.create({
   root: {
     flex: 1,
-    paddingLeft: 15,
     flexDirection: 'row',
-    paddingVertical: 10,
-    marginBottom: 5,
     elevation: 2,
-    borderTopRightRadius: 5,
-    borderBottomRightRadius: 5,
-    borderTopLeftRadius: 5,
-    borderBottomLeftRadius: 5,
-    marginHorizontal: 5
+    paddingLeft: 15,
+    paddingVertical: 10,
+    marginTop: 8,
+    marginHorizontal: 5,
+    borderRadius: 5
   },
   iconContainer: {
     flex: 0.1

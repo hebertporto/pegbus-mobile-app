@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { Fonts } from '../../../../constants'
+import { Fonts, Colors } from '../../../../constants'
 
 export const styles = StyleSheet.create({
   root: {
@@ -8,10 +8,6 @@ export const styles = StyleSheet.create({
     marginBottom: 5,
     marginTop: 5,
     elevation: 2,
-    borderTopRightRadius: 1,
-    borderTopLeftRadius: 1,
-    borderBottomRightRadius: 2,
-    borderBottomLeftRadius: 2,
     marginHorizontal: 5
   },
   mapContainer: {
@@ -40,8 +36,22 @@ export const styles = StyleSheet.create({
     flex: 0.5,
     flexDirection: 'row'
   },
+  textNumber: {
+    color: Colors.TEXT_DEFAULT,
+    fontWeight: '700',
+    fontSize: 16
+  },
+  stopName: {
+    color: Colors.TEXT_DEFAULT,
+    fontWeight: '400'
+  },
   date: {
     fontSize: 12
+  },
+  dateTitle: {
+    fontSize: 12,
+    color: Colors.TEXT_DEFAULT,
+    fontWeight: '500'
   },
   labelWrapper: {
     flex: 0.1,

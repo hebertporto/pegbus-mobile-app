@@ -15,7 +15,7 @@ const BookmarkList = ({ data, navigate }) => {
   return (
     <Surface style={styles.root}>
       <View style={styles.titleWrapper}>
-        <Text>Saved Bus Stop</Text>
+        <Text style={styles.title}>Saved Bus Stop</Text>
       </View>
       <View style={styles.listWrapper}>
         <FlatList

@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { Colors } from '../../../../constants'
+import { Colors, Fonts } from '../../../../constants'
 
 export const styles = StyleSheet.create({
   root: {
@@ -19,5 +19,9 @@ export const styles = StyleSheet.create({
   text: {
     color: Colors.TEXT_DEFAULT,
     fontWeight: '700'
+  },
+  title: {
+    ...Fonts.standardStyle.caption,
+    fontWeight: '600'
   }
 })

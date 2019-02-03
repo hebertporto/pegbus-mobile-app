@@ -7,7 +7,6 @@ export const removeTemp = async () => AsyncStorage.removeItem(INDICE)
 export const getTempItem = async () => {
   try {
     const item = await AsyncStorage.getItem(INDICE)
-    console.log('ITEM', item)
     return item ? JSON.parse(item) : {}
   } catch (e) {
     console.log('errpr getTempItem ', e)

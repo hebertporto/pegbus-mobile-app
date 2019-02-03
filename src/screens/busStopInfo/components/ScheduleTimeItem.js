@@ -1,6 +1,8 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons'
+import { Surface } from 'react-native-paper'
+
 import moment from 'moment'
 
 import { styles } from './styles/ScheduleTimeItem.style'
@@ -28,7 +30,7 @@ const ScheduleTimeItem = ({ item }) => {
   const { number, name, timeEstimated, timeScheduled } = item
   const time = checkTime({ timeEstimated, timeScheduled })
   return (
-    <View style={{ ...styles.root }}>
+    <Surface style={styles.root}>
       <View style={styles.iconContainer}>
         <Ionicons name="md-bus" size={26} color={time.iconColor} />
       </View>
@@ -68,7 +70,7 @@ const ScheduleTimeItem = ({ item }) => {
           </Text>
         </View>
       </View>
-    </View>
+    </Surface>
   )
 }
 

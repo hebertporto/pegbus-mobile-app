@@ -4,6 +4,7 @@ import { View, Text } from 'react-native'
 import { RkButton } from 'react-native-ui-kitten'
 import { Ionicons } from '@expo/vector-icons'
 import moment from 'moment-timezone'
+import { Surface } from 'react-native-paper'
 
 import { styles } from './styles/RouteInfo.style'
 import { Map } from '../../../ui/Map'
@@ -28,7 +29,7 @@ const RouteInfo = ({
 }) => {
   const { name, number, direction, geographic } = stopInfo
   return (
-    <View style={styles.root}>
+    <Surface style={styles.root}>
       <View style={styles.mapContainer}>
         {geographic ? (
           <Map
@@ -39,13 +40,13 @@ const RouteInfo = ({
       </View>
       <View style={styles.infoContainer}>
         <View style={styles.stopWrapper}>
-          <Text>{number}</Text>
-          <Text>{name}</Text>
+          <Text style={styles.textNumber}>{number}</Text>
+          <Text style={styles.stopName}>{name}</Text>
           <Text>{direction}</Text>
         </View>
         <View style={styles.bottomWrapper}>
           <View style={styles.bleft}>
-            <Text style={styles.date}>Updated at:</Text>
+            <Text style={styles.dateTitle}>Updated at:</Text>
             <Text style={styles.date}>
               {moment(dateRequested)
                 .tz('America/Winnipeg')
@@ -73,7 +74,7 @@ const RouteInfo = ({
           </View>
         </View>
       </View>
-    </View>
+    </Surface>
   )
 }
 
