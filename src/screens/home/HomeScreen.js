@@ -36,6 +36,7 @@ class HomeScreen extends Component {
         navigateTo={stopNumber =>
           this.props.navigation.navigate('BusStop', { stopNumber })
         }
+        goToNearbyStops={() => this.props.navigation.navigate('NearbyStops')}
         favourites={favourites}
       />
     )

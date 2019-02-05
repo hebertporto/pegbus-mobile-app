@@ -4,7 +4,7 @@
     "description": "Real time bus schedules on Winnipeg",
     "slug": "pegbus",
     "privacy": "public",
-    "sdkVersion": "31.0.0",
+    "sdkVersion": "32.0.0",
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.hebertporto.pegbus"
