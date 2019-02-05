@@ -35,8 +35,8 @@ export const Colors = {
   TITLE_BLACK: '#333333',
   TEXT_DEFAULT: '#555555',
   NAV_BAR: {
-    background: isIOS ? '#2196F3' : '#2196F3',
-    tint: isIOS ? '#00973A' : '#FFF',
+    background: '#2196F3',
+    tint: '#FFF',
     iosBorderColor: 'rgba(167, 167, 164, 0.25)'
   }
 }
