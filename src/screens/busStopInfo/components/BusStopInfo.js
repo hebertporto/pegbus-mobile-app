@@ -18,7 +18,8 @@ const defaultState = {
   stopInfo: {},
   error: false,
   showFilter: false,
-  loading: false
+  loading: false,
+  reloadLoading: false
 }
 
 class BusStopInfo extends Component {
@@ -60,21 +61,21 @@ class BusStopInfo extends Component {
   }
 
   reloadSchedule = async () => {
-    this.setState({ loading: true })
+    this.setState({ reloadLoading: true })
     try {
       const { shedules, dateRequested } = await this.props.getBusesTime()
       await this.setState({
         data: shedules,
         dataFiltered: shedules,
         error: false,
-        loading: false,
+        reloadLoading: false,
         dateRequested
       })
       this.filterSchedule()
     } catch (e) {
       this.setState({
         error: true,
-        loading: false
+        reloadLoading: false
       })
     }
   }
@@ -130,6 +131,7 @@ class BusStopInfo extends Component {
       showFilter,
       dateRequested,
       loading,
+      reloadLoading,
       error
     } = this.state
     return loading ? (
@@ -153,19 +155,23 @@ class BusStopInfo extends Component {
           />
         </View>
         <View style={{ flex: 0.68 }}>
-          <ScheduleTimeList
-            data={dataFiltered}
-            showFilter={showFilter}
-            filter={
-              <BusRoutesFilter
-                stopInfo={stopInfo}
-                routes={routes}
-                handleSelectRoute={this.handleSelectRoute}
-                filteredRoutes={selectedRoutes}
-              />
-            }
-            notFound={error}
-          />
+          {reloadLoading ? (
+            this.renderLoading()
+          ) : (
+            <ScheduleTimeList
+              data={dataFiltered}
+              showFilter={showFilter}
+              filter={
+                <BusRoutesFilter
+                  stopInfo={stopInfo}
+                  routes={routes}
+                  handleSelectRoute={this.handleSelectRoute}
+                  filteredRoutes={selectedRoutes}
+                />
+              }
+              notFound={error}
+            />
+          )}
         </View>
         <View style={{ flex: 0.07 }}>
           <ScheduleTimeListFooter />

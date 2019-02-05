@@ -9,10 +9,8 @@ import { Surface } from 'react-native-paper'
 import { styles } from './styles/RouteInfo.style'
 import { Map } from '../../../ui/Map'
 
-getFilterStyle = ({ isButtonDisable, isFilterOpen }) => {
-  if (isButtonDisable) {
-    return { ...styles.buttonFilter, backgroundColor: 'grey' }
-  } else if (isFilterOpen) {
+getFilterStyle = ({ isFilterOpen }) => {
+  if (isFilterOpen) {
     return { ...styles.buttonFilter, backgroundColor: 'green' }
   } else {
     return styles.buttonFilter
@@ -54,22 +52,22 @@ const RouteInfo = ({
             </Text>
           </View>
           <View style={styles.bright}>
+            {!isButtonDisable ? (
+              <RkButton
+                rkType="icon small"
+                disabled={isButtonDisable}
+                style={getFilterStyle({ isFilterOpen })}
+                onPress={filterToogle}
+              >
+                <Ionicons name="md-funnel" size={20} color="white" />
+              </RkButton>
+            ) : null}
             <RkButton
               rkType="icon small"
-              disabled={isButtonDisable}
-              style={{ width: 40 }}
+              style={{ width: 40, marginLeft: 15 }}
               onPress={reload}
             >
               <Ionicons name="md-refresh" size={20} color="white" />
-            </RkButton>
-            <RkButton
-              rkType="icon small"
-              disabled={isButtonDisable}
-              // style={getFilterStyle({ isButtonDisable, isFilterOpen })}
-              style={{ width: 40, marginLeft: 10 }}
-              onPress={filterToogle}
-            >
-              <Ionicons name="md-funnel" size={20} color="white" />
             </RkButton>
           </View>
         </View>

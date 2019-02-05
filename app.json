@@ -11,7 +11,7 @@
     },
     "android": {
       "package": "com.hebertoporto.pegbus",
-      "versionCode": 18,
+      "versionCode": 19,
       "permissions": ["LOCATION"]
     },
     "platforms": ["ios", "android"],

@@ -32,9 +32,10 @@ export const styles = StyleSheet.create({
     flex: 0.5
   },
   bright: {
-    paddingLeft: 5,
+    paddingRight: 10,
     flex: 0.5,
-    flexDirection: 'row'
+    flexDirection: 'row',
+    justifyContent: 'flex-end'
   },
   textNumber: {
     color: Colors.TEXT_DEFAULT,
@@ -87,5 +88,8 @@ export const styles = StyleSheet.create({
   },
   textUnselected: {
     padding: 5
+  },
+  buttonFilter: {
+    width: 40
   }
 })
