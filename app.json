@@ -7,7 +7,10 @@
     "sdkVersion": "32.0.0",
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.hebertporto.pegbus"
+      "bundleIdentifier": "com.hebertporto.pegbus",
+      "infoPlist": {
+        "CFBundleVersion": "2"
+      }
     },
     "android": {
       "package": "com.hebertoporto.pegbus",
