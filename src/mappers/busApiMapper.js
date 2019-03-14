@@ -31,10 +31,10 @@ export const mapperScheduler = apiResponse => {
     const montendRoutes = closetTimes.map(route => {
       return {
         id: uuid(),
-        number: routeInfo.number,
-        name: getNameRoute(route.variant.name),
-        timeScheduled: route.times.arrival.scheduled,
-        timeEstimated: route.times.arrival.estimated
+        number: get(routeInfo, 'number', ''),
+        name: getNameRoute(get(route, 'variant.name', '')),
+        timeScheduled: get(route, 'times.arrival.scheduled', ''),
+        timeEstimated: get(route, 'times.arrival.estimated', '')
       }
     })
 

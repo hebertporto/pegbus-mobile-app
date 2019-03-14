@@ -5,10 +5,12 @@ import {
 } from 'react-navigation'
 
 import { HomeScreen } from './../screens/home/HomeScreen'
+import { TesteScreen } from './../screens/home/TesteScreen'
 import { BusStopInfoScreen } from './../screens/busStopInfo/BusStopInfoScreen'
 
 const HomeStack = createStackNavigator({
-  Home: HomeScreen
+  Home: HomeScreen,
+  Teste: TesteScreen
 })
 
 const BusStack = createStackNavigator({

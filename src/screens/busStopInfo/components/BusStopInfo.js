@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text, ActivityIndicator } from 'react-native'
+import { StyleSheet, View, Text } from 'react-native'
 
 import { RouteInfo } from './RouteInfo'
 import { BusRoutesFilter } from './BusRoutesFilter'
@@ -8,6 +8,7 @@ import { ScheduleTimeList } from './ScheduleTimeList'
 import { ScheduleTimeListFooter } from './ScheduleTimeListFooter'
 
 import { routes, dateRequested, stopInfo, shedules } from './../../../domain'
+import { LoaderAnimated } from '../../../ui/LoaderAnimated'
 
 const defaultState = {
   data: [],
@@ -118,7 +119,7 @@ class BusStopInfo extends Component {
       <View
         style={{ flex: 0.75, justifyContent: 'center', alignItems: 'center' }}
       >
-        <ActivityIndicator size="large" color="#2196F3" />
+        <LoaderAnimated />
       </View>
     )
   }
