@@ -33,8 +33,8 @@ export const mapperScheduler = apiResponse => {
         id: uuid(),
         number: routeInfo.number,
         name: getNameRoute(route.variant.name),
-        timeScheduled: route.times.arrival.scheduled,
-        timeEstimated: route.times.arrival.estimated
+        timeScheduled: get(route, 'times.arrival.scheduled', null),
+        timeEstimated: get(route, 'times.arrival.estimated', null)
       }
     })
 
@@ -51,4 +51,17 @@ export const mapperBusRouterPerStop = apiResponse => {
     return route.number
   })
   return routes.sort()
+}
+
+export const mapperNearbyStops = apiResponse => {
+  const fullStops = get(apiResponse, 'stops', [])
+  const stopsUordered = fullStops.map(stop => ({
+    latitude: stop.centre.geographic.latitude,
+    longitude: stop.centre.geographic.longitude,
+    direction: stop.direction,
+    distance: stop.distances.walking,
+    number: stop.number,
+    name: stop.name
+  }))
+  return sortBy(stopsUordered, ['distance', 'number'])
 }

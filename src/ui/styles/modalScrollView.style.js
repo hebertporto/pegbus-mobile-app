@@ -12,16 +12,9 @@ export default StyleSheet.create({
   },
   container: {
     flex: 1,
-    // width: 100,
-    // height: 100,
     backgroundColor: 'white',
-    // overflow: 'hidden',
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
-    // marginTop: 20,
-    paddingTop: 7,
-    paddingLeft: 7,
-    paddingRight: 7,
     shadowColor: 'rgba(0, 0, 0, .60)',
     shadowOpacity: 0.8,
     shadowRadius: 3,
@@ -32,8 +25,18 @@ export default StyleSheet.create({
     elevation: 7
   },
   backgroundContainer: {
-    flex: 1
-    // backgroundColor: 'yellow'
-    // position: 'absolute'
+    flex: 1,
+    backgroundColor: 'yellow'
+  },
+  handlerContainer: {
+    paddingTop: 10,
+    paddingBottom: 10
+  },
+  handler: {
+    backgroundColor: '#DDDDDD',
+    alignSelf: 'center',
+    borderRadius: 20,
+    width: 40,
+    height: 5
   }
 })

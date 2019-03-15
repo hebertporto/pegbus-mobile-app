@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
+import { SafeAreaView } from 'react-native'
 import { RkButton } from 'react-native-ui-kitten'
 import { Ionicons } from '@expo/vector-icons'
-
 import { BusStopInfo } from './components/BusStopInfo'
 import { NavBarStyle } from '../../constants'
 import { trackView } from '../../config/analytics'
@@ -56,11 +56,13 @@ class BusStopInfoScreen extends Component {
   render() {
     const { stopNumber } = this.props.navigation.state.params
     return (
-      <BusStopInfo
-        stopNumber={stopNumber}
-        getBusesTime={this.getSchedule}
-        getBusesNumber={this.getStopBusRoutes}
-      />
+      <SafeAreaView style={{ flex: 1, backgroundColor: '#EBEBEB' }}>
+        <BusStopInfo
+          stopNumber={stopNumber}
+          getBusesTime={this.getSchedule}
+          getBusesNumber={this.getStopBusRoutes}
+        />
+      </SafeAreaView>
     )
   }
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { StatusBar } from 'react-native'
 import { AppLoading, Asset, Font, Icon } from 'expo'
 import { Provider as PaperProvider } from 'react-native-paper'
 import AppNavigator from './src/navigation/AppNavigator'
@@ -13,10 +14,7 @@ export default class App extends React.Component {
 
   loadResourcesAsync = async () => {
     return Promise.all([
-      Asset.loadAsync([
-        require('./src/assets/images/robot-dev.png'),
-        require('./src/assets/images/robot-prod.png')
-      ]),
+      Asset.loadAsync([require('./src/assets/images/header.png')]),
       Font.loadAsync({
         ...Icon.Ionicons.font,
         archivo: require('./src/assets/fonts/Archivo-Regular.ttf'),
@@ -37,6 +35,7 @@ export default class App extends React.Component {
     return isReady ? (
       <PaperProvider>
         <LocalProvider>
+          <StatusBar barStyle="light-content" />
           <AppNavigator />
         </LocalProvider>
       </PaperProvider>

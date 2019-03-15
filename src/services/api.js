@@ -17,6 +17,16 @@ export const getRoutes = async ({ stopNumber }) => {
     const { data } = await axios.get(`routes.json?stop=${stopNumber}`)
     return data
   } catch (e) {
-    throw new Error('stopBusRoutes Failed')
+    throw new Error('getRoutes Failed')
+  }
+}
+
+export const getStops = async ({ latitude, longitude, distance }) => {
+  try {
+    const url = `stops.json?distance=${distance}&lat=${latitude}&lon=${longitude}&walking=true&usage=long`
+    const { data } = await axios.get(url)
+    return data
+  } catch (e) {
+    throw new Error('getStops Failed')
   }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { Image } from 'react-native'
 import { Home } from './components/Home'
 import { NavBarStyle } from '../../constants'
 import { trackView } from '../../config/analytics'
@@ -13,7 +13,6 @@ class HomeScreen extends Component {
 
   static navigationOptions = () => {
     return {
-      title: 'Peg Bus',
       ...NavBarStyle
     }
   }
