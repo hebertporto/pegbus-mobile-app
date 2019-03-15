@@ -19,7 +19,7 @@ class ModalScrollView extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      pan: new Animated.ValueXY(),
+      pan: new Animated.ValueXY({ x: 0, y: 700 }),
       scale: new Animated.Value(1),
       viewWidth: window.width,
       viewHeight: window.height
@@ -28,10 +28,36 @@ class ModalScrollView extends Component {
 
   componentWillMount() {
     this._panResponder = PanResponder.create({
-      onMoveShouldSetResponderCapture: () => true,
-      onMoveShouldSetPanResponderCapture: () => true,
-
+      onStartShouldSetPanResponder: (evt, gestureState) => {
+        console.log('onStartShouldSetPanResponder')
+        return true
+      },
+      onStartShouldSetPanResponderCapture: (evt, gestureState) => {
+        console.log('onStartShouldSetPanResponderCapture')
+        return true
+      },
+      onMoveShouldSetResponderCapture: () => {
+        console.log('onMoveShouldSetResponderCapture')
+        return true
+      },
+      onMoveShouldSetPanResponderCapture: () => {
+        console.log('onMoveShouldSetPanResponderCapture')
+        const [translateX, translateY] = [
+          this.state.pan.x._value,
+          this.state.pan.y._value
+        ]
+        const limit = -window.height / 4
+        // console.log(
+        //   'limit',
+        //   limit,
+        //   'translateY',
+        //   translateY,
+        // )
+        return true
+        // return translateY > limit
+      },
       onPanResponderGrant: (e, gestureState) => {
+        console.log('onPanResponderGrant')
         // Set the initial value to the current state
         this.state.pan.setOffset({
           x: this.state.pan.x._value,
@@ -101,12 +127,22 @@ class ModalScrollView extends Component {
         })
       }
     })
+
+    Animated.spring(this.state.pan, {
+      toValue: { x: 0, y: 0 },
+      tension: 2,
+      friction: 5
+    }).start(e => {
+      console.log('finished', e.finished)
+      // this.setState({ animationFinished: true })
+    })
   }
 
   render() {
     const { children, backgroundView } = this.props
     const { pan, scale, viewWidth, viewHeight } = this.state
     const [translateX, translateY] = [pan.x, pan.y]
+    console.log('translateX', translateX, 'translateY', translateY)
     const rotate = '0deg'
     return (
       <Fragment>
@@ -127,15 +163,41 @@ class ModalScrollView extends Component {
             },
             styles.scrollView
           ]}
+          {...this._panResponder.panHandlers}
         >
           <View style={styles.container}>
             <View
               style={styles.handlerContainer}
-              {...this._panResponder.panHandlers}
+              // {...this._panResponder.panHandlers}
             >
               <View style={styles.handler} />
             </View>
-            {children}
+            <ScrollView
+              style={{ flex: 1, padding: 7 }}
+              contentContainerStyle={{ flexGrow: 1 }}
+              scrollEnabled={true}
+              scrollEventThrottle={5}
+              onScroll={e => {
+                //console.log('onScroll', e.nativeEvent.contentOffset)
+                console.log('onScroll')
+                this.state.pan.setValue({
+                  x: 0,
+                  y: -e.nativeEvent.contentOffset.y
+                })
+                // e.preventDefault()
+                // e.stopPropagation()
+              }}
+              onScrollBeginDrag={e => {
+                console.log('onScrollBeginDrag')
+                // e.preventDefault()
+                // e.stopPropagation()
+              }}
+              onScrollEndDrag={e => {
+                console.log('onScrollEndDrag')
+              }}
+            >
+              {children}
+            </ScrollView>
           </View>
         </Animated.View>
       </Fragment>

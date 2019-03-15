@@ -48,21 +48,14 @@ class NearbyStops extends Component {
               <Map longitude={-97.1333263} latitude={49.8958907} />
             )}
           >
-            <ScrollView
-              style={{ flex: 1 }}
-              contentContainerStyle={{ flexGrow: 1 }}
-              scrollEnabled={true}
+            <View
+              style={{
+                flexGrow: 1,
+                justifyContent: 'space-between'
+              }}
             >
-              <View
-                style={{
-                  flexGrow: 1,
-                  justifyContent: 'space-between',
-                  padding: 10
-                }}
-              >
-                {isLoading ? this.renderLoading() : this.renderStops()}
-              </View>
-            </ScrollView>
+              {isLoading ? this.renderLoading() : this.renderStops()}
+            </View>
           </ModalScrollView>
         </View>
       </View>
