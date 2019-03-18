@@ -7,7 +7,7 @@ import moment from 'moment-timezone'
 import { Surface } from 'react-native-paper'
 
 import { styles } from './styles/RouteInfo.style'
-import { Map } from '../../../components/Map'
+import { Map } from '../../../components/Map/'
 
 getFilterStyle = ({ isFilterOpen }) => {
   if (isFilterOpen) {
