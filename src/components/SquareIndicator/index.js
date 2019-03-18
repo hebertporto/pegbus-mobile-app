@@ -25,7 +25,7 @@ const SquareIndicator = ({ direction }) => {
         height: 25,
         backgroundColor: bgColor,
         justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'center'
       }}
     >
       <Text style={{ fontWeight: '600', color: 'white', fontSize: 14 }}>
