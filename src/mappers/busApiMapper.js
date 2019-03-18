@@ -15,7 +15,7 @@ const mapperStopInfo = busInfo => {
         number: key,
         name,
         direction,
-        geographic: centre.geographic
+        geographic: centre.geographic,
       }
     : {}
 }
@@ -34,7 +34,7 @@ export const mapperScheduler = apiResponse => {
         number: get(routeInfo, 'number', ''),
         name: getNameRoute(get(route, 'variant.name', '')),
         timeScheduled: get(route, 'times.arrival.scheduled', ''),
-        timeEstimated: get(route, 'times.arrival.estimated', '')
+        timeEstimated: get(route, 'times.arrival.estimated', ''),
       }
     })
 

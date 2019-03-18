@@ -6,7 +6,7 @@ import { BusStopInfo } from './components/BusStopInfo'
 import { NavBarStyle } from '../../constants'
 import { trackView } from '../../config/analytics'
 import { stopBusAndSchedule, stopBusRoutes } from '../../services/stopService'
-import { HeaderStarButton } from '../../ui/buttons/HeaderStartButton'
+import { HeaderStarButton } from '../../components/buttons/HeaderStartButton'
 import { saveTempStop } from '../../services/tempStop'
 
 class BusStopInfoScreen extends Component {

@@ -37,6 +37,6 @@ export const Colors = {
   NAV_BAR: {
     background: '#2196F3',
     tint: '#FFF',
-    iosBorderColor: 'rgba(167, 167, 164, 0.25)'
-  }
+    iosBorderColor: 'rgba(167, 167, 164, 0.25)',
+  },
 }

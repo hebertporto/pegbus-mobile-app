@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { StyleSheet, View } from 'react-native'
 
-import { InputSearchRow } from '../../../ui/InputSearchRow'
+import { InputSearchRow } from '../../../components/InputSearchRow'
 import { BookmarkList } from './BookmarkList'
 
 class Home extends Component {

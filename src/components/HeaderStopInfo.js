@@ -18,7 +18,7 @@ export default class App extends React.Component {
               latitude: 49.89699,
               longitude: -97.1386,
               latitudeDelta: 633682,
-              longitudeDelta: 5528839
+              longitudeDelta: 5528839,
             }}
           />
         </View>

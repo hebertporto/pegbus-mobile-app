@@ -11,7 +11,7 @@ const NAV_BAR_HEIGHT_LARGE = NAV_BAR_HEIGHT + TITLE_ROW
 const CHIP_HEIGHT = 32
 
 const SPINNER_HEIGHT = {
-  small: 20
+  small: 20,
 }
 
 export const Metrics = {
@@ -45,7 +45,7 @@ export const Metrics = {
     large: 32,
     xl: 56,
     xxl: 72,
-    xxxl: 88
+    xxxl: 88,
   },
   ICON_TOUCHABLE_AREA_DENSE: 48,
   ICON_TOUCHABLE_AREA: 48,
@@ -58,7 +58,7 @@ export const Metrics = {
     square: 1,
     standard: 4 / 3,
     wide: 16 / 9,
-    wideVertical: 9 / 16
+    wideVertical: 9 / 16,
   },
-  MAX_ERROR_MESSAGE_HEIGHT: 48
+  MAX_ERROR_MESSAGE_HEIGHT: 48,
 }

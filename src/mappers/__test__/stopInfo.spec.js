@@ -23,25 +23,25 @@ describe('Schedule Route Mapper', () => {
         street: {
           key: 2265,
           name: 'Main Street',
-          type: 'Street'
+          type: 'Street',
         },
         'cross-street': {
           key: 2400,
           name: 'McDermot Avenue',
-          type: 'Avenue'
+          type: 'Avenue',
         },
         centre: {
           utm: {
             zone: '14U',
             x: 633682,
-            y: 5528839
+            y: 5528839,
           },
           geographic: {
             latitude: '49.89699',
-            longitude: '-97.1386'
-          }
-        }
-      })
+            longitude: '-97.1386',
+          },
+        },
+      }),
     )
   })
 
@@ -53,9 +53,9 @@ describe('Schedule Route Mapper', () => {
           number: 11,
           name: 'to Glenway',
           timeScheduled: '10:14:52',
-          timeEstimated: '10:14:52'
-        })
-      ])
+          timeEstimated: '10:14:52',
+        }),
+      ]),
     )
   })
 })

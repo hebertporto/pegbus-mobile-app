@@ -8,7 +8,7 @@ const bus = {
   number: 11,
   name: 'to Glenway',
   timeScheduled: '10:14:52',
-  timeEstimated: '10:14:52'
+  timeEstimated: '10:14:52',
 }
 
 const checkOnTime = (estimated, scheduled) => {

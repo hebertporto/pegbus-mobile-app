@@ -8,7 +8,7 @@ import { styles } from './styles/HeaderWithSearchBar.style'
 
 class HeaderWithSearchBarContainer extends Component {
   state = {
-    witdhAnimation: new Animated.Value(0)
+    witdhAnimation: new Animated.Value(0),
   }
 
   startAnimation = () => {
@@ -16,8 +16,8 @@ class HeaderWithSearchBarContainer extends Component {
       Animated.parallel([
         Animated.timing(this.state.witdhAnimation, {
           toValue: 250,
-          duration: 2500
-        })
+          duration: 2500,
+        }),
       ]).start(() => alert('acabou'))
     }
   }
@@ -26,7 +26,7 @@ class HeaderWithSearchBarContainer extends Component {
     const { navigation, propsHeader } = this.props
     const isSearchActive = navigation.getParam('isSearchActive', false)
     const animatedStyle = {
-      width: 100
+      width: 100,
     }
     return (
       <View>
@@ -41,7 +41,7 @@ class HeaderWithSearchBarContainer extends Component {
                   paddingVertical: 10,
                   paddingLeft: 10,
                   fontSize: 28,
-                  color: 'black'
+                  color: 'black',
                 }}
               />
             </Animated.View>

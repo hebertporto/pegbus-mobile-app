@@ -4,7 +4,7 @@ export const getStopBusesTime = async ({ stopNumber }) => {
   try {
     const date = new Date().toISOString()
     const { data } = await axios.get(
-      `stops/${stopNumber}/schedule.json?start=${date}`
+      `stops/${stopNumber}/schedule.json?start=${date}`,
     )
     return { response: data, dateRequested: date }
   } catch (e) {

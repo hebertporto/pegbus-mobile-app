@@ -3,28 +3,28 @@ import {
   StyleSheet,
   Animated,
   View,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
 } from 'react-native'
 import { RkTextInput } from 'react-native-ui-kitten'
 import { Ionicons } from '@expo/vector-icons'
 
 class Anima extends React.Component {
   state = {
-    witdhAnimation: new Animated.Value(250)
+    witdhAnimation: new Animated.Value(250),
   }
 
   handlePress = () => {
     Animated.parallel([
       Animated.timing(this.state.witdhAnimation, {
         toValue: 250,
-        duration: 500
-      })
+        duration: 500,
+      }),
     ]).start()
   }
 
   render() {
     const animatedStyles = {
-      width: this.state.witdhAnimation
+      width: this.state.witdhAnimation,
     }
     return (
       <View style={styles.container}>
@@ -47,7 +47,7 @@ class Anima extends React.Component {
                 paddingVertical: 10,
                 paddingLeft: 10,
                 fontSize: 28,
-                color: 'black'
+                color: 'black',
               }}
             />
           </Animated.View>
@@ -62,21 +62,21 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'flex-end',
     justifyContent: 'center',
-    flexDirection: 'column'
+    flexDirection: 'column',
   },
   row1: {
     flex: 0.5,
-    backgroundColor: 'yellow'
+    backgroundColor: 'yellow',
   },
   row2: {
-    flex: 0.5
+    flex: 0.5,
   },
   icon: {
-    backgroundColor: 'yellow'
+    backgroundColor: 'yellow',
   },
   box: {
-    height: 50
-  }
+    height: 50,
+  },
 })
 
 export { Anima }

@@ -30,7 +30,7 @@ const BookmarkList = ({ data, navigate }) => {
 
 BookmarkList.propTypes = {
   data: PropTypes.array.isRequired,
-  navigate: PropTypes.func.isRequired
+  navigate: PropTypes.func.isRequired,
 }
 
 export { BookmarkList }

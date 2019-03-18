@@ -5,21 +5,21 @@ const type = {
   light: {
     ...Platform.select({
       android: { fontFamily: 'cabin' },
-      ios: { fontWeight: '300' }
-    })
+      ios: { fontWeight: '300' },
+    }),
   },
   regular: {
     ...Platform.select({
       android: { fontFamily: 'archivo' },
-      ios: { fontWeight: '400' }
-    })
+      ios: { fontWeight: '400' },
+    }),
   },
   medium: {
     ...Platform.select({
       android: { fontFamily: 'archivo-semibold' },
-      ios: { fontWeight: '700' }
-    })
-  }
+      ios: { fontWeight: '700' },
+    }),
+  },
 }
 
 const size = {
@@ -35,86 +35,86 @@ const size = {
   secondaryButton: Platform.OS === 'ios' ? 15 : 12,
   medium: 15,
   small: 13,
-  tiny: 11
+  tiny: 11,
 }
 
 const lineHeight = {
   boost: 24,
   regular: 20,
-  small: 16
+  small: 16,
 }
 
 const style = {
   title: {
     ...type.medium,
-    fontSize: size.medium
+    fontSize: size.medium,
   },
   primaryButton: {
     ...type.medium,
-    fontSize: size.medium
+    fontSize: size.medium,
   },
   secondaryButton: {
     ...type.medium,
-    fontSize: size.secondaryButton
+    fontSize: size.secondaryButton,
   },
   footNote: {
     ...type.regular,
-    fontSize: size.small
-  }
+    fontSize: size.small,
+  },
 }
 
 const standardStyle = {
   h2: {
     fontSize: size.h2,
     color: Colors.BLACK_PRIMARY_ALT,
-    ...type.medium
+    ...type.medium,
   },
   h5: {
     fontSize: size.h5,
     color: Colors.BLACK_PRIMARY_ALT,
-    ...type.medium
+    ...type.medium,
   },
   h6: {
     fontSize: size.h6,
     color: Colors.BLACK_PRIMARY_ALT,
-    ...type.medium
+    ...type.medium,
   },
   p: {
     fontSize: size.regular,
     lineHeight: lineHeight.boost,
     color: Colors.BLACK_SECONDARY_ALT,
-    ...type.regular
+    ...type.regular,
   },
   pEmphasis: {
     fontSize: size.regular,
     lineHeight: lineHeight.boost,
     color: Colors.BLACK_PRIMARY_ALT,
-    ...type.regular
+    ...type.regular,
   },
   description: {
     fontSize: size.medium,
     lineHeight: lineHeight.regular,
     color: Colors.BLACK_SECONDARY_ALT,
-    ...type.regular
+    ...type.regular,
   },
   descriptionEmphasis: {
     fontSize: size.medium,
     lineHeight: lineHeight.regular,
     color: Colors.BLACK_PRIMARY_ALT,
-    ...type.regular
+    ...type.regular,
   },
   caption: {
     fontSize: size.small,
     lineHeight: lineHeight.small,
     color: Colors.BLACK_SECONDARY_ALT,
-    ...type.regular
+    ...type.regular,
   },
   captionEmphasis: {
     fontSize: size.small,
     lineHeight: lineHeight.small,
     color: Colors.BLACK_PRIMARY_ALT,
-    ...type.regular
-  }
+    ...type.regular,
+  },
 }
 
 export const Fonts = {
@@ -122,5 +122,5 @@ export const Fonts = {
   size,
   standardStyle,
   style,
-  type
+  type,
 }

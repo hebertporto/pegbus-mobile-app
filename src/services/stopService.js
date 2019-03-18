@@ -1,7 +1,7 @@
 import { getStopBusesTime, getRoutes } from './api'
 import {
   mapperScheduler,
-  mapperBusRouterPerStop
+  mapperBusRouterPerStop,
 } from '../mappers/busApiMapper'
 
 export const stopBusAndSchedule = async ({ stopNumber }) => {

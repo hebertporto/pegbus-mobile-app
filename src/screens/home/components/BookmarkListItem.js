@@ -1,11 +1,11 @@
 import React from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
-import { Map } from './../../../ui/Map'
+import { Map } from './../../../components/Map'
 import { Divider } from 'react-native-paper'
 import { Ionicons } from '@expo/vector-icons'
 
 import { styles } from './styles/BookmarkListItem.style'
-import { SquareIndicator } from '../../../ui/SquareIndicator'
+import { SquareIndicator } from '../../../components/SquareIndicator'
 
 const BookmarkListItem = ({ item, navigate }) => {
   const { number, geographic, direction, name } = item

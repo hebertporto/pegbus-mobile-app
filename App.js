@@ -2,9 +2,7 @@ import React from 'react'
 import { AppLoading, Asset, Font, Icon } from 'expo'
 import { Provider as PaperProvider } from 'react-native-paper'
 import AppNavigator from './src/navigation/AppNavigator'
-
 import './src/config'
-import { LocalProvider } from './src/context/LocalContext'
 
 export default class App extends React.Component {
   state = {
@@ -36,9 +34,7 @@ export default class App extends React.Component {
 
     return isReady ? (
       <PaperProvider>
-        <LocalProvider>
-          <AppNavigator />
-        </LocalProvider>
+        <AppNavigator />
       </PaperProvider>
     ) : (
       <AppLoading

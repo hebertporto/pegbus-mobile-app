@@ -8,7 +8,7 @@ import { ScheduleTimeList } from './ScheduleTimeList'
 import { ScheduleTimeListFooter } from './ScheduleTimeListFooter'
 
 import { routes, dateRequested, stopInfo, shedules } from './../../../domain'
-import { LoaderAnimated } from '../../../ui/LoaderAnimated'
+import { LoaderAnimated } from '../../../components/LoaderAnimated'
 
 const defaultState = {
   data: [],

@@ -5,11 +5,11 @@ export const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    flex: 1
+    flex: 1,
   },
   lottie: {
     width: 150,
     height: 150,
-    backgroundColor: 'transparent'
-  }
+    backgroundColor: 'transparent',
+  },
 })

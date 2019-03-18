@@ -22,7 +22,7 @@ const routes = [
   47,
   48,
   58,
-  67
+  67,
 ]
 
 export { routes }

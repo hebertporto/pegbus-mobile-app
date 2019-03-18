@@ -7,21 +7,21 @@ export const styles = StyleSheet.create({
     flexDirection: 'column',
     marginBottom: 5,
     elevation: 2,
-    marginHorizontal: 5
+    marginHorizontal: 5,
   },
   titleWrapper: {
     paddingVertical: 5,
-    paddingLeft: 15
+    paddingLeft: 15,
   },
   listWrapper: {
-    flex: 1
+    flex: 1,
   },
   text: {
     color: Colors.TEXT_DEFAULT,
-    fontWeight: '700'
+    fontWeight: '700',
   },
   title: {
     ...Fonts.standardStyle.caption,
-    fontWeight: '600'
-  }
+    fontWeight: '600',
+  },
 })

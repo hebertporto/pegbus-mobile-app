@@ -11,18 +11,18 @@ const checkTime = ({ timeScheduled, timeEstimated }) => {
   if (moment(timeScheduled).isBefore(moment(timeEstimated))) {
     return {
       iconColor: 'red',
-      isOnTime: false
+      isOnTime: false,
     }
   }
   if (moment(timeScheduled).isAfter(moment(timeEstimated))) {
     return {
       iconColor: '#eab53a',
-      isOnTime: false
+      isOnTime: false,
     }
   }
   return {
     iconColor: 'green',
-    isOnTime: true
+    isOnTime: true,
   }
 }
 

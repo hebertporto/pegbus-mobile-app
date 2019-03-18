@@ -9,11 +9,11 @@ export const styles = StyleSheet.create({
     alignItems: 'flex-end',
     ...StyleSheet.absoluteFillObject,
     backgroundColor: '#2196F3',
-    elevation: 8
+    elevation: 8,
   },
   inputContainer: {
     flex: 1,
     // marginLeft: 40,
-    backgroundColor: 'green'
-  }
+    backgroundColor: 'green',
+  },
 })

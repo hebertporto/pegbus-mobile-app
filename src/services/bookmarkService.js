@@ -39,7 +39,7 @@ export const deleteBookmark = async ({ stopNumber }) => {
   try {
     const bookmarks = await getAll()
     const newBookmarks = bookmarks.filter(
-      b => parseInt(b.number, 10) !== parseInt(stopNumber, 10)
+      b => parseInt(b.number, 10) !== parseInt(stopNumber, 10),
     )
     await saveBookmarkList(newBookmarks)
   } catch (e) {

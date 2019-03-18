@@ -9,8 +9,7 @@
     "ios": "expo start --ios",
     "eject": "expo eject",
     "test": "node ./node_modules/jest/bin/jest.js --watchAll",
-    "reformat-code": "npm run prettier && npm run lint:fix",
-    "lint:fix": "prettier --single-quote --no-semi --write '{src,__{tests,mocks}__}/**/*.js'"
+    "lint:fix": "prettier --single-quote --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "jest": {
     "preset": "jest-expo"
@@ -23,7 +22,6 @@
     "lodash": "^4.17.11",
     "moment": "^2.22.2",
     "moment-timezone": "^0.5.23",
-    "prettier": "^1.15.1",
     "prop-types": "^15.6.2",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
@@ -38,6 +36,7 @@
     "eslint-config-prettier": "^3.3.0",
     "eslint-config-react-native-prettier": "^1.0.1",
     "eslint-plugin-prettier": "^3.0.0",
+    "prettier": "^1.15.1",
     "husky": "^1.1.4",
     "jest-expo": "30.0.0",
     "lint-staged": "^8.0.5",

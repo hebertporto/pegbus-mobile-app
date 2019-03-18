@@ -6,19 +6,19 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: '#EBEBEB',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   item: {
     flex: 0.2,
     alignItems: 'center',
     justifyContent: 'flex-start',
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   caption: {
-    ...Fonts.standardStyle.caption
+    ...Fonts.standardStyle.caption,
   },
   timeText: {
     ...Fonts.standardStyle.captionEmphasis,
-    marginLeft: 5
-  }
+    marginLeft: 5,
+  },
 })
