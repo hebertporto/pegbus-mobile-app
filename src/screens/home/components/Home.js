@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { StyleSheet, View } from 'react-native'
-
-import { InputSearchRow } from '../../../components/InputSearchRow'
+import { InputSearch } from '../../../components/InputSearch'
 import { BookmarkList } from './BookmarkList'
 
 class Home extends Component {
@@ -13,7 +12,7 @@ class Home extends Component {
     return (
       <View style={styles.root}>
         <View style={styles.inputWrapper}>
-          <InputSearchRow searchHandler={this.navigate} />
+          <InputSearch searchHandler={this.navigate} />
         </View>
 
         <View style={styles.listWrapper}>

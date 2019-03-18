@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View } from 'react-native'
 import { MapView } from 'expo'
-import { styles } from './style'
+import { styles } from './styles'
 
 class Map extends Component {
   state = {

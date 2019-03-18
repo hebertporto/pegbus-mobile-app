@@ -5,11 +5,11 @@ import { Surface } from 'react-native-paper'
 import { View, Keyboard, TextInput, Text } from 'react-native'
 import { RkButton } from 'react-native-ui-kitten'
 
-import { styles } from './styles/InputSearchRow.style.js'
+import { styles } from './styles'
 
-class InputSearchRow extends Component {
+class InputSearch extends Component {
   state = {
-    value: '',
+    value: ''
   }
 
   handleChangeText = value => this.setState({ value })
@@ -49,8 +49,8 @@ class InputSearchRow extends Component {
   }
 }
 
-InputSearchRow.propTypes = {
-  searchHandler: PropTypes.func.isRequired,
+InputSearch.propTypes = {
+  searchHandler: PropTypes.func.isRequired
 }
 
-export { InputSearchRow }
+export { InputSearch }
