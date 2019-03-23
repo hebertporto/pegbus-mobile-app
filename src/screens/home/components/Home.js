@@ -25,7 +25,7 @@ class Home extends Component {
 
 Home.propTypes = {
   navigateTo: PropTypes.func.isRequired,
-  favourites: PropTypes.array.isRequired
+  favourites: PropTypes.array.isRequired,
 }
 
 export { Home }
@@ -33,12 +33,12 @@ export { Home }
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    flexDirection: 'column'
+    flexDirection: 'column',
   },
   inputWrapper: {
-    flex: 0.15
+    flex: 0.15,
   },
   listWrapper: {
-    flex: 0.85
-  }
+    flex: 0.85,
+  },
 })

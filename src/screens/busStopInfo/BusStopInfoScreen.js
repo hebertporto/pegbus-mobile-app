@@ -15,7 +15,7 @@ class BusStopInfoScreen extends Component {
       ...NavBarStyle,
       headerTitleStyle: {
         ...NavBarStyle.headerTitleStyle,
-        paddingLeft: 50
+        paddingLeft: 50,
       },
       headerLeft: () => {
         return (
@@ -30,7 +30,7 @@ class BusStopInfoScreen extends Component {
       },
       headerRight: (
         <HeaderStarButton stopNumber={navigation.getParam('stopNumber')} />
-      )
+      ),
     }
   }
 

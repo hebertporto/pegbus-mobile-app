@@ -7,14 +7,14 @@ import { Ionicons } from '@expo/vector-icons'
 import {
   saveBookmark,
   getBookmarkStored,
-  deleteBookmark
+  deleteBookmark,
 } from '../../services/bookmarkService'
 import { getTempItem } from '../../services/tempStop'
 
 class StarButton extends Component {
   state = {
     favorito: false,
-    stopNumber: 0
+    stopNumber: 0,
   }
 
   componentDidMount() {

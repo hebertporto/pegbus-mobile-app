@@ -20,7 +20,7 @@ const defaultState = {
   error: false,
   showFilter: false,
   loading: false,
-  reloadLoading: false
+  reloadLoading: false,
 }
 
 class BusStopInfo extends Component {
@@ -36,7 +36,7 @@ class BusStopInfo extends Component {
       dataFiltered: shedules,
       routes,
       dateRequested,
-      stopInfo
+      stopInfo,
     })
   }
 
@@ -70,13 +70,13 @@ class BusStopInfo extends Component {
         dataFiltered: shedules,
         error: false,
         reloadLoading: false,
-        dateRequested
+        dateRequested,
       })
       this.filterSchedule()
     } catch (e) {
       this.setState({
         error: true,
-        reloadLoading: false
+        reloadLoading: false,
       })
     }
   }
@@ -87,7 +87,7 @@ class BusStopInfo extends Component {
       const {
         shedules,
         stopInfo,
-        dateRequested
+        dateRequested,
       } = await this.props.getBusesTime()
 
       const routes = await this.props.getBusesNumber()
@@ -99,14 +99,14 @@ class BusStopInfo extends Component {
         dataFiltered: shedules,
         error: false,
         loading: false,
-        dateRequested
+        dateRequested,
       })
     } catch (e) {
       console.log('ERROR', e)
       this.setState({
         ...defaultState,
         error: true,
-        loading: false
+        loading: false,
       })
     }
   }
@@ -133,7 +133,7 @@ class BusStopInfo extends Component {
       dateRequested,
       loading,
       reloadLoading,
-      error
+      error,
     } = this.state
     return loading ? (
       this.renderLoading()
@@ -187,6 +187,6 @@ export { BusStopInfo }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column'
-  }
+    flexDirection: 'column',
+  },
 })

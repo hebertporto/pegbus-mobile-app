@@ -1,23 +1,23 @@
 import {
   createStackNavigator,
   createAppContainer,
-  createSwitchNavigator
+  createSwitchNavigator,
 } from 'react-navigation'
 
 import { HomeScreen } from './../screens/home/HomeScreen'
 import { BusStopInfoScreen } from './../screens/busStopInfo/BusStopInfoScreen'
 
 const HomeStack = createStackNavigator({
-  Home: HomeScreen
+  Home: HomeScreen,
 })
 
 const BusStack = createStackNavigator({
-  BusStop: BusStopInfoScreen
+  BusStop: BusStopInfoScreen,
 })
 
 const AppSwitchNavigator = createSwitchNavigator({
   MainStack: HomeStack,
-  Welcome: BusStack
+  Welcome: BusStack,
 })
 
 export default createAppContainer(AppSwitchNavigator)

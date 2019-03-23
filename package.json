@@ -19,6 +19,7 @@
     "axios": "^0.18.0",
     "expo": "^31.0.0",
     "expo-analytics": "^1.0.7",
+    "glamorous-native": "^1.4.2",
     "lodash": "^4.17.11",
     "moment": "^2.22.2",
     "moment-timezone": "^0.5.23",
@@ -36,10 +37,10 @@
     "eslint-config-prettier": "^3.3.0",
     "eslint-config-react-native-prettier": "^1.0.1",
     "eslint-plugin-prettier": "^3.0.0",
-    "prettier": "^1.15.1",
     "husky": "^1.1.4",
     "jest-expo": "30.0.0",
     "lint-staged": "^8.0.5",
+    "prettier": "^1.15.1",
     "prettier-standard": "^8.0.1"
   },
   "husky": {
@@ -49,7 +50,7 @@
   },
   "lint-staged": {
     "*.{js}": [
-      "prettier --single-quote --no-semi --write '{src,__{tests,mocks}__}/**/*.js'",
+      "prettier --single-quote --write '{src,__{tests,mocks}__}/**/*.js'",
       "git add"
     ]
   }

@@ -23,7 +23,7 @@ const RouteInfo = ({
   isButtonDisable,
   isFilterOpen,
   filterToogle,
-  reload
+  reload,
 }) => {
   const { name, number, direction, geographic } = stopInfo
   return (
@@ -82,7 +82,7 @@ RouteInfo.propTypes = {
   isButtonDisable: PropTypes.bool.isRequired,
   isFilterOpen: PropTypes.bool.isRequired,
   filterToogle: PropTypes.func.isRequired,
-  reload: PropTypes.func.isRequired
+  reload: PropTypes.func.isRequired,
 }
 
 export { RouteInfo }

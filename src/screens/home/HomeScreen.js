@@ -8,13 +8,13 @@ import { removeTemp } from '../../services/tempStop'
 
 class HomeScreen extends Component {
   state = {
-    favourites: []
+    favourites: [],
   }
 
   static navigationOptions = () => {
     return {
       title: 'Peg Bus',
-      ...NavBarStyle
+      ...NavBarStyle,
     }
   }
 
