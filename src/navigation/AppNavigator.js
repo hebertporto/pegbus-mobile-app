@@ -10,7 +10,7 @@ import { NearbyStopsScreen } from './../screens/nearbyStops/NearbyStopsScreen'
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
-  // NearbyStops: NearbyStopsScreen,
+  NearbyStops: NearbyStopsScreen,
 })
 
 const BusStack = createStackNavigator({
