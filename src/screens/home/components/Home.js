@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { StyleSheet, View } from 'react-native'
 import { InputSearch } from '../../../components/InputSearch'
+import { StyleSheet, View, Text } from 'react-native'
+import { InputSearchRow } from '../../../ui/InputSearchRow'
 import { BookmarkList } from './BookmarkList'
+import { RkButton } from 'react-native-ui-kitten'
+import { Ionicons } from '@expo/vector-icons'
 
 class Home extends Component {
   navigate = stopNumber => this.props.navigateTo(stopNumber)
@@ -15,6 +18,16 @@ class Home extends Component {
           <InputSearch searchHandler={this.navigate} />
         </View>
 
+        <View style={styles.inputWrapper}>
+          <RkButton
+            rkType="icon small"
+            style={styles.buttonSearch}
+            onPress={this.props.goToNearbyStops}
+          >
+            <Text>Nearby</Text>
+          </RkButton>
+        </View>
+
         <View style={styles.listWrapper}>
           <BookmarkList data={favourites} navigate={this.navigate} />
         </View>
@@ -25,6 +38,7 @@ class Home extends Component {
 
 Home.propTypes = {
   navigateTo: PropTypes.func.isRequired,
+  goToNearbyStops: PropTypes.func.isRequired,
   favourites: PropTypes.array.isRequired
 }
 

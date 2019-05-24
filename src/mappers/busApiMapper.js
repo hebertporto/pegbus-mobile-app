@@ -15,7 +15,7 @@ const mapperStopInfo = busInfo => {
         number: key,
         name,
         direction,
-        geographic: centre.geographic,
+        geographic: centre.geographic
       }
     : {}
 }
@@ -31,10 +31,10 @@ export const mapperScheduler = apiResponse => {
     const montendRoutes = closetTimes.map(route => {
       return {
         id: uuid(),
-        number: get(routeInfo, 'number', ''),
-        name: getNameRoute(get(route, 'variant.name', '')),
-        timeScheduled: get(route, 'times.arrival.scheduled', ''),
-        timeEstimated: get(route, 'times.arrival.estimated', ''),
+        number: routeInfo.number,
+        name: getNameRoute(route.variant.name),
+        timeScheduled: get(route, 'times.arrival.scheduled', null),
+        timeEstimated: get(route, 'times.arrival.estimated', null)
       }
     })
 
@@ -51,4 +51,17 @@ export const mapperBusRouterPerStop = apiResponse => {
     return route.number
   })
   return routes.sort()
+}
+
+export const mapperNearbyStops = apiResponse => {
+  const fullStops = get(apiResponse, 'stops', [])
+  const stopsUordered = fullStops.map(stop => ({
+    latitude: stop.centre.geographic.latitude,
+    longitude: stop.centre.geographic.longitude,
+    direction: stop.direction,
+    distance: stop.distances.walking,
+    number: stop.number,
+    name: stop.name
+  }))
+  return sortBy(stopsUordered, ['distance', 'number'])
 }
