@@ -2,20 +2,20 @@ import React, { Component } from 'react'
 import { NavBarStyle } from '../../constants'
 import { NearbyStops } from './components/NearbyStops'
 import { Constants, Location, Permissions } from 'expo'
-import { ModalCard } from '../../ui/ModalCard'
+// import { ModalCard } from '../../components/ModalCard'
 import { nearbyStops } from '../../services/stopService'
 
 class NearbyStopsScreen extends Component {
   static navigationOptions = () => {
     return {
       title: 'Peg Bus',
-      ...NavBarStyle
+      ...NavBarStyle,
     }
   }
 
   state = {
     isLoading: true,
-    stops: []
+    stops: [],
   }
 
   componentDidMount() {
@@ -46,7 +46,7 @@ class NearbyStopsScreen extends Component {
     let { status } = await Permissions.askAsync(Permissions.LOCATION)
     if (status !== 'granted') {
       this.setState({
-        errorMessage: 'Permission to access location was denied'
+        errorMessage: 'Permission to access location was denied',
       })
     }
 

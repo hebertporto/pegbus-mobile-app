@@ -4,10 +4,10 @@ import {
   ActivityIndicator,
   View,
   Text,
-  ScrollView
+  ScrollView,
 } from 'react-native'
-import { ModalScrollView } from '../../../ui/ModalScrollView'
-import { Map } from './../../../ui/Map'
+import { ModalScrollView } from '../../../components/ModalScrollView'
+import { Map } from './../../../components/Map'
 import { StopRow } from './StopRow'
 
 class NearbyStops extends Component {
@@ -51,7 +51,7 @@ class NearbyStops extends Component {
             <View
               style={{
                 flexGrow: 1,
-                justifyContent: 'space-between'
+                justifyContent: 'space-between',
               }}
             >
               {isLoading ? this.renderLoading() : this.renderStops()}

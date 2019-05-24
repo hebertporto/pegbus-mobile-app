@@ -9,7 +9,7 @@ import { styles } from './styles'
 
 class InputSearch extends Component {
   state = {
-    value: ''
+    value: '',
   }
 
   handleChangeText = value => this.setState({ value })
@@ -50,7 +50,7 @@ class InputSearch extends Component {
 }
 
 InputSearch.propTypes = {
-  searchHandler: PropTypes.func.isRequired
+  searchHandler: PropTypes.func.isRequired,
 }
 
 export { InputSearch }

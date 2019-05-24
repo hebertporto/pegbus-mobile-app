@@ -32,7 +32,7 @@ class ModalCard extends Component {
       editPlaceholder: '',
       title,
       question,
-      answer
+      answer,
     }
   }
 
@@ -54,12 +54,12 @@ class ModalCard extends Component {
     if (type === this.TYPE_QUESTION) {
       return {
         editTitle: 'Question',
-        editPlaceholder: this.DEFAULT_QUESTION
+        editPlaceholder: this.DEFAULT_QUESTION,
       }
     }
     return {
       editTitle: 'Answer',
-      editPlaceholder: this.DEFAULT_ANSWER
+      editPlaceholder: this.DEFAULT_ANSWER,
     }
   }
 
@@ -71,7 +71,7 @@ class ModalCard extends Component {
     this.setState({
       ...this.getStateForEditType(type),
       type,
-      editing: true
+      editing: true,
     })
   }
 
@@ -213,7 +213,7 @@ class ModalCard extends Component {
 
 ModalCard.propTypes = {
   onCancel: PropTypes.func,
-  onFinish: PropTypes.func
+  onFinish: PropTypes.func,
 }
 
 export { ModalCard }

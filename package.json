@@ -51,7 +51,7 @@
   },
   "lint-staged": {
     "*.{js}": [
-      "prettier --single-quote --no-semi --write '{src,__{tests,mocks}__}/**/*.js'",
+      "prettier --write '{src,__{tests,mocks}__}/**/*.js'",
       "git add"
     ]
   }

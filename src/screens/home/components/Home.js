@@ -2,10 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { InputSearch } from '../../../components/InputSearch'
 import { StyleSheet, View, Text } from 'react-native'
-import { InputSearchRow } from '../../../ui/InputSearchRow'
 import { BookmarkList } from './BookmarkList'
 import { RkButton } from 'react-native-ui-kitten'
-import { Ionicons } from '@expo/vector-icons'
 
 class Home extends Component {
   navigate = stopNumber => this.props.navigateTo(stopNumber)
@@ -39,7 +37,7 @@ class Home extends Component {
 Home.propTypes = {
   navigateTo: PropTypes.func.isRequired,
   goToNearbyStops: PropTypes.func.isRequired,
-  favourites: PropTypes.array.isRequired
+  favourites: PropTypes.array.isRequired,
 }
 
 export { Home }
@@ -47,12 +45,12 @@ export { Home }
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    flexDirection: 'column'
+    flexDirection: 'column',
   },
   inputWrapper: {
-    flex: 0.15
+    flex: 0.15,
   },
   listWrapper: {
-    flex: 0.85
-  }
+    flex: 0.85,
+  },
 })

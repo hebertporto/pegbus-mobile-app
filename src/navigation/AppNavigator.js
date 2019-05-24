@@ -1,7 +1,7 @@
 import {
   createStackNavigator,
   createAppContainer,
-  createSwitchNavigator
+  createSwitchNavigator,
 } from 'react-navigation'
 
 import { HomeScreen } from './../screens/home/HomeScreen'
@@ -10,16 +10,16 @@ import { NearbyStopsScreen } from './../screens/nearbyStops/NearbyStopsScreen'
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
-  NearbyStops: NearbyStopsScreen
+  // NearbyStops: NearbyStopsScreen,
 })
 
 const BusStack = createStackNavigator({
-  BusStop: BusStopInfoScreen
+  BusStop: BusStopInfoScreen,
 })
 
 const AppSwitchNavigator = createSwitchNavigator({
   MainStack: HomeStack,
-  Welcome: BusStack
+  Welcome: BusStack,
 })
 
 export default createAppContainer(AppSwitchNavigator)
