@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Image } from 'react-native'
 import { Home } from './components/Home'
 import { NavBarStyle } from '../../constants'
 import { trackView } from '../../config/analytics'
@@ -8,12 +7,12 @@ import { removeTemp } from '../../services/tempStop'
 
 class HomeScreen extends Component {
   state = {
-    favourites: []
+    favourites: [],
   }
 
   static navigationOptions = () => {
     return {
-      ...NavBarStyle
+      ...NavBarStyle,
     }
   }
 

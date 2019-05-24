@@ -16,7 +16,7 @@ class Card extends Component {
     super(props)
     this.state = {
       flip: props.flip || false,
-      isFlipped: props.isFlipped || false
+      isFlipped: props.isFlipped || false,
     }
   }
 
@@ -108,7 +108,7 @@ Card.propTypes = {
   back: PropTypes.node,
   children: PropTypes.node,
   cardStyle: StylePropType,
-  style: StylePropType.supportingArrays
+  style: StylePropType.supportingArrays,
 }
 
 export { Card }

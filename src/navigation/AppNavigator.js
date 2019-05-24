@@ -8,14 +8,20 @@ import { HomeScreen } from './../screens/home/HomeScreen'
 import { BusStopInfoScreen } from './../screens/busStopInfo/BusStopInfoScreen'
 import { NearbyStopsScreen } from './../screens/nearbyStops/NearbyStopsScreen'
 
-const HomeStack = createStackNavigator({
-  Home: HomeScreen,
-  NearbyStops: NearbyStopsScreen,
-})
+const HomeStack = createStackNavigator(
+  {
+    Home: HomeScreen,
+    NearbyStops: NearbyStopsScreen,
+  },
+  { headerLayoutPreset: 'center' },
+)
 
-const BusStack = createStackNavigator({
-  BusStop: BusStopInfoScreen,
-})
+const BusStack = createStackNavigator(
+  {
+    BusStop: BusStopInfoScreen,
+  },
+  { headerLayoutPreset: 'center' },
+)
 
 const AppSwitchNavigator = createSwitchNavigator({
   MainStack: HomeStack,

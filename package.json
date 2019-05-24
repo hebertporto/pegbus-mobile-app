@@ -9,7 +9,7 @@
     "ios": "expo start --ios",
     "eject": "expo eject",
     "test": "node ./node_modules/jest/bin/jest.js --watchAll",
-    "lint:fix": "prettier --single-quote --write '{src,__{tests,mocks}__}/**/*.js'"
+    "lint:fix": "prettier '{src,__{tests,mocks}__}/**/*.js'"
   },
   "jest": {
     "preset": "jest-expo"

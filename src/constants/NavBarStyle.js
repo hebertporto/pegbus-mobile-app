@@ -8,7 +8,7 @@ export const NavBarStyle = {
       source={require('../assets/images/header.png')}
       style={{
         resizeMode: 'contain',
-        height: 34
+        height: 34,
       }}
     />
   ),

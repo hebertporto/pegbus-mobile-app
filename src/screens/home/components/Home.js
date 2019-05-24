@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { InputSearch } from '../../../components/InputSearch'
 import { StyleSheet, View, Text } from 'react-native'
-import { BookmarkList } from './BookmarkList'
 import { RkButton } from 'react-native-ui-kitten'
+import { BookmarkList } from './BookmarkList'
+import { InputSearch } from '../../../components/InputSearch'
 
 class Home extends Component {
   navigate = stopNumber => this.props.navigateTo(stopNumber)
