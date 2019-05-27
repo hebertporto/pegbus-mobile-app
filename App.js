@@ -7,7 +7,7 @@ import './src/config'
 
 export default class App extends React.Component {
   state = {
-    isReady: false
+    isReady: false,
   }
 
   loadResourcesAsync = async () => {
@@ -18,8 +18,12 @@ export default class App extends React.Component {
         archivo: require('./src/assets/fonts/Archivo-Regular.ttf'),
         'archivo-semibold': require('./src/assets/fonts/Archivo-SemiBold.ttf'),
         cabin: require('./src/assets/fonts/Cabin-Regular.ttf'),
-        'cabin-bold': require('./src/assets/fonts/Cabin-Bold.ttf')
-      })
+        'cabin-bold': require('./src/assets/fonts/Cabin-Bold.ttf'),
+        'praktika-bold': require('./src/assets/fonts/Praktika-Bold.otf'),
+        'praktika-light': require('./src/assets/fonts/Praktika-Light.otf'),
+        'praktika-medium': require('./src/assets/fonts/Praktika-Medium.otf'),
+        'praktika-regular': require('./src/assets/fonts/Praktika-Regular.otf'),
+      }),
     ])
   }
 

@@ -8,7 +8,7 @@ class Map extends Component {
     latitude: parseFloat(this.props.latitude),
     longitude: parseFloat(this.props.longitude),
     latitudeDelta: 0.00072026,
-    longitudeDelta: 0.0014299
+    longitudeDelta: 0.0014299,
   }
 
   render() {
@@ -21,7 +21,7 @@ class Map extends Component {
             latitude,
             longitude,
             latitudeDelta,
-            longitudeDelta
+            longitudeDelta,
           }}
         >
           <MapView.Marker coordinate={{ latitude, longitude }} />

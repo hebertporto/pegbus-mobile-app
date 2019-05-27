@@ -5,9 +5,6 @@ export const styles = StyleSheet.create({
   root: {
     flex: 1,
     flexDirection: 'column',
-    marginBottom: 5,
-    elevation: 2,
-    marginHorizontal: 5,
   },
   titleWrapper: {
     paddingVertical: 5,

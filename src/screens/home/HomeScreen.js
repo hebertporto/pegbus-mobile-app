@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Home } from './components/Home'
+import { Home2 } from './components/Home2'
 import { NavBarStyle } from '../../constants'
 import { trackView } from '../../config/analytics'
 import { getBookmarkList } from '../../services/bookmarkService'
@@ -13,6 +13,10 @@ class HomeScreen extends Component {
   static navigationOptions = () => {
     return {
       ...NavBarStyle,
+      headerStyle: {
+        ...NavBarStyle.headerStyle,
+        elevation: 0,
+      },
     }
   }
 
@@ -30,7 +34,7 @@ class HomeScreen extends Component {
   render() {
     const { favourites } = this.state
     return (
-      <Home
+      <Home2
         navigateTo={stopNumber =>
           this.props.navigation.navigate('BusStop', { stopNumber })
         }

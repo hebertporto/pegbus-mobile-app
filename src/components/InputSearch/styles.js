@@ -9,29 +9,29 @@ export const styles = StyleSheet.create({
     paddingLeft: 15,
     justifyContent: 'center',
     margin: 5,
-    marginBottom: 10
+    marginBottom: 10,
   },
   inputWrapper: {
     flex: 0.8,
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   buttonSearchWrapper: {
     flex: 0.2,
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   labelInputText: {
     ...Fonts.standardStyle.caption,
-    fontWeight: '600'
+    fontWeight: '600',
   },
   inputText: {
     borderColor: Colors.BLACK_SECONDARY_ALT,
     borderBottomWidth: 1,
     width: '95%',
-    ...Fonts.standardStyle.p
+    ...Fonts.standardStyle.p,
   },
   buttonSearch: {
     borderRadius: 5,
     width: 50,
-    height: 35
-  }
+    height: 35,
+  },
 })
