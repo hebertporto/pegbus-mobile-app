@@ -64,4 +64,3 @@ class NearbyStops extends Component {
 }
 
 export { NearbyStops }
-//import { Constants, Location, Permissions } from 'expo';

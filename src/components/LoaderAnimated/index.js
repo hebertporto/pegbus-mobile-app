@@ -1,9 +1,8 @@
 import React from 'react'
 import { View } from 'react-native'
-import { DangerZone } from 'expo'
+import Lottie from 'lottie-react-native'
 import { styles } from './styles'
 
-const { Lottie } = DangerZone
 const animaLocation = require('../../assets/animations/location.json')
 
 class LoaderAnimated extends React.Component {

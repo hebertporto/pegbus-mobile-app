@@ -1,11 +1,11 @@
 import { StyleSheet } from 'react-native'
-import { Fonts, Colors } from '../../constants'
+import { Fonts, Colors } from '../../helpers'
 
 export const styles = StyleSheet.create({
   root: {
     flex: 1,
     flexDirection: 'row',
-    elevation: 2,
+    // elevation: 2,
     paddingLeft: 15,
     justifyContent: 'center',
     margin: 5,

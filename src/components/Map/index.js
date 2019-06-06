@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { View } from 'react-native'
-import { MapView } from 'expo'
+import MapView from 'react-native-maps'
 import { styles } from './styles'
 
 class Map extends Component {

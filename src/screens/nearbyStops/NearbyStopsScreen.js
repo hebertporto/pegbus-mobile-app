@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import { NavBarStyle } from '../../constants'
+import { NavBarStyle } from '../../helpers'
 import { NearbyStops } from './components/NearbyStops'
-import { Constants, Location, Permissions } from 'expo'
-// import { ModalCard } from '../../components/ModalCard'
+import { Location, Permissions } from 'expo'
 import { nearbyStops } from '../../services/stopService'
 
 class NearbyStopsScreen extends Component {

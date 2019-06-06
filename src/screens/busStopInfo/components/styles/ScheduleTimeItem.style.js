@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { Fonts } from '../../../../constants'
+import { Fonts } from '../../../../helpers'
 
 export const styles = StyleSheet.create({
   root: {

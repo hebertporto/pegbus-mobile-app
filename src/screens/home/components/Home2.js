@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { StyleSheet, View, Text } from 'react-native'
-import { Colors } from '../../../constants'
-import { InputSearch } from '../../../components/InputSearch'
+import { Colors } from '../../../helpers'
 import { Map } from '../../../components/Map'
 import { Favourite } from './Favourite'
 
@@ -16,8 +15,9 @@ class Home2 extends Component {
         <View style={styles.sectionMap}>
           <Map longitude={-97.1333263} latitude={49.8958907} />
         </View>
-        <View style={styles.sectionTop}>
-          <Text>Header</Text>
+        <View style={styles.sectionTop} />
+        <View style={styles.sectionFloatButton}>
+          <Text>Buuu222222</Text>
         </View>
         <Favourite favourites={favourites} navigate={this.navigate} />
       </View>
@@ -49,5 +49,13 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.NAV_BAR.background,
     height: '20%',
     width: '100%',
+  },
+  sectionFloatButton: {
+    position: 'absolute',
+    top: '25%',
+    width: '100%',
+    flex: 1,
+    alignItems: 'flex-end',
+    paddingRight: 30,
   },
 })
