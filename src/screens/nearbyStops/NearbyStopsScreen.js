@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { NavBarStyle } from '../../helpers'
+import { NavBarStyle } from '../../constants'
 import { NearbyStops } from './components/NearbyStops'
 import { Location, Permissions } from 'expo'
 import { nearbyStops } from '../../services/stopService'

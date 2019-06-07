@@ -3,7 +3,7 @@ import { SafeAreaView } from 'react-native'
 import { RkButton } from 'react-native-ui-kitten'
 import { Ionicons } from '@expo/vector-icons'
 import { BusStopInfo } from './components/BusStopInfo'
-import { NavBarStyle } from '../../helpers'
+import { NavBarStyle } from '../../constants'
 import { trackView } from '../../config/analytics'
 import { stopBusAndSchedule, stopBusRoutes } from '../../services/stopService'
 import { HeaderStarButton } from '../../components/buttons/HeaderStartButton'
@@ -15,7 +15,7 @@ class BusStopInfoScreen extends Component {
       ...NavBarStyle,
       headerTitleStyle: {
         ...NavBarStyle.headerTitleStyle,
-        paddingLeft: 50
+        paddingLeft: 50,
       },
       headerLeft: () => {
         return (
@@ -30,7 +30,7 @@ class BusStopInfoScreen extends Component {
       },
       headerRight: (
         <HeaderStarButton stopNumber={navigation.getParam('stopNumber')} />
-      )
+      ),
     }
   }
 

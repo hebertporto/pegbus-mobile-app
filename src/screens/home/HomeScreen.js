@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Home2 } from './components/Home2'
-import { NavBarStyle } from '../../helpers'
+import { NavBarStyle } from '../../constants'
 import { trackView } from '../../config/analytics'
 import { getBookmarkList } from '../../services/bookmarkService'
 import { removeTemp } from '../../services/tempStop'
