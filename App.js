@@ -5,7 +5,9 @@ import * as Font from 'expo-font'
 import { Asset } from 'expo-asset'
 import * as Icon from '@expo/vector-icons'
 import { Provider as PaperProvider } from 'react-native-paper'
+import { ApplicationProvider, Layout } from 'react-native-ui-kitten'
 import AppNavigator from './src/navigation/AppNavigator'
+import { mapping, light as lightTheme } from '@eva-design/eva'
 import './src/config'
 
 export default class App extends React.Component {
@@ -38,10 +40,14 @@ export default class App extends React.Component {
     const { isReady } = this.state
 
     return isReady ? (
-      <PaperProvider>
-        <StatusBar barStyle="light-content" />
-        <AppNavigator />
-      </PaperProvider>
+      <ApplicationProvider mapping={mapping} theme={lightTheme}>
+        <Layout style={{ flex: 1 }}>
+          <PaperProvider>
+            <StatusBar barStyle="light-content" />
+            <AppNavigator />
+          </PaperProvider>
+        </Layout>
+      </ApplicationProvider>
     ) : (
       <AppLoading
         startAsync={this.loadResourcesAsync}

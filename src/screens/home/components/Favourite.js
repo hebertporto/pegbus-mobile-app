@@ -8,6 +8,7 @@ import {
   Animated,
 } from 'react-native'
 import { BookmarkList } from './BookmarkList'
+import { Ionicons } from '@expo/vector-icons'
 
 const fullWidth = Dimensions.get('window').width
 const fullHeight = Dimensions.get('window').height - 100
@@ -56,7 +57,7 @@ class Favourite extends React.Component {
         <View style={styles.sectionHeader}>
           <Text style={styles.headerText}>FAVOURITES</Text>
           <TouchableWithoutFeedback onPress={this.startAnimation}>
-            <Text>#</Text>
+            <Ionicons name="md-arrow-dropup" size={32} />
           </TouchableWithoutFeedback>
         </View>
         <Animated.View style={[styles.sectionBusList, animatedStylesList]}>

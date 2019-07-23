@@ -1,58 +1,74 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import {
-  StyleSheet,
-  View,
-  TouchableOpacity,
-  ImageBackground,
-} from 'react-native'
+import { StyleSheet, View, TouchableOpacity } from 'react-native'
 import { Colors } from '../../../constants'
-import { Map } from '../../../components/Map'
+import { MapWithLocations } from '../../../components/MapWithLocations'
 import { Favourite } from './Favourite'
-import { MaterialIcons, Ionicons } from '@expo/vector-icons'
-import { RkTextInput } from 'react-native-ui-kitten'
+import { MaterialIcons } from '@expo/vector-icons'
+import { Input } from 'react-native-ui-kitten'
+import { nearbyStops } from '../../../services/stopService'
 
 class Home2 extends Component {
+  state = {
+    locations: [],
+    latitude: 49.895,
+    longitude: -97.138,
+  }
+
+  updateCoordenates = ({ latitude, longitude }) =>
+    this.setState({ latitude, longitude })
+
+  searchNearByBusStop = async () => {
+    const { latitude, longitude } = this.state
+    console.log('latitude, longitude: ', latitude, longitude)
+    try {
+      const locations = await nearbyStops({
+        latitude,
+        longitude,
+        distance: 600,
+      })
+      this.setState({ locations })
+    } catch (e) {
+      console.log('ERROR: searchNearByBusStop', e)
+    }
+  }
+
   navigate = stopNumber => this.props.navigateTo(stopNumber)
 
   render() {
     const { favourites } = this.props
+    const { locations, longitude, latitude } = this.state
     return (
       <View style={styles.root}>
         <View style={styles.sectionMap}>
-          <Map longitude={-97.1333263} latitude={49.8958907} />
+          <MapWithLocations
+            locations={locations}
+            longitude={longitude}
+            latitude={latitude}
+            updateCoordenates={this.updateCoordenates}
+          />
         </View>
         <View style={styles.sectionTop}>
-          <ImageBackground
-            source={require('../../../assets/images/peg-bg.png')}
-            style={{
-              width: '100%',
-              height: '100%',
-              opacity: 0.3,
-              position: 'relative',
-            }}
-          />
           <View
             style={{
-              backgroundColor: 'white',
               position: 'absolute',
               top: 30,
-              width: '75%',
+              width: '80%',
               alignSelf: 'center',
             }}
           >
-            <RkTextInput
-              label={<Ionicons name={'ios-search'} />}
-              inputStyle={{
-                color: 'black',
-                margin: 0,
-                padding: 0,
-              }}
+            <Input
+              placeholder="Placeholder"
+              icon={() => (
+                <TouchableOpacity onPress={() => console.log('press Search')}>
+                  <MaterialIcons name="search" size={32} color="black" />
+                </TouchableOpacity>
+              )}
             />
           </View>
         </View>
         <View style={styles.sectionFloatButton}>
-          <TouchableOpacity onPress={() => console.log('Pressed Button')}>
+          <TouchableOpacity onPress={this.searchNearByBusStop}>
             <MaterialIcons name="my-location" size={32} color="black" />
           </TouchableOpacity>
         </View>
@@ -78,18 +94,17 @@ const styles = StyleSheet.create({
   },
   sectionMap: {
     flex: 1,
-    backgroundColor: 'green',
   },
   sectionTop: {
     position: 'absolute',
     top: 0,
     backgroundColor: Colors.NAV_BAR.background,
-    height: '35%',
+    height: '18%',
     width: '100%',
   },
   sectionFloatButton: {
     position: 'absolute',
-    top: '40%',
+    top: '22%',
     width: '100%',
     flex: 1,
     alignItems: 'flex-end',
